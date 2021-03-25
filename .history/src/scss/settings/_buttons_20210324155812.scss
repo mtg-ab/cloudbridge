@@ -1,0 +1,22 @@
+// Here you can setup all the SASS of your buttons.
+.btn {
+  font-family: '', sans-serif;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  line-height: 1;
+  text-align: center;
+  white-space: normal;
+  vertical-align: middle;
+  padding: 20px 28px;
+  text-decoration: none;
+  user-select: none;
+  transition: 0.3s color, 0.3s background, 0.3s border;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid;
+  &.small {
+    padding: 10px 20px;
+  }
+}

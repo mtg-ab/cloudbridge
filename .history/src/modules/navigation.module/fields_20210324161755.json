@@ -1,0 +1,89 @@
+[
+    {
+        "name": "module_identity",
+        "label": "Module ID",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text"
+    },
+    {
+        "type": "group",
+        "name": "content_group",
+        "label": "Content Group",
+        "children": [
+            {
+            "name": "logo_src",
+            "label": "Logo",
+            "required": false,
+            "locked": false,
+            "inline_help_text": "",
+            "help_text": "",
+            "responsive": true,
+            "resizable": true,
+            "type": "image",
+            "default": {
+              "src": "https://f.hubspotusercontent00.net/hubfs/2659857/Boilerplate%20V2/Logo/logo-make-the-grade.svg",
+              "alt": null} 
+            },
+            {
+            "name": "menu_id",
+            "label": "Menu",
+            "required": false,
+            "locked": false,
+            "inline_help_text": "",
+            "help_text": "",
+            "type": "menu",
+            "placeholder": "",
+            "default": null 
+            },
+            {
+            "name": "contact",
+            "label": "Contact",
+            "required": false,
+            "locked": false,
+            "children": [
+                {
+                "name": "button_text",
+                "label": "Button Content",
+                "required": false,
+                "locked": false,
+                "validation_regex": "",
+                "allow_new_line": false,
+                "show_emoji_picker": false,
+                "type": "text",
+                "placeholder": "",
+                "inline_help_text": "",
+                "help_text": "",
+                "default": "Contact" 
+                },
+                {
+                "name": "url_field",
+                "label": "URL field",
+                "required": false,
+                "locked": false,
+                "inline_help_text": "",
+                "help_text": "",
+                "supported_types": [
+                  "EXTERNAL",
+                  "CONTENT",
+                  "FILE",
+                  "EMAIL_ADDRESS",
+                  "BLOG"
+                ],
+                "type": "url",
+                "default": {
+                  "content_id": null,
+                  "href": "",
+                  "type": "EXTERNAL"} 
+                }
+            ],
+            "type": "group",
+            "inline_help_text": "",
+            "help_text": "",
+            "default": {} }
+        ]
+    }
+]

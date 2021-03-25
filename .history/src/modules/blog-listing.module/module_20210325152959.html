@@ -1,0 +1,36 @@
+<div id="{{module.module_identity}}"
+    class="blog-listing-module {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center"></h2>
+            </div>
+        </div>
+        <div class="row">
+            {% set blog_posts = blog_recent_posts(module.content_group.blog_field, limit=3) %}
+
+            {% for post in blog_posts %}
+            <div class="col-md-4">
+                <div class="single-post">
+                    <a class="feat-img" href="{{ post.absolute_url }}"><img class="rounded w-100"
+                            src="{{ post.featured_image }}" alt="{{ post.name }}">
+                    </a>
+                    <div class="content-wrapper p-2">
+                        <div class="container-tags">
+                            {% for tag in post.tag_list %}
+                            <a href="{{ blog_tag_url(group.id, tag.slug) }}" class="single-tag"><span
+                                    class="label label-black">{{ tag.name
+                                    }}</span></a>
+                            {% if not loop.last %}{% endif %}
+                            {% endfor %}
+                        </div>
+                        <h3>
+                            <a class="text-decoration-none" href="{{ post.absolute_url }}">{{ post.name }}</a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

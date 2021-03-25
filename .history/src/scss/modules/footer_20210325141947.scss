@@ -1,0 +1,57 @@
+.footer {
+  .main-footer {
+  }
+  .sub-footer {
+  }
+}
+
+
+
+.footer {
+  ul {
+    li {
+      & + li {
+        margin-top: 30px;
+      }
+      a {
+        text-decoration: none;
+        font-family: 'MuseoSans-500';
+        color: rgba($black, 0.5);
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  &-contact {
+    background-color: #f2f2f2;
+    p,
+    p a,
+    a {
+      text-decoration: none;
+      font-family: 'MuseoSans-700';
+      font-size: 16px;
+    }
+    &-sub {
+      justify-content: space-between;
+    }
+    .social-wrapper a + a {
+      margin-left: 30px;
+    }
+  }
+  &-copyright {
+    background-color: #e7e4e4;
+    p {
+      font-size: 12px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer {
+    .footer-contact-sub {
+      flex-direction: column;
+    }
+  }
+}
+

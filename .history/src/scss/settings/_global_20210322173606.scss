@@ -1,0 +1,10 @@
+// Here you can regroup all of your base SASS.
+body {
+  font-family: 'MuseoSans-300', sans-serif;
+  color: $baseFontColor;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}

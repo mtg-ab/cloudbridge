@@ -1,0 +1,73 @@
+// Here you can regroup all of your base SASS.
+body {
+  color: $baseFontColor;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+p {
+  font-family: 'MuseoSans-300', sans-serif;
+  font-size: 20px;
+  color: $baseFontColor;
+  line-height: 1.2;
+  margin: 0;
+}
+
+h1,.h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+  color: $baseFontColor;
+  font-style: normal;
+}
+
+h1,
+.h1 {
+  color: $baseFontColor;
+  font-size: 60px;
+  font-family: 'MuseoSans-900', sans-serif;
+  font-style: normal;
+  line-height: 1.2;
+  margin: 0;
+}
+
+h2,
+.h2 {
+  color: $baseFontColor;
+  font-size: 46px;
+  font-family: 'MuseoSans-900', sans-serif;
+  font-style: normal;
+  line-height: 1.2;
+  margin: 0;
+}
+
+h3,
+.h3 {
+  color: $baseFontColor;
+  font-size: 32px;
+  font-family: 'MuseoSans-900', sans-serif;
+  font-style: normal;
+  line-height: 1.2;
+  margin: 0;
+}
+
+h4,
+.h4 {
+  color: $baseFontColor;
+  font-size: 24px;
+  font-family: 'MuseoSans-900', sans-serif;
+  font-style: normal;
+  line-height: 1.2;
+  margin: 0;
+}
+
+h5,
+.h5 {
+  color: $baseFontColor;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: 'MuseoSans-900', sans-serif;
+  font-style: normal;
+  line-height: 1.2;
+  margin: 0;
+}

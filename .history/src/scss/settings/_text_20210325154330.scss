@@ -1,0 +1,15 @@
+// Here you can manage all your text settings
+.label {
+  display: inline-block;
+  border-radius: 2px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  margin-bottom: 15px;
+  &.black {
+    background-color: $black;
+    color: $white;
+  }
+}

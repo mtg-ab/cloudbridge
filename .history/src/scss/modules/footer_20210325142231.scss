@@ -1,0 +1,28 @@
+.footer {
+  .main-footer {
+    ul {
+      li {
+        & + li {
+          margin-top: 15px;
+        }
+        a {
+          text-decoration: none;
+          font-family: 'MuseoSans-500';
+          color: rgba($black, 0.5);
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  .sub-footer {
+    background-color: $grey;
+    .social-wrapper a + a {
+      margin-left: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+}

@@ -1,0 +1,32 @@
+<div id="{{module.module_identity}}" class="footer">
+    <div class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    {% if module.main_footer.first_col.logo.logo_src.src.src %}
+                    <img class="img-fluid lazy"
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.main_footer.first_col.logo.logo_src.src.width }} {{ module.main_footer.first_col.logo.logo_src.src.height }}'%3E%3C/svg%3E"
+                        data-src="{{ module.main_footer.first_col.logo.logo_src.src.src }}"
+                        alt="{{ module.main_footer.first_col.logo.logo_src.src.alt }}" />
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sub-footer">
+        <div class="container">
+            <div class="copy-wrapper d-flex py-2">
+                <p>Copyright © {{year}} Make the Grade</p>
+                <div class="social-wrapper d-flex mt-2 mt-md-0">
+                    {% for item in module.sub_footer.social_group %}
+                    <a href="{{item.social_link.href}}" target="_blank">
+                        <img class="img-fluid lazy"
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ item.logo_src.width }} {{ item.logo_src.height }}'%3E%3C/svg%3E"
+                            data-src="{{ item.logo_src.src }}" alt="{{ item.logo_src.alt }}" />
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

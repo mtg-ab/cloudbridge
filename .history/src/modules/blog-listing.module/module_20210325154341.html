@@ -1,0 +1,36 @@
+<div id="{{module.module_identity}}"
+    class="blog-listing-module {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center mb-3">{{module.content_group.title}}</h2>
+            </div>
+        </div>
+        <div class="row">
+            {% set blog_posts = blog_recent_posts(module.content_group.blog_field, limit=3) %}
+
+            {% for post in blog_posts %}
+            <div class="col-md-4">
+                <div class="single-post rounded shadow overflow-hidden">
+                    <a class="feat-img d-block position-relative" href="{{ post.absolute_url }}">
+                        <img class="fit-cover" src="{{ post.featured_image }}" alt="{{ post.name }}">
+                    </a>
+                    <div class="content-wrapper p-2">
+                        <div class="container-tags mb-1">
+                            {% for tag in post.tag_list %}
+                            <a class="label black text-decoration-none" href="{{ blog_tag_url(group.id, tag.slug) }}">{{
+                                tag.name
+                                }}</a>
+                            {% if not loop.last %}{% endif %}
+                            {% endfor %}
+                        </div>
+                        <h3>
+                            <a class="text-decoration-none" href="{{ post.absolute_url }}">{{ post.name }}</a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+.blog-listing-module {
+  .single-post {
+    a {
+      color: inherit;
+    }
+    .feat-img {
+      height: 200px;
+    }
+    &:hover {
+      transform: translateY(-20px);
+    }
+  }
+}

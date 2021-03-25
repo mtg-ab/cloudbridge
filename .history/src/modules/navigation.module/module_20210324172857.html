@@ -1,0 +1,127 @@
+<div id="{{module.module_identity}}"
+    class="navigation {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    {# Top Navigation #}
+    <div class="top-navigation py-1 d-none d-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex justify-content-end align-items-center">
+                        <nav>
+                            {% if module.top_navigation.connection.url_field.href %}
+                            <a
+                                href="{{module.top_navigation.connection.url_field.href}}">{{module.top_navigation.connection.text_field}}</a>
+                            {% endif %}
+                            {% if module.top_navigation.client.url_field.href %}
+                            <a class="ml-md-2"
+                                href="{{module.top_navigation.client.url_field.href}}">{{module.top_navigation.client.text_field}}</a>
+                            {% endif %}
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {# End of Top Navigation #}
+
+    {# Main Navigation #}
+    <div class="main-navigation">
+        <div class="fixed-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="navbar navbar-expand-lg py-1 p-lg-0">
+                            <a class="navbar-brand p-0 mr-4" href="{{module.main_navigation.logo.logo_link.href}}">
+                                {% if module.main_navigation.logo.logo_src.src %}
+                                <img class="img-fluid lazy"
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.main_navigation.logo.logo_src.width }} {{ module.main_navigation.logo.logo_src.height }}'%3E%3C/svg%3E"
+                                    data-src="{{ module.main_navigation.logo.logo_src.src }}"
+                                    alt="{{ module.main_navigation.logo.logo_src.alt }}"
+                                    width="{{ module.main_navigation.logo.logo_src.width }}"
+                                    height="{{ module.main_navigation.logo.logo_src.height }}" />
+                                {% endif %}
+                            </a>
+                            <button
+                                class="navbar-toggler flex-direction-column align-items-end justify-content-between border-0 bg-white p-0"
+                                type="button" data-toggle="collapse" data-target="#main_nav">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </button>
+                            <div class="collapse navbar-collapse pt-1 pt-lg-0 px-1 px-lg-0" id="main_nav">
+                                <ul class="navbar-nav list-unstyled ml-auto mt-0 p-0">
+
+                                    <!-- Dev de la macro -->
+                                    {%- macro render_link_item(link,depth,looop)-%}
+                                    {%- if link != [] && link.label -%}
+                                    {%- if link.children -%}
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link  dropdown-toggle px-1 py-2" href="#" data-toggle="dropdown">
+                                            {{link.label}}
+                                            <svg width="9px" height="6px" viewBox="0 0 9 6" version="1.1"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <g transform="translate(-444.000000, -6175.000000)">
+                                                        <g transform="translate(165.000000, 6151.000000)">
+                                                            <g transform="translate(178.000000, 15.000000)" filter="">
+                                                                <g transform="translate(101.000000, 6.000000)">
+                                                                    <path
+                                                                        d="M6.63474769,1.46103896 C6.99928094,1.46103896 7.29885356,1.73916845 7.33283604,2.09479792 L7.33604639,2.16233766 L7.33604639,6.83766234 C7.33604639,7.22497892 7.02206427,7.53896104 6.63474769,7.53896104 C6.27021444,7.53896104 5.97064181,7.26083155 5.93665933,6.90520208 L5.93344899,6.83766234 L5.93344899,2.86363636 L1.95942301,2.86363636 C1.59488976,2.86363636 1.29531714,2.58550687 1.26133466,2.22987741 L1.25812431,2.16233766 C1.25812431,1.79780441 1.5362538,1.49823179 1.89188327,1.46424931 L1.95942301,1.46103896 L6.63474769,1.46103896 Z"
+                                                                        fill="#000000" fill-rule="nonzero"
+                                                                        transform="translate(4.297085, 4.500000) rotate(134.000000) translate(-4.297085, -4.500000) ">
+                                                                    </path>
+                                                                </g>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                        </a>
+                                        <ul class="dropdown-menu list-unstyled mt-0 px-1 p-lg-2">
+                                            {% set depth = depth + 1%}
+                                            {%- for sublink in link.children -%}
+                                            {{render_link_item(sublink,depth)}}
+                                            {%- endfor -%}
+                                        </ul>
+                                    </li>
+                                    {% else%}
+                                    {% if depth == 1 %}
+                                    <li class="nav-item"><a href="{{link.url}}" {% if link.linkTarget=='_blank'
+                                            %}target="_blank" {% endif %} class="d-block px-1 py-2">{{link.label}}</a>
+                                    </li>
+                                    {% elif depth == 2 %}
+                                    <li class="sub-item"><a href="{{link.url}}" {% if link.linkTarget=='_blank'
+                                            %}target="_blank" {% endif %}>{{link.label}}</a>
+                                    </li>
+                                    {% endif %}
+                                    {% endif%}
+                                    {%- endif -%}
+
+
+                                    {%- endmacro -%}
+
+                                    {% set menu = menu( id=module.main_navigation.menu_id).children %}
+
+                                    <!-- Appler de la macro -->
+                                    {% for link in menu %}
+                                    {{render_link_item(link,1,loop.index)}}
+                                    {% endfor %}
+                                    {% if module.main_navigation.contact.url_field.href %}
+                                    <li class="nav-item ml-lg-1">
+                                        <a href="{{module.main_navigation.contact.url_field.href}}"
+                                            class="btn primary">{{module.main_navigation.contact.button_text}}</a>
+                                    </li>
+                                    {% endif %}
+
+
+                                </ul>
+
+                            </div> <!-- navbar-collapse.// -->
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {# End of Main Navigation #}
+</div>

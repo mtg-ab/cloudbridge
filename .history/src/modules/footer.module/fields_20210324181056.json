@@ -1,0 +1,20 @@
+[
+    {
+        "name": "module_identity",
+        "label": "Module ID",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text"
+    },
+    {
+        "type": "group",
+        "name": "main_footer",
+        "label": "Main Footer",
+        "children": [
+            
+        ]
+    }
+]

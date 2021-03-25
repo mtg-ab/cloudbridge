@@ -1,0 +1,69 @@
+// Here you can regroup all of your base SASS.
+body {
+  color: $baseFontColor;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+a,
+li,
+p {
+  font-family: 'Montserrat', sans-serif;
+}
+
+p {
+  font-size: 20px;
+  color: $baseFontColor;
+  line-height: 1.2;
+  margin: 0;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5 {
+  font-family: 'Montserrat', sans-serif;
+  color: $baseFontColor;
+  font-style: normal;
+  margin: 0;
+}
+
+h1,
+.h1 {
+  font-size: 60px;
+  line-height: 1.2;
+}
+
+h2,
+.h2 {
+  font-size: 46px;
+  line-height: 1.2;
+}
+
+h3,
+.h3 {
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+h4,
+.h4 {
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+h5,
+.h5 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+}

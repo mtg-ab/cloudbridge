@@ -1,0 +1,128 @@
+.navigation {
+  a.btn {
+    color: $white;
+  }
+  .dropdown-toggle {
+    transition: all 0.3s;
+    &:after {
+      display: none;
+    }
+    &:hover {
+      color: $baseFontColor;
+    }
+    svg path {
+      transition: all 0.3s;
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+  ul {
+    padding: 0;
+    li {
+      list-style-type: none;
+    }
+  }
+  .has-child {
+    display: inline-block;
+  }
+  .sub-nav {
+    background-color: #f7f7f7;
+    a {
+      font-size: 16px;
+    }
+  }
+  .main-nav {
+    .fixed-wrapper {
+      background-color: $white;
+    }
+    &.top-nav {
+      height: 80px;
+      .fixed-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 50;
+        box-shadow: 0 15px 25px -1px rgba($color: #000000, $alpha: 0.05);
+      }
+    }
+  }
+}
+
+@media all and (min-width: 992px) {
+  .navigation {
+    .navbar-collapse {
+      position: relative;
+      justify-content: space-between;
+      ul.navbar-nav {
+        align-items: center;
+      }
+    }
+  }
+  .navbar .nav-item .dropdown-menu {
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+    transition: all 0.4s ease;
+  }
+  .navbar .nav-item:hover .dropdown-menu {
+    opacity: 1;
+    border: 1px solid #e4e4e4;
+    box-shadow: 0 15px 25px -1px rgba($color: #000000, $alpha: 0.05);
+    border-radius: 0 0 5px 5px;
+    transform: translateY(-1px);
+    pointer-events: initial;
+  }
+  .navbar .nav-item .dropdown-menu {
+    margin-top: 0;
+  }
+}
+
+@media all and (max-width: 991px) {
+  .navbar-brand {
+    max-width: 92px;
+  }
+  .navbar-toggler {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 27px;
+    height: 27px;
+    background-color: $white;
+    border: none;
+    outline: 0 !important;
+    padding: 0;
+    div {
+      background-color: $black;
+      height: 3px;
+      border-radius: 100px;
+      &:first-child {
+        width: calc(100% / 3);
+      }
+      &:nth-child(2) {
+        width: calc(100% / 1.66);
+      }
+      &:last-child {
+        width: 100%;
+      }
+    }
+  }
+  .navbar-nav {
+    .dropdown-menu {
+      border: none;
+      margin: 0;
+      height: 0px;
+      overflow: hidden;
+      transition: height 0.3s;
+      &.show {
+        height: 100%;
+      }
+      ul li a {
+        display: block;
+        padding: 15px;
+      }
+    }
+  }
+}

@@ -1,0 +1,148 @@
+[
+    {
+        "name": "module_identity",
+        "label": "Module ID",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text"
+    },
+    {
+        "type": "group",
+        "name": "main_footer",
+        "label": "Main Footer",
+        "children": [
+            {
+            "name": "first_col",
+            "label": "Première Colonne",
+            "required": false,
+            "locked": false,
+            "children": [
+                {
+                    "name": "logo",
+                    "label": "Logo",
+                    "required": false,
+                    "locked": false,
+                    "children": [
+                      {
+                        "name": "logo_src",
+                        "label": "Logo",
+                        "required": false,
+                        "locked": false,
+                        "inline_help_text": "",
+                        "help_text": "",
+                        "responsive": true,
+                        "resizable": true,
+                        "type": "image",
+                        "default": {
+                          "src": "https://f.hubspotusercontent00.net/hubfs/2659857/Boilerplate%20V2/Logo/logo-make-the-grade.svg",
+                          "alt": null} 
+                        },
+                        {
+                        "name": "logo_link",
+                        "label": "URL field",
+                        "required": false,
+                        "locked": false,
+                        "inline_help_text": "",
+                        "help_text": "",
+                        "supported_types": [
+                          "EXTERNAL",
+                          "CONTENT",
+                          "FILE",
+                          "EMAIL_ADDRESS",
+                          "BLOG"
+                        ],
+                        "type": "url",
+                        "default": {
+                          "content_id": null,
+                          "href": "https://www.makethegrade.fr/",
+                          "type": "EXTERNAL"} }
+                    ],
+                    "type": "group",
+                    "inline_help_text": "",
+                    "help_text": "",
+                    "default": {} 
+                }
+            ],
+            "type": "group",
+            "inline_help_text": "",
+            "help_text": "",
+            "default": {} 
+            },
+            {
+                "name": "menu_id",
+                "label": "Menu",
+                "required": false,
+                "locked": false,
+                "inline_help_text": "",
+                "help_text": "",
+                "type": "menu",
+                "placeholder": "",
+                "default": 43601824811 
+            }
+        ]
+    },
+    {
+    "name": "sub_footer",
+    "label": "Sub Footer",
+    "required": false,
+    "locked": false,
+    "children": [
+        {
+        "name": "social_group",
+        "label": "Réseaux Sociaux",
+        "required": false,
+        "locked": false,
+        "occurrence": {
+          "min": null,
+          "max": null,
+          "sorting_label_field": null,
+          "default": 1
+        },
+        "children": [
+            {
+                "name": "social_link",
+                "label": "Social link",
+                "required": false,
+                "locked": false,
+                "inline_help_text": "",
+                "help_text": "",
+                "supported_types": [
+                  "EXTERNAL",
+                  "CONTENT",
+                  "BLOG"
+                ],
+                "type": "url",
+                "default": {
+                  "content_id": null,
+                  "href": "https://www.linkedin.com/company/mkthgrd/",
+                  "type": "EXTERNAL"} 
+                },
+                {
+                "name": "logo_src",
+                "label": "Logo",
+                "required": false,
+                "locked": false,
+                "inline_help_text": "",
+                "help_text": "",
+                "responsive": true,
+                "resizable": true,
+                "type": "image",
+                "default": {
+                  "src": "https://f.hubspotusercontent00.net/hubfs/2659857/Boilerplate%20V2/Icons/linkedin-logo.svg",
+                  "alt": null} 
+                }
+        ],
+        "type": "group",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": {} }
+    ],
+    "type": "group",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": {} 
+    }
+]

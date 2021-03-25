@@ -1,0 +1,62 @@
+[
+    {
+        "name": "module_identity",
+        "label": "Module ID",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text"
+    },
+    {
+        "type": "group",
+        "name": "main_footer",
+        "label": "Main Footer",
+        "children": [
+            {
+            "name": "first_col",
+            "label": "Première Colonne",
+            "required": false,
+            "locked": false,
+            "children": [
+                {
+                "name": "logo",
+                "label": "Logo",
+                "required": false,
+                "locked": false,
+                "children": [
+                    {
+                    "name": "url_field",
+                    "label": "URL field",
+                    "required": false,
+                    "locked": false,
+                    "inline_help_text": "",
+                    "help_text": "",
+                    "supported_types": [
+                      "EXTERNAL",
+                      "CONTENT",
+                      "FILE",
+                      "EMAIL_ADDRESS",
+                      "BLOG"
+                    ],
+                    "type": "url",
+                    "default": {
+                      "content_id": null,
+                      "href": "",
+                      "type": "EXTERNAL"} }
+                ],
+                "type": "group",
+                "inline_help_text": "",
+                "help_text": "",
+                "default": {} 
+                }
+            ],
+            "type": "group",
+            "inline_help_text": "",
+            "help_text": "",
+            "default": {} 
+            }
+        ]
+    }
+]

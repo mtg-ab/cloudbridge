@@ -1,0 +1,14 @@
+// Here you can manage all your text settings
+.label {
+  font-size: 16px;
+  display: inline-block;
+  text-transform: uppercase;
+  margin: 0;
+  &.transparent {
+    color: $white;
+    opacity: 0.6;
+  }
+  &.red {
+    color: $primaryRed;
+  }
+}

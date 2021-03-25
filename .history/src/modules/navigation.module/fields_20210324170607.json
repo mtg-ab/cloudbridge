@@ -1,0 +1,203 @@
+[
+    {
+        "name": "module_identity",
+        "label": "Module ID",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text"
+    },
+    {
+    "name": "top_navigation",
+    "label": "Top Navigation",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "name": "connection",
+        "label": "Connection",
+        "required": false,
+        "locked": false,
+        "children": [
+            {
+            "name": "text_field",
+            "label": "Label",
+            "required": false,
+            "locked": false,
+            "validation_regex": "",
+            "allow_new_line": false,
+            "show_emoji_picker": false,
+            "type": "text",
+            "placeholder": "",
+            "inline_help_text": "",
+            "help_text": "",
+            "default": "Se connecter" 
+            },
+            {
+            "name": "url_field",
+            "label": "URL field",
+            "required": false,
+            "locked": false,
+            "inline_help_text": "",
+            "help_text": "",
+            "supported_types": [
+              "EXTERNAL",
+              "CONTENT",
+              "FILE",
+              "EMAIL_ADDRESS",
+              "BLOG"
+            ],
+            "type": "url",
+            "default": {
+              "content_id": null,
+              "href": "https://www.makethegrade.fr/",
+              "type": "EXTERNAL"} 
+            }
+        ],
+        "type": "group",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": {} 
+        },
+        {
+            "name": "client",
+            "label": "Service Client",
+            "required": false,
+            "locked": false,
+            "children": [
+                {
+                "name": "text_field",
+                "label": "Label",
+                "required": false,
+                "locked": false,
+                "validation_regex": "",
+                "allow_new_line": false,
+                "show_emoji_picker": false,
+                "type": "text",
+                "placeholder": "",
+                "inline_help_text": "",
+                "help_text": "",
+                "default": "Service client" 
+                },
+                {
+                "name": "url_field",
+                "label": "URL field",
+                "required": false,
+                "locked": false,
+                "inline_help_text": "",
+                "help_text": "",
+                "supported_types": [
+                  "EXTERNAL",
+                  "CONTENT",
+                  "FILE",
+                  "EMAIL_ADDRESS",
+                  "BLOG"
+                ],
+                "type": "url",
+                "default": {
+                  "content_id": null,
+                  "href": "https://www.makethegrade.fr/",
+                  "type": "EXTERNAL"} 
+                }
+            ],
+            "type": "group",
+            "inline_help_text": "",
+            "help_text": "",
+            "default": {} 
+            }
+    ],
+    "type": "group",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": {} 
+    },
+    {
+        "type": "group",
+        "name": "main_navigation",
+        "label": "Main Navigation",
+        "children": [
+            {
+            "name": "field_group",
+            "label": "field_group",
+            "required": false,
+            "locked": false,
+            "children": [],
+            "type": "group",
+            "inline_help_text": "",
+            "help_text": "",
+            "default": {} }
+            {
+            "name": "logo_src",
+            "label": "Logo",
+            "required": false,
+            "locked": false,
+            "inline_help_text": "",
+            "help_text": "",
+            "responsive": true,
+            "resizable": true,
+            "type": "image",
+            "default": {
+              "src": "https://f.hubspotusercontent00.net/hubfs/2659857/Boilerplate%20V2/Logo/logo-make-the-grade.svg",
+              "alt": null} 
+            },
+            {
+            "name": "menu_id",
+            "label": "Menu",
+            "required": false,
+            "locked": false,
+            "inline_help_text": "",
+            "help_text": "",
+            "type": "menu",
+            "placeholder": "",
+            "default": 43601824811 
+            },
+            {
+            "name": "contact",
+            "label": "Contact",
+            "required": false,
+            "locked": false,
+            "children": [
+                {
+                "name": "button_text",
+                "label": "Button Content",
+                "required": false,
+                "locked": false,
+                "validation_regex": "",
+                "allow_new_line": false,
+                "show_emoji_picker": false,
+                "type": "text",
+                "placeholder": "",
+                "inline_help_text": "",
+                "help_text": "",
+                "default": "Contact" 
+                },
+                {
+                "name": "url_field",
+                "label": "URL field",
+                "required": false,
+                "locked": false,
+                "inline_help_text": "",
+                "help_text": "",
+                "supported_types": [
+                  "EXTERNAL",
+                  "CONTENT",
+                  "FILE",
+                  "EMAIL_ADDRESS",
+                  "BLOG"
+                ],
+                "type": "url",
+                "default": {
+                  "content_id": null,
+                  "href": "https://www.makethegrade.fr/",
+                  "type": "EXTERNAL"} 
+                }
+            ],
+            "type": "group",
+            "inline_help_text": "",
+            "help_text": "",
+            "default": {} }
+        ]
+    }
+]
