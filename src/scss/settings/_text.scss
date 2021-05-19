@@ -12,3 +12,10 @@
     color: $white;
   }
 }
+
+p,
+a {
+  &.bold {
+    font-weight: 600;
+  }
+}

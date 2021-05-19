@@ -1,0 +1,29 @@
+<div
+    class="dropdown-qa position-relative overflow-hidden{% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="accordion position-relative py-10" id="accordion_{{ name }}">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 mx-auto">
+                    {% for item in module.content_group.collapses %}
+                    <div class="card rounded-lg">
+                        <div class="card-header" id="heading_{{ name }}_{{ loop.index }}">
+                            <div class="card-toggle position-relative d-flex justify-content-between align-items-center ali collapsed pl-2 pr-4 pl-md-3 pr-md-6 py-2 {% if module.content_group.collapses_style.active_color.color %} active-color {% endif %}"
+                                data-toggle="collapse" data-target="#collapse_{{ name }}_{{ loop.index }}">
+                                <div class="title-wrapper d-flex align-items-center">
+                                    <p class="bold">{{ item.card_title }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="collapse_{{ name }}_{{ loop.index }}" class="collapse"
+                            data-parent="#accordion_{{ name }}">
+                            <div class="card-body px-2 px-md-3 pb-2">
+                                {{ item.card_rich_text }}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

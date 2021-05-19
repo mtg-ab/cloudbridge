@@ -1,0 +1,8 @@
+<div id="{{module.module_identity}}"
+    class="cta-center d-flex justify-content-center align-items-center {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    {% if module.content_group.button_type == "button" && module.content_group.button_link.href %}
+    <a class="btn primary" href="{{module.content_group.button_link.href}}">{{module.content_group.button_text}}</a>
+    {% else if item.first_button_type == "cta" %}
+    {% cta "cta" label='Select a CTA', guid='{{module.content_group.cta}}' %}
+    {% endif %}
+</div>

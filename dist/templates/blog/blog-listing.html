@@ -1,25 +1,107 @@
 <!--
   templateType: blog
   isAvailableForNewContent: true
-  label: Boilerplate - Blog Listing Template
+  label: Boilerplate V2 - Blog Listing Template
 -->
 {% extends "../layouts/base-blog.html" %}
 {% block body %}
+<div class="blog-listing">
+  {% if blog_author %}
+  {# Author Block Listing - You can manage it here #}
+  <div class="section hero-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <h1 class="mb-2 text-center">{{ blog_author.display_name }}</h1>
+          <p class="text-center">{{ blog_author.bio }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% elif tag %}
+  {# Tag Listing - You can manage it here #}
+  <div class="section hero-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <h1 class="mb-2 text-center">{{ page_meta.html_title|split(' | ')|last }}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <!--Classic Listing - You can manage it here -->
+  <div class="section hero-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <h1 class="mb-2 text-center">Your incredible blog listing</h1>
+          <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at elit volutpat,
+            aliquam leo non, eleifend
+            odio. Pellentesque ultrices vehicula eros eget vulputate. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        {% for post in contents %}
+        <div class="{% if loop.index == 1 %}col-md-8{% else %}col-md-4{% endif %}">
+          <div class="single-post rounded shadow overflow-hidden">
+            <a class="feat-img d-block position-relative" href="{{ post.absolute_url }}">
+              <img class="fit-cover" src="{{ post.featured_image }}" alt="{{ post.name }}">
+            </a>
+            <div class="content-wrapper p-2">
+              <div class="container-tags mb-1">
+                {% for tag in post.tag_list %}
+                <a class="label black text-decoration-none" href="{{ blog_tag_url(group.id, tag.slug) }}">{{
+                  tag.name
+                  }}</a>
+                {% if not loop.last %}{% endif %}
+                {% endfor %}
+              </div>
+              <h3>
+                <a class="text-decoration-none" href="{{ post.absolute_url }}">{{ post.name }}</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <!-- Pagination - You can manage it here -->
+  {% if next_page_num %}
+  <nav class="blog-pagination d-flex justify-content-center py-5">
 
-{% if blog_author %}
-{# Author Block Listing - You can manage it here #}
 
-{% elif tag %}
-{# Tag Listing - You can manage it here #}
-{% else %}
-<!--Classic Listing - You can manage it here -->
+    {% set page_list = [-2, -1, 0, 1, 2] %}
+    {% if contents.total_page_count - current_page_num == 1 %}{% set offset = -1 %}
+    {% elif contents.total_page_count - current_page_num == 0 %}{% set offset = -2 %}
+    {% elif current_page_num == 2 %}{% set offset = 1 %}
+    {% elif current_page_num == 1 %}{% set offset = 2 %}
+    {% else %}{% set offset = 0 %}{% endif %}
 
-{% endif %}
+    <a class="previous d-flex justify-content-center align-items-center text-decoration-none mr-3"
+      href="{{ blog_page_link(last_page_num) }}">
+    </a>
+    <div class="container-pagination-link px-3 px-md-5 d-flex justify-content-center align-items-center">
+      {% for page in page_list %}
+      {% set this_page = current_page_num + page + offset %}
+      {% if this_page > 0 and this_page <= contents.total_page_count %} <a
+        class="blog-pagination__number-link d-flex justify-content-center align-items-center text-decoration-none rounded bold {{ "
+        blog-pagination__link--active" if this_page==current_page_num }}" href="{{ blog_page_link(this_page) }}">{{
+        this_page }}</a>
+        {% endif %}
+        {% endfor %}
+    </div>
+    <a class="next d-flex justify-content-center align-items-center text-decoration-none ml-3 {{ "
+      blog-pagination__next-link--disabled" if !next_page_num }}" href="{{ blog_page_link(current_page_num + 1) }}">
+    </a>
+  </nav>
+  {% endif %}
 
-<!-- Pagination - You can manage it here -->
-{% if next_page_num %}
-
-{% endif %}
-
-
+</div>
 {% endblock body %}

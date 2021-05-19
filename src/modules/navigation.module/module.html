@@ -8,11 +8,11 @@
                     <div class="d-flex justify-content-end align-items-center">
                         <nav>
                             {% if module.top_navigation.connection.url_field.href %}
-                            <a
+                            <a class="bold"
                                 href="{{module.top_navigation.connection.url_field.href}}">{{module.top_navigation.connection.text_field}}</a>
                             {% endif %}
                             {% if module.top_navigation.client.url_field.href %}
-                            <a class="ml-md-2"
+                            <a class="ml-md-2 bold"
                                 href="{{module.top_navigation.client.url_field.href}}">{{module.top_navigation.client.text_field}}</a>
                             {% endif %}
                         </nav>
@@ -31,13 +31,18 @@
                     <div class="col-12">
                         <nav class="navbar navbar-expand-lg py-1 p-lg-0">
                             <a class="navbar-brand p-0 mr-4" href="{{module.main_navigation.logo.logo_link.href}}">
-                                {% if module.main_navigation.logo.logo_src.src %}
+                                {% if module.main_navigation.logo.logo_field.override_inherited_src %}
+                                <img class="img-fluid lazy" src="{{module.main_navigation.logo.logo_field.src}}"
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.main_navigation.logo.logo_field.width }} {{ module.main_navigation.logo.logo_field.height }}'%3E%3C/svg%3E"
+                                    data-src="{{ module.main_navigation.logo.logo_field.src }}"
+                                    alt="{{ module.main_navigation.logo.logo_field.alt }}"
+                                    width="{{ module.main_navigation.logo.logo_field.width }}"
+                                    height="{{ module.main_navigation.logo.logo_field.height }}" />
+                                {% else %}
                                 <img class="img-fluid lazy"
-                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.main_navigation.logo.logo_src.width }} {{ module.main_navigation.logo.logo_src.height }}'%3E%3C/svg%3E"
-                                    data-src="{{ module.main_navigation.logo.logo_src.src }}"
-                                    alt="{{ module.main_navigation.logo.logo_src.alt }}"
-                                    width="{{ module.main_navigation.logo.logo_src.width }}"
-                                    height="{{ module.main_navigation.logo.logo_src.height }}" />
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ domain_settings.site_settings.logo_width }} {{ domain_settings.site_settings.logo_height }}'%3E%3C/svg%3E"
+                                    data-src="{{domain_settings.site_settings.logo_src}}"
+                                    alt="{{domain_settings.site_settings.logo_alt}}">
                                 {% endif %}
                             </a>
                             <button
@@ -112,7 +117,6 @@
                                     {{render_link_item(link,1,loop.index)}}
                                     {% endfor %}
                                     <!--  -->
-
                                     <!-- Top Navigation in Responsive -->
                                     {% if module.top_navigation.connection.url_field.href %}
                                     <li class="nav-item d-block d-lg-none"><a

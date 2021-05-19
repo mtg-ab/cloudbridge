@@ -1,0 +1,62 @@
+.blog-listing {
+  .hero-section {
+    background-color: $persian-green;
+    h1,
+    p {
+      color: $white;
+    }
+  }
+  .single-post {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    h3 a {
+      color: inherit;
+    }
+    .feat-img {
+      height: 200px;
+    }
+    &:hover {
+      transform: translate3d(0, -5px, 0);
+    }
+  }
+  .blog-pagination {
+    .next,
+    .previous {
+      height: 50px;
+      width: 50px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 20px;
+      background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.85687 3.80005L5.02844 6.62848L2.20001 3.80005' stroke='%231D1D1B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+      transition: all 0.3s ease;
+    }
+    .next {
+      transform: rotate(270deg);
+    }
+    .previous {
+      transform: rotate(90deg);
+    }
+    .container-pagination-link {
+      a {
+        height: 50px;
+        width: 50px;
+        color: $baseFontColor;
+        transition: all 0.3s ease;
+        + a {
+          margin-left: 5px;
+        }
+        &:hover {
+          background: $baseFontColor;
+          color: $white;
+        }
+        &:not(.blog-pagination__link--active) {
+          border: 2px solid $baseFontColor;
+        }
+        &.blog-pagination__link--active {
+          background: $baseFontColor;
+          color: $white;
+        }
+      }
+    }
+  }
+}

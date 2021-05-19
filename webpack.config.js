@@ -1,9 +1,10 @@
-const path = require('path')
+const path = require('path');
+var glob = require("glob");
 
 module.exports = {
   mode: 'production',
   entry: {
-    main: './src/js/main.js'
+    main: glob.sync("./src/js/**/*.js"),
   },
   output: {
     filename: '[name].js',
