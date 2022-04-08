@@ -1,0 +1,56 @@
+<section id="{{module.module_identity}}" class="case-studies {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <svg width="82" class="line-1" height="141" viewBox="0 0 82 141" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 0V70C1 81.0457 9.95431 90 21 90H61C72.0457 90 81 98.9543 81 110V140.5" stroke="#022D54" stroke-opacity="0.4" stroke-width="0.5"/>
+        <path d="M1 37L1 67" stroke="#722281" stroke-width="2"/>
+    </svg>
+    <div class="container">
+        <div class="bloc-slider">
+            <div class="steps">
+                <span class="actual">01</span>
+                <span>0{{ module.items|length }}</span>
+                <i></i>
+            </div>
+            <div class="slider">
+                {% set i = 0 %}
+                {% for item in module.items %}
+                    {% set i = i + 1 %}
+                    <div class="bloc" data-id="{{ i }}">
+                        <div class="testimonial">
+                            {{ item.text }}
+                        </div>
+                        <p class="name"><strong>{{ item.nom }},</strong><span> {{ item.job }}</span></p>
+                        {% if item.logo.src %}
+                            <figure class="figure">
+                                <img class="img-fluid" src="{{ item.logo.src }}" loading="lazy" alt="{{ item.logo.alt }}" />
+                            </figure>
+                        {% else %}
+                            <figure class="figure">
+                                <img class="img-fluid" loading="lazy" src="https://via.placeholder.com/600x600/919388/ffffff.png?text=600x600">
+                            </figure>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="bloc-title">
+            <div>
+                {% if module.subtitle %}
+                    <p class="subtitle">{{ module.subtitle }}</p>
+                {% endif %}
+                {% inline_rich_text field="rich_text" value="{{ module.title }}" %}
+                {% inline_rich_text field="rich_text" value="{{ module.text }}" %}
+            </div>
+            <div class="row-btns">
+                {% if module.button_url.href %}
+                    <a href="{{ module.button_url.href }}" class="btn secondary"><span>{{ module.button_text }}</span></a>
+                {% else %}
+                    {{ module.cta_field }}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <svg width="510" height="91" class="line-2" viewBox="0 0 510 91" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M509 90.5V65.5C509 54.4543 500.046 45.5 489 45.5H21C9.9543 45.5 1 36.5457 1 25.5V0" stroke="#022D54" stroke-opacity="0.4" stroke-width="0.5"/>
+        <path d="M216 45.5H266" stroke="#722281" stroke-width="2"/>
+    </svg>   
+</section>

@@ -1,0 +1,109 @@
+section.logos{
+    background-image: url('https://25642218.fs1.hubspotusercontent-eu1.net/hubfs/25642218/bg-gradient.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    div.container{
+        max-width:1000px;
+        justify-content: space-between;
+        display:flex;
+        @media(max-width:900px){
+            flex-direction: column;
+        }
+        div.bloc-title{
+            padding:100px 0px;
+            max-width:400px;
+            @media(max-width:900px){
+                padding:100px 0px 50px 0px;
+            }
+            h2,p{
+                color:#fff;
+                &.subtitle{
+                    color: rgba(255, 255, 255, 0.5);
+                }
+            }
+            h2{
+                margin-bottom:30px;
+                margin-top:10px;
+            }
+        
+        }
+        div.bloc-logos{
+            display:flex;
+            transform: rotate(30deg);
+            position: relative;
+            max-height:500px;
+            @media(max-width:900px){
+                overflow: hidden;
+                transform: translateY(50px) rotate(30deg);
+            }
+            &:before{
+                display:block;
+                content:'';
+                position: absolute;
+                left:0px;
+                background-color: rgba(#fff,0.6);
+                width:1px;
+                height:85%;
+                top:53%;
+                @media(max-width:900px){
+                    top:0px;
+                }
+            }
+            &:after{
+                display:block;
+                content:'';
+                position: absolute;
+                right:0px;
+                background-color: rgba(#fff,0.6);
+                width:1px;
+                height:85%;
+            }
+            div.bloc-line{
+                display: flex;
+                flex-direction: column;
+                padding:0px 60px;
+                position: relative;
+                @media(max-width:$size4){
+                    padding:0px 30px;
+                }
+                &.bloc-line-1{
+                    top:30%;
+                    div.bloc{
+                        transform: translateY(30px);
+                    }
+                }
+                &.bloc-line-2{
+                    top:-30%;
+                    @media(max-width:$size4){
+                        top:-100%;
+                    }
+                    div.bloc{
+                        transform: translateY(-30px);
+                    }
+                }
+                div.bloc{
+                    margin-bottom:50px;
+                    background-color: #fff;
+                    box-shadow: 0px 1.75557px 21.9446px rgba(22, 22, 24, 0.1);
+                    border-radius: 10px;
+                    width:105px;
+                    height:105px;
+                    min-width:105px;
+                    min-height:105px;
+                    display:block;
+                    opacity:0;
+                    
+                    figure{
+                        margin:0px;
+                        display:flex;
+                        justify-content: center;
+                        align-items: center;
+                        width:100%;
+                        height:100%;
+                    }
+                }
+            }
+        }
+    }
+}

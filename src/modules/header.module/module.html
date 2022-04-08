@@ -1,0 +1,32 @@
+<header>
+    <div class="container">
+        <div>
+            <a href="{{ module.logo_link.url.href }}" class="logo">
+                {% if module.logo.src %}
+                    <figure class="figure">
+                        <img class="img-fluid" loading="lazy" src="{{ module.logo.src }}" alt="{{ module.logo.alt }}" />
+                    </figure>
+                {% else %}
+                    <figure class="figure">
+                        <img class="img-fluid" loading="lazy" src="https://via.placeholder.com/600x600/919388/ffffff.png?text=600x600">
+                    </figure>
+                {% endif %}
+            </a>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="">Features</a>
+                    </li>
+                    <li>
+                        <a href="">Ressources</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        {% if module.button_url.href %}
+            <a href="{{ module.button_url.href }}" class="btn primary"><span>{{ module.button_text }}</span></a>
+        {% else %}
+            {{ module.cta_field }}
+        {% endif %}
+    </div>
+</header>    

@@ -1,0 +1,39 @@
+header{
+    position: absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    z-index:100;
+    div.container{
+        padding-top:45px;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        div{
+            display:flex;
+            align-items:center;
+            figure{
+                margin-right:47px;
+                margin-bottom:0px;
+                img{
+                    max-height:50px;
+                }
+            }
+            nav{
+                ul{
+                    margin:0px;
+                    padding:0px;
+                    display:flex;
+                    li{
+                        margin-right:35px;
+                        list-style: none;
+                        a{
+                            color:#fff;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

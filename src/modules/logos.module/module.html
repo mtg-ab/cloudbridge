@@ -1,0 +1,41 @@
+<section id="{{module.module_identity}}" class="logos {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        <div class="bloc-title">
+            <p class="subtitle">{{ module.subtitle }}</p>
+            {% inline_rich_text field="rich_text" value="{{ module.title }}" %}
+            {% inline_rich_text field="rich_text" value="{{ module.text }}" %}
+        </div>
+        <div class="bloc-logos">
+            <div class="bloc-line bloc-line-1">
+                {% for item in module.logos %}
+                    <div class="bloc">
+                        {% if item.logo.src %}
+                            <figure class="figure">
+                                <img class="img-fluid" src="{{ item.logo.src }}" loading="lazy" alt="{{ item.logo.alt }}" />
+                            </figure>
+                        {% else %}
+                            <figure class="figure">
+                                <img class="img-fluid" loading="lazy" src="https://via.placeholder.com/600x600/919388/ffffff.png?text=600x600">
+                            </figure>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="bloc-line bloc-line-2">
+                {% for item in module.logos_line_2 %}
+                    <div class="bloc">
+                        {% if item.logo.src %}
+                            <figure class="figure">
+                                <img class="img-fluid" src="{{ item.logo.src }}" loading="lazy" alt="{{ item.logo.alt }}" />
+                            </figure>
+                        {% else %}
+                            <figure class="figure">
+                                <img class="img-fluid" loading="lazy" src="https://via.placeholder.com/600x600/919388/ffffff.png?text=600x600">
+                            </figure>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

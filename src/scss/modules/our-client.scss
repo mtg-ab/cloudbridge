@@ -1,0 +1,73 @@
+section.our-client{
+    div.container{
+        max-width: 1220px;
+        background-image: url('https://25642218.fs1.hubspotusercontent-eu1.net/hubfs/25642218/bg-gradient.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding:80px 120px 20px 120px;
+        border-radius: 5px;
+        @media(max-width:1260px){
+            max-width:calc(100% - 40px);
+            padding:60px 45px;
+            padding:60px 45px 0px 45px;
+        }
+        div.bloc-title{
+            display:flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            @media(max-width:$size4){
+                flex-direction:column;
+                align-items: flex-start;
+            }
+            h2{
+                color:#fff;
+                margin-top:5px;
+                margin-bottom:20px;
+            }
+            p{
+                color: #FAFAFB;
+                font-size:18px;
+                line-height:25px;
+                &.subtitle{
+                    color: rgba(255, 255, 255, 0.5);
+                    font-size:10px;
+                    line-height:12px;
+                }
+            }
+            div.row-btns{
+                @media(max-width:$size4){
+                    margin-top:30px;
+                }
+            }
+        }
+        div.blocs{
+            display:flex;
+            margin-top:60px;
+            flex-wrap: wrap;
+            flex-grow:2;
+            div.bloc{
+                max-width:380px;
+                margin-right:95px;
+                margin-bottom:60px;
+                @media(max-width:$size4){
+                    max-width:calc(100%);
+                    margin-right:0px;
+                }
+                figure{
+                    margin-bottom:0px;
+                    img{
+                        max-height:25px;
+                    }
+                }
+                p{
+                    color: #FAFAFB;
+                    &.title{
+                        font-weight: 600;
+                        margin-bottom:15px;
+                        margin-top:15px;
+                    }
+                }
+            }
+        }
+    }
+}

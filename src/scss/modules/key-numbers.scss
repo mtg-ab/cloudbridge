@@ -1,0 +1,42 @@
+section.key-numbers{
+    div.container{
+        padding-right:100px;
+        display:flex;
+        justify-content: space-between;
+        div.bloc-txt{
+            max-width:430px;
+            width:100%;
+            h2{
+                margin-bottom:30px;
+                strong{
+                    padding-left:80px;
+                    display:block;
+                    margin-top:5px;
+                }
+            }
+            p{
+                padding-left:80px;
+                &.subtitle{
+                    padding-left:0px;
+                }
+            }
+        }
+        div.bloc-list-numbers{
+            max-width:450px;
+            padding-top:50px;
+            div.bloc-number{
+                display:flex;
+                flex-direction:column;
+                overflow:hidden;
+                height:110px;
+                span{
+                    font-weight:600;
+                    font-size:110px;
+                    display: block;
+                    width:100%;
+                    line-height:110px;
+                }
+            }
+        }
+    }
+}

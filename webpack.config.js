@@ -1,6 +1,6 @@
-const path = require('path');
+const path = require('path')
 var glob = require("glob");
-
+const webpack = require('webpack');
 module.exports = {
   mode: 'production',
   entry: {
@@ -10,6 +10,13 @@ module.exports = {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist/js')
   },
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery"
+    })
+  ],
   module: {
     rules: [
       {

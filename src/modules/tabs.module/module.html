@@ -1,0 +1,44 @@
+<section id="{{module.module_identity}}" data-scroll-section class="tabs {% if module.content_style.background == 'black' %}bg-black{% endif %} {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        <div class="bloc-titles">
+            {% set i = 0 %}
+            {% for item in module.tabs %}
+                {% set i = i + 1 %}
+                <div class="bloc {% if loop.first %}selected{% endif %}" data-id="{{ i }}">
+                    <span class="number">{% if i < 10%}0{% endif %}{{ i }}</span>
+                    <span class="title">{{ item.subtitle }}</span>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="bloc-imgs">
+            {% set i = 0 %}
+            {% for item in module.tabs %}
+                {% set i = i + 1 %}
+                <div class="bloc {% if loop.first %}selected{% endif %}" data-id="{{ i }}">
+                    <div class="contain">
+                        <div class="bloc-txt">
+                            <h2>{{ item.title }}</h2>
+                            <div class="txt">
+                                {{ item.text }}
+                            </div>
+                            {% if item.button_url.href %}
+                                <a href="{{ item.button_url.href }}" class="btn secondary"><span>{{ item.button_text }}</span></a>
+                            {% endif %}
+                        </div>
+                        <div class="bloc-img " >
+                            {% if item.image.src %}
+                                <figure class="figure">
+                                    <img class="img-fluid" src="{{ item.image.src }}" loading="lazy" alt="{{ item.image.alt }}" />
+                                </figure>
+                            {% else %}
+                                <figure class="figure">
+                                    <img class="img-fluid" loading="lazy" src="https://via.placeholder.com/600x600/919388/ffffff.png?text=600x600">
+                                </figure>
+                            {% endif %}
+                        </div>
+                    </div>                    
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

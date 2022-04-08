@@ -1,149 +1,152 @@
 [
-    {
-        "name": "module_identity",
-        "label": "Module ID",
-        "required": false,
-        "locked": false,
-        "validation_regex": "",
-        "allow_new_line": false,
-        "show_emoji_picker": false,
-        "type": "text"
-    },
-    {
-        "type": "group",
-        "name": "main_footer",
-        "label": "Main Footer",
-        "children": [
             {
-            "name": "first_col",
-            "label": "Première Colonne",
-            "required": false,
-            "locked": false,
-            "children": [
-                {
-                    "name": "logo",
-                    "label": "Logo",
-                    "required": false,
-                    "locked": false,
-                    "children": [
-                      {
-                        "name": "logo_src",
-                        "label": "Logo",
-                        "required": false,
-                        "locked": false,
-                        "inline_help_text": "",
-                        "help_text": "",
-                        "responsive": true,
-                        "resizable": true,
-                        "type": "image",
-                        "default": {
-                          "src": "https://f.hubspotusercontent00.net/hubfs/2659857/Boilerplate%20V2/Logo/logo-make-the-grade.svg",
-                          "alt": null} 
-                        },
-                        {
-                        "name": "logo_link",
-                        "label": "URL field",
-                        "required": false,
-                        "locked": false,
-                        "inline_help_text": "",
-                        "help_text": "",
-                        "supported_types": [
-                          "EXTERNAL",
-                          "CONTENT",
-                          "FILE",
-                          "EMAIL_ADDRESS",
-                          "BLOG"
-                        ],
-                        "type": "url",
-                        "default": {
-                          "content_id": null,
-                          "href": "https://www.makethegrade.fr/",
-                          "type": "EXTERNAL"} }
-                    ],
-                    "type": "group",
-                    "inline_help_text": "",
-                    "help_text": "",
-                    "default": {} 
-                }
-            ],
-            "type": "group",
-            "inline_help_text": "",
-            "help_text": "",
-            "default": {} 
-            },
-            {
-                "name": "menu_id",
-                "label": "Menu",
-                "required": false,
-                "locked": false,
-                "inline_help_text": "",
-                "help_text": "",
-                "type": "menu",
-                "placeholder": "",
-                "default": 43835132285 
-            }
-        ]
-    },
-    {
-    "name": "sub_footer",
-    "label": "Sub Footer",
-    "required": false,
-    "locked": false,
-    "children": [
-        {
-        "name": "social_group",
-        "label": "Réseaux Sociaux",
-        "required": false,
-        "locked": false,
-        "occurrence": {
-          "min": null,
-          "max": null,
-          "sorting_label_field": null,
-          "default": 1
-        },
-        "children": [
-            {
-                "name": "social_link",
-                "label": "Social link",
-                "required": false,
-                "locked": false,
-                "inline_help_text": "",
-                "help_text": "",
-                "supported_types": [
-                  "EXTERNAL",
-                  "CONTENT",
-                  "BLOG"
-                ],
-                "type": "url",
-                "default": {
-                  "content_id": null,
-                  "href": "https://www.linkedin.com/company/mkthgrd/",
-                  "type": "EXTERNAL"} 
-                },
-                {
-                "name": "logo_src",
+                "name": "logo",
                 "label": "Logo",
                 "required": false,
                 "locked": false,
-                "inline_help_text": "",
-                "help_text": "",
                 "responsive": true,
                 "resizable": true,
                 "type": "image",
                 "default": {
-                  "src": "https://f.hubspotusercontent00.net/hubfs/2659857/Boilerplate%20V2/Icons/linkedin-logo.svg",
-                  "alt": null} 
+                  "size_type": "auto",
+                  "src": "https://via.placeholder.com/600",
+                  "alt": "Example of an image used in your module"
                 }
-        ],
-        "type": "group",
-        "inline_help_text": "",
-        "help_text": "",
-        "default": null 
-        }
-    ],
-    "type": "group",
-    "inline_help_text": "",
-    "help_text": "",
-    "default": {} 
-    }
+            },
+            {
+                "name" : "facebook_link",
+                "label" : "Facebook link",
+                "required" : false,
+                "locked" : false,
+                "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+                "type" : "link",
+                "show_advanced_rel_options" : false,
+                "default" : {
+                "url" : {
+                    "content_id" : null,
+                    "type" : "EXTERNAL",
+                    "href" : ""
+                },
+                "open_in_new_tab" : false,
+                "no_follow" : false,
+                "sponsored" : false,
+                "user_generated_content" : false
+                }
+            },
+            {
+                "name" : "youtube_link",
+                "label" : "Youtube link",
+                "required" : false,
+                "locked" : false,
+                "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+                "type" : "link",
+                "show_advanced_rel_options" : false,
+                "default" : {
+                "url" : {
+                    "content_id" : null,
+                    "type" : "EXTERNAL",
+                    "href" : ""
+                },
+                "open_in_new_tab" : false,
+                "no_follow" : false,
+                "sponsored" : false,
+                "user_generated_content" : false
+                }
+            },
+            {
+                "name" : "linkedin_link",
+                "label" : "LinkedIn link",
+                "required" : false,
+                "locked" : false,
+                "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+                "type" : "link",
+                "show_advanced_rel_options" : false,
+                "default" : {
+                "url" : {
+                    "content_id" : null,
+                    "type" : "EXTERNAL",
+                    "href" : ""
+                },
+                "open_in_new_tab" : false,
+                "no_follow" : false,
+                "sponsored" : false,
+                "user_generated_content" : false
+                }
+            },
+            {
+                "name" : "twitter_link",
+                "label" : "Twitter link",
+                "required" : false,
+                "locked" : false,
+                "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+                "type" : "link",
+                "show_advanced_rel_options" : false,
+                "default" : {
+                "url" : {
+                    "content_id" : null,
+                    "type" : "EXTERNAL",
+                    "href" : ""
+                },
+                "open_in_new_tab" : false,
+                "no_follow" : false,
+                "sponsored" : false,
+                "user_generated_content" : false
+                }
+            },
+            {
+                "name" : "instagram_link",
+                "label" : "Instagram link",
+                "required" : false,
+                "locked" : false,
+                "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+                "type" : "link",
+                "show_advanced_rel_options" : false,
+                "default" : {
+                "url" : {
+                    "content_id" : null,
+                    "type" : "EXTERNAL",
+                    "href" : ""
+                },
+                "open_in_new_tab" : false,
+                "no_follow" : false,
+                "sponsored" : false,
+                "user_generated_content" : false
+                }
+            },
+            {
+                "name": "address",
+                "label": "Address",
+                "required": false,
+                "locked": false,
+                "validation_regex": "",
+                "allow_new_line": false,
+                "show_emoji_picker": false,
+                "type": "richtext",
+                "help_text" : "Address",
+                "default": "Address"
+            },
+            {
+                "name" : "footer_menu",
+                "label" : "Footer menu",
+                "required" : false,
+                "locked" : false,
+                "type" : "menu",
+                "default" : 12345678911
+            },
+            {
+                "name" : "footer_menu_second",
+                "label" : "Footer second menu",
+                "required" : false,
+                "locked" : false,
+                "type" : "menu",
+                "default" : 12345678911
+            },
+            {
+                "name" : "second_footer_menu",
+                "label" : "Second footer menu",
+                "required" : false,
+                "locked" : false,
+                "type" : "menu",
+                "default" : 12345678911
+            } 
 ]

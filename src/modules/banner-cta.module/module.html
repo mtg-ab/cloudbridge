@@ -1,0 +1,14 @@
+<section id="{{module.module_identity}}" class="banner-cta {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        <div class="bloc-title">
+            {% inline_rich_text field="rich_text" value="{{ module.title }}" %}
+            <div class="row-btns">
+                {% if module.button_url.href %}
+                    <a href="{{ module.button_url.href }}" class="btn primary"><span>{{ module.button_text }}</span></a>
+                {% else %}
+                    {{ module.cta_field }}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

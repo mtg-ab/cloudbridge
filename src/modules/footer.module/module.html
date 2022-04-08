@@ -1,62 +1,45 @@
-<div id="{{module.module_identity}}" class="footer pt-6">
-    <div class="main-footer pb-2 pb-md-4">
-        <div class="container">
-            <div class="row">
-                {%- macro render_link_item(link,depth,looop)-%}
-                {%- if link != [] && link.label -%}
-                {%- if link.children -%}
-                <div class="col-6 col-md-2">
-                    <p class="h5 pb-1">
-                        {{link.label}}
-                    </p>
-                    <ul class="p-0 my-1 list-unstyled mb-3 mb-md-0">
-                        {% set depth = depth + 1%}
-                        {%- for sublink in link.children -%}
-                        {{render_link_item(sublink,depth)}}
-                        {%- endfor -%}
-                    </ul>
-                </div>
-                {% else %}
-                <li>
-                    <a href="{{link.url}}">{{link.label}}</a>
-                </li>
-                {% endif%}
-                {% endif%}
-                {%- endmacro -%}
-
-
-                {% set menu = menu( id= module.main_footer.menu_id ).children %}
-
-                {% for link in menu %}
-                {{render_link_item(link,1,loop.index)}}
-                {% endfor %}
-                <div class="col-md-4 order-md-first">
-                    {% if module.main_footer.first_col.logo.logo_src.src %}
-                    <a href="{{module.main_footer.first_col.logo.logo_link.href}}">
-                        <img class="img-fluid lazy"
-                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.main_footer.first_col.logo.logo_src.width }} {{ module.main_footer.first_col.logo.logo_src.height }}'%3E%3C/svg%3E"
-                            data-src="{{ module.main_footer.first_col.logo.logo_src.src }}"
-                            alt="{{ module.main_footer.first_col.logo.logo_src.alt }}" />
-                    </a>
-                    {% endif %}
-                </div>
+<footer data-scroll-section>
+    <div class="container container-head-footer">
+        <div class="bloc-informations">
+            {% if module.logo.src %}
+                <a href="" class="logo">
+                    <img src="{{ module.logo.src }}" loading="lazy" alt="{{ module.logo.src }}">
+                </a>
+            {% endif %}
+            <div class="bloc-socials">
+                {% if module.facebook_link %}
+                    <a href="{{ module.facebook_link.url.href }}" target="_blank" rel="noopener" class="fb">FB</a>
+                {% endif %}
+                {% if module.youtube_link %}
+                    <a href="{{ module.youtube_link.url.href }}" target="_blank" rel="noopener" class="youtube">Youtube</a>
+                {% endif %}
+                {% if module.linkedin_link %}
+                    <a href="{{ module.linkedin_link.url.href }}" target="_blank" rel="noopener" class="linkedin">LinkedIn</a>
+                {% endif %}
+                {% if module.twitter_link %}
+                    <a href="{{ module.twitter_link.url.href }}" target="_blank" rel="noopener" class="twitter">Twitter</a>
+                {% endif %}
+                {% if module.instagram_link %}
+                    <a href="{{ module.instagram_link.url.href }}" target="_blank" rel="noopener" class="instagram">Instagram</a>
+                {% endif %}
             </div>
+            {% inline_rich_text field="rich_text" value="{{ module.address }}" %}
+        </div>
+        <div class="bloc-nav">
+            <nav>
+                {% menu "footer_menu" id={{ module.footer_menu }}, site_map_name='Default', overrideable=False, root_type='site_root', flyouts='true', max_levels='2', flow='horizontal', label='Advanced Menu' %}
+            </nav>
+        </div>
+        <div class="bloc-nav-second">
+            <nav>
+                {% menu "footer_menu_second" id={{ module.footer_menu_second }}, site_map_name='Default', overrideable=False, root_type='site_root', flyouts='true', max_levels='2', flow='horizontal', label='Advanced Menu' %}
+            </nav>
         </div>
     </div>
-    <div class="sub-footer">
-        <div class="container">
-            <div class="copy-wrapper d-flex py-2">
-                <p class="sm">Copyright © {{year}} Make the Grade</p>
-                <div class="social-wrapper d-flex mt-2 mt-md-0">
-                    {% for item in module.sub_footer.social_group %}
-                    <a href="{{item.social_link.href}}" target="_blank">
-                        <img class="img-fluid lazy"
-                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ item.logo_src.width }} {{ item.logo_src.height }}'%3E%3C/svg%3E"
-                            data-src="{{ item.logo_src.src }}" alt="{{ item.logo_src.alt }}" />
-                    </a>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
+    <div class="container container-sub-footer">
+        <nav>
+            {% menu "footer_menu" id={{ module.second_footer_menu }}, site_map_name='Default', overrideable=False, root_type='site_root', flyouts='true', max_levels='2', flow='horizontal', label='Advanced Menu' %}
+        </nav>
     </div>
-</div>
+    <span class="bg-color"></span>
+</footer>

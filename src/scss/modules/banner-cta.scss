@@ -1,0 +1,58 @@
+section.banner-cta{
+    background-image: url('https://25642218.fs1.hubspotusercontent-eu1.net/hubfs/25642218/bg-gradient.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    div.container{
+        position: relative;
+        z-index:2;
+        padding:120px 0px;
+        @media(max-width:$size1){
+            padding:80px 20px;
+        }
+        div.bloc-title{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            @media(max-width:$size4){
+                flex-direction: column;
+                align-items: center;
+            }
+            h2{
+                color:#fff;
+                font-size:55px;
+                margin-left:200px;
+                font-weight:400;
+                @media(max-width:900px){
+                    margin-left:50px;
+                }
+                @media(max-width:$size4){
+                    font-size:35px;
+                    margin-left:0px;
+                    text-align: center;
+                }
+                strong{
+                    transform: translateX(-200px);
+                    position: relative;
+                    display:block;
+                    font-weight:700;
+                    margin-bottom:45px;
+                    @media(max-width:900px){
+                        transform: translateX(-50px);
+                        margin-bottom:25px;
+                    }
+                    @media(max-width:$size4){
+                        transform: translateX(0px);
+                        margin-bottom:15px;
+                    }
+                }
+            }
+            div.row-btns{
+                padding-right:100px;
+                @media(max-width:$size4){
+                    padding-right: 0px;
+                    margin-top:35px;
+                }
+            }
+        }
+    }
+}

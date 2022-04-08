@@ -1,11 +1,13 @@
 // Here you can regroup all of your base SASS.
 body {
-  color: $baseFontColor;
+  color: $color1;
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  font-family: $font;
+  font-size:15px;
 }
 
 a,
@@ -15,10 +17,19 @@ p {
 }
 
 p {
-  font-size: 20px;
-  color: $baseFontColor;
-  line-height: 1.3;
+  color: $color1;
+  font-size: 15px;
+  line-height: 25px;
   margin: 0;
+  &.subtitle{
+    text-transform: uppercase;
+    color: rgba(114, 34, 129, 0.5);
+    letter-spacing: 5px;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 12px;
+    margin-bottom:5px;
+  }
 }
 
 h1,
@@ -31,22 +42,31 @@ h4,
 .h4,
 h5,
 .h5 {
-  font-family: 'Inter', sans-serif;
-  color: $baseFontColor;
   font-style: normal;
   margin: 0;
 }
 
 h1,
 .h1 {
-  font-size: 48px;
-  line-height: 1.2;
+  font-size: 100px;
+  line-height: 150px;
+  font-weight:400;
+  @media(max-width:$size4){
+    font-size:55px;
+    line-height:75px;
+  }
 }
 
 h2,
 .h2 {
-  font-size: 40px;
-  line-height: 1.2;
+  font-size: 35px;
+  line-height: 50px;
+  font-weight:400;
+  color:$color1;
+  @media(max-width:$size4){
+    font-size:25px;
+    line-height:35px;
+  }
 }
 
 h3,

@@ -1,0 +1,98 @@
+section.latest-news{
+    background-color: rgba($color1,0.1);
+    div.container{
+        div.bloc-title{
+            display:flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            h2{
+                padding-left:80px;
+                strong{
+                    display:block;
+                    transform: translatex(-80px);
+                }
+            }
+            a.btn{
+                background-color: $color1;
+                color:#fff;
+                &:before,&:after{
+                    background-color: #fff;
+                }
+            }
+        }
+        div.bloc-posts{
+            padding-left:80px;
+            margin-top:75px;
+            div.bloc{
+                display:flex;
+                justify-content: space-between;
+                a.bloc-img{
+                    display:block;
+                    width:100%;
+                    max-width:445px;
+                    height:315px;
+                    figure{
+                        display:block;
+                        img{
+                            display:block;
+                            object-fit: cover;
+                            width:100%;
+                            height:100%;
+                        }
+                    }
+                }
+                div.bloc-txt{
+                    margin-left:125px;
+                    max-width:445px;
+                    padding-top:70px;
+                    div.infos{
+                        display:flex;
+                        p{
+                            font-weight: 600;
+                            font-size: 10px;
+                            line-height: 12px;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                            opacity: 0.5;
+                            margin-right:10px;
+                            padding-right:10px;
+                            position: relative;
+                            &:last-child{
+                                &:after{
+                                    display:none;
+                                }
+                            }
+                            &:after{
+                                display:block;
+                                content:'';
+                                position: absolute;
+                                right:0px;
+                                bottom:3px;
+                                width:4px;
+                                height:4px;
+                                background-color: $color1;
+                                opacity:0.5;
+                                border-radius: 50%;
+                            }
+                        }
+                    }
+                    p.title{
+                        font-size:18px;
+                        line-height:25px;
+                        font-weight:600;
+                        margin-bottom:15px;
+                        margin-top:15px;
+                    }
+                    a.secondary{
+                        color:$color2;
+                        border-bottom:1px solid $color2;
+                        margin-top:30px;
+                        &:before,&:after{
+                            background-color: $color2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+<section id="{{module.module_identity}}" class="our-client {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        <div class="bloc-title">
+            <div>
+                {% if module.subtitle %}
+                    <p class="subtitle">{{ module.subtitle }}</p>
+                {% endif %}
+                {% inline_rich_text field="rich_text" value="{{ module.title }}" %}
+                {% inline_rich_text field="rich_text" value="{{ module.text }}" %}
+            </div>
+            <div class="row-btns">
+                {% if module.button_url.href %}
+                    <a href="{{ module.button_url.href }}" class="btn primary"><span>{{ module.button_text }}</span></a>
+                {% else %}
+                    {{ module.cta_field }}
+                {% endif %}
+            </div>
+        </div>
+        <div class="blocs">
+            {% for item in module.items %}
+                <div class="bloc">
+                    {% if item.pictogram.src %}
+                        <figure class="figure">
+                            <img class="img-fluid" src="{{ item.pictogram.src }}" loading="lazy" alt="{{ item.pictogram.alt }}" />
+                        </figure>
+                    {% else %}
+                        <figure class="figure">
+                            <img class="img-fluid" loading="lazy" src="https://via.placeholder.com/600x600/919388/ffffff.png?text=600x600">
+                        </figure>
+                    {% endif %}
+                    {% if item.title %}
+                        <p class="title">{{ item.title }}</p>
+                    {% endif %}
+                    {{ item.text }}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
