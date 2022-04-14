@@ -8,6 +8,11 @@ body {
   text-rendering: optimizeLegibility;
   font-family: $font;
   font-size:15px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 a,
@@ -53,20 +58,41 @@ h1,
   font-weight:400;
   @media(max-width:$size4){
     font-size:55px;
-    line-height:75px;
+    line-height:60px;
+  }
+  span.word{
+    display: inline-block;
+    overflow:hidden;
+    span.char{
+      transform: translateY(10px);
+      position: relative;
+      display: inline-block;
+      opacity:0;
+    }
   }
 }
 
 h2,
 .h2 {
   font-size: 35px;
-  line-height: 50px;
+  line-height: 45px;
   font-weight:400;
   color:$color1;
   @media(max-width:$size4){
-    font-size:25px;
-    line-height:35px;
+    font-size:35px;
+    line-height:45px;
   }
+  span.word{
+    display: inline-block;
+    overflow:hidden;
+    span.char{
+      transform: translateY(10px);
+      position: relative;
+      display: inline-block;
+      opacity:0;
+    }
+  }
+  
 }
 
 h3,

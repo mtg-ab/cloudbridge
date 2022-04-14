@@ -33,6 +33,53 @@
         }
     },
     {
+        "id" : "items",
+        "name" : "items",
+        "label" : "Items",
+        "required" : false,
+        "locked" : false,
+        "occurrence" : {
+          "min" : 1,
+          "max" : null,
+          "sorting_label_field" : "items.item",
+          "default" : null
+        },
+        "children" : [
+            {
+                "name" : "title",
+                "label" : "Title",
+                "required" : false,
+                "locked" : false,
+                "validation_regex" : "",
+                "allow_new_line" : false,
+                "show_emoji_picker" : false,
+                "type" : "text",
+                "default" : "title"
+            },
+            {
+                "name" : "link",
+                "label" : "Link",
+                "required" : false,
+                "locked" : false,
+                "supported_types" : [ "EXTERNAL", "CONTENT" ],
+                "type" : "link",
+                "show_advanced_rel_options" : false,
+                "default" : {
+                  "url" : {
+                    "content_id" : null,
+                    "type" : "CONTENT",
+                    "href" : ""
+                  },
+                  "open_in_new_tab" : false,
+                  "no_follow" : false,
+                  "sponsored" : false,
+                  "user_generated_content" : false
+                }
+            }
+        ],
+        "type" : "group"  
+    },
+    {
         "name": "button_type",
         "id":"button_type_id",
         "label": "Button type",

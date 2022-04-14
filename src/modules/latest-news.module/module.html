@@ -12,25 +12,35 @@
             {% endif %}
         </div>
         <div class="bloc-posts">
-            {% set rec_posts = blog_recent_posts("default", 1) %}
-            {% for rec_post in rec_posts %}
-                <div class="bloc">
-                    <a href="{{ rec_post.absolute_url }}" class="bloc-img">
-                        <figure class="position-relative h-100 mr-n1 mb-0 overflow-hidden">
-                            <img class="fit-cover" loading="lazy" src="{{ rec_post.featured_image }}" alt="{{ rec_post.featured_image_alt }}">
-                        </figure>
-                    </a>
-                    <div class="bloc-txt">
-                        <div class="infos">
-                        <p>{% for item in rec_post.topic_list %}<span>{{ item }}</span>{% endfor %}</p>
-                        <p>{% if rec_post.post_body|wordcount > 0 %}{{rec_post.post_body|wordcount|float|divide(300)|round(0, 'ceil')}}{% else %}1{% endif %} min</p>
+            
+            <div class="slider">
+                {% set rec_posts = blog_recent_posts("default", 3) %}
+                {% set i = 0 %}
+                {% for rec_post in rec_posts %}
+                    {% set i = i + 1 %}
+                    <div class="bloc" data-id="{{ i }}">
+                        <a href="{{ rec_post.absolute_url }}" class="bloc-img">
+                            <figure class="position-relative h-100 mr-n1 mb-0 overflow-hidden">
+                                <img class="fit-cover" loading="lazy" src="{{ rec_post.featured_image }}" alt="{{ rec_post.featured_image_alt }}">
+                            </figure>
+                        </a>
+                        <div class="bloc-txt">
+                            <div class="steps">
+                                <span class="actual">01</span>
+                                <span>0{{ rec_posts|length }}</span>
+                                <i></i>
+                            </div>
+                            <div class="infos">
+                            <p>{% for item in rec_post.topic_list %}<span>{{ item }}</span>{% endfor %}</p>
+                            <p>{% if rec_post.post_body|wordcount > 0 %}{{rec_post.post_body|wordcount|float|divide(300)|round(0, 'ceil')}}{% else %}1{% endif %} min read</p>
+                            </div>
+                            <p class="title">{{ rec_post.name }}</p>
+                            {{ rec_post.post_summary }}
+                            <a href="{{ rec_post.absolute_url }}" class="btn secondary"><span class="arrow"></span>Read the article</a>
                         </div>
-                        <p class="title">{{ rec_post.name }}</p>
-                        {{ rec_post.post_summary }}
-                        <a href="{{ rec_post.absolute_url }}" class="btn secondary"><span class="arrow"></span>Read the article</a>
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
     </div>
 </section>

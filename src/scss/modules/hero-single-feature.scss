@@ -1,0 +1,71 @@
+section.hero-single-feature{
+    background-image: url('https://25642218.fs1.hubspotusercontent-eu1.net/hubfs/25642218/bg-gradient.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    @media(max-width:$size4){
+        padding-bottom:50px;
+    }
+    div.container{
+        padding-top:240px;
+        display:flex;
+        justify-content: space-between;
+        position: relative;
+        padding-bottom:263px;
+        div.bloc-title{
+            padding-bottom:5px;
+            h1{
+                color:#fff;
+                font-size:80px;
+                line-height:93px;
+                margin-bottom:30px;
+                max-width:635px;
+                font-weight:700;
+                @media(max-width:$size4){
+                    font-size:55px;
+                    line-height:60px;
+                }
+                strong{
+                    display: block;
+                    padding-left:95px;
+                    margin-top:25px;
+                    @media(max-width:$size4){
+                        padding-left:0px;
+                        margin-top:0px;
+                    }
+                }
+            }
+            p{
+                color:#fff;
+                max-width:540px;
+            }
+            div.row-btns{
+                margin-top:60px;
+            }
+        }
+        div.bloc-img{
+            max-width:500px;
+            padding-top:80px;
+        }
+        svg{
+            position: absolute;
+            left:45%;
+            transform: translateX(-50%);
+            bottom:110px;
+            @media(max-width:$size4){
+                display:none
+            }
+            path#line2{
+                stroke-dashoffset: 40;
+                stroke-dasharray: 40 711;
+                animation: followpathHeroFeatures 2.8s ease-in-out;
+                animation-fill-mode: forwards;                    
+                @keyframes followpathHeroFeatures {
+                    to {
+                        stroke-dashoffset: -620;
+                    }
+                }
+            }
+        }
+    }
+}

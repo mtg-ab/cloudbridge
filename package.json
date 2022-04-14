@@ -1,5 +1,5 @@
 {
-  "name": "boilerplate-second-version",
+  "name": "CloudBridge",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -16,9 +16,9 @@
     "gen:module": "yarn plop; yarn gen:fields",
     "hs:auth": "hs auth personalaccesskey",
     "hs:sync-prod": "yarn gen:fields; hs upload --overwrite --portal=prod  dist MTG-HS-Boilerplate",
-    "hs:sync-dev": "yarn gen:fields;  hs upload --overwrite --portal=mtg-dev-andrew  dist Boilerplate-Second-Version",
+    "hs:sync-dev": "yarn gen:fields;  hs upload --overwrite --portal=mtg-dev-andrew  dist CloudBridge",
     "hs:module": "yarn plop; yarn gen:fields",
-    "hs:watch": "hs watch --portal=mtg-dev-andrew dist Boilerplate-Second-Version",
+    "hs:watch": "hs watch --portal=mtg-dev-andrew dist CloudBridge",
     "deploy:prod": "yarn build && yarn hs:sync-prod",
     "deploy:dev": "yarn build && yarn hs:sync-dev"
   },
@@ -71,7 +71,7 @@
     "pretty-quick": "^2.0.1",
     "require-dir": "^1.2.0",
     "standard-version": "^7.0.0",
-    "webpack": "^4.39.0",
+    "webpack": "^5.0.0",
     "webpack-cli": "^3.3.6"
   },
   "dependencies": {
@@ -81,11 +81,12 @@
     "flickity-fade": "^1.0.0",
     "flickity-fullscreen": "^1.1.1",
     "flickity-imagesloaded": "^2.0.0",
-    "gsap": "^3.10.2",
+    "gsap": "npm:@gsap/business",
     "infinite-scroll": "^3.0.6",
     "isotope-layout": "^3.0.6",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.1",
+    "splitting": "^1.0.6",
     "sticky-js": "^1.2.2",
     "vanilla-lazyload": "^14.0.0"
   }

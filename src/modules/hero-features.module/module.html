@@ -1,0 +1,35 @@
+<section id="{{module.module_identity}}" class="hero-features {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        <div class="bloc-title">
+            {% inline_rich_text field="rich_text" value="{{ module.title }}" %}
+            {% inline_rich_text field="rich_text" value="{{ module.text }}" %}
+            <div class="row-btns">
+                {% if module.button_url.href %}
+                    <a href="{{ module.button_url.href }}" class="btn primary"><span>{{ module.button_text }}</span></a>
+                {% else %}
+                    {{ module.cta_field }}
+                {% endif %}
+            </div>
+            <svg width="367" height="200" viewBox="0 0 367 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M366 1.51171e-06L366 121.667C366 132.712 357.046 141.667 346 141.667L21 141.667C9.9543 141.667 1 150.621 1 161.667L1 200" stroke="white" stroke-opacity="0.6" stroke-width="0.5"/>
+                <path d="M366 1.51171e-06L366 121.667C366 132.712 357.046 141.667 346 141.667L21 141.667C9.9543 141.667 1 150.621 1 161.667L1 200" id="line2" stroke="white" stroke-width="2"/>
+            </svg>
+        </div>
+    </div>
+    <div class="container container-slide">
+        {% if module.logos %}
+            <div class="blocs">
+                {% for item in module.logos %}
+                    <div class="bloc">
+                        <img src="{{ item.logo.src }}" class="lazy" alt="{{ item.logo.alt }}">
+                    </div>
+                {% endfor %}
+                {% for item in module.logos %}
+                    <div class="bloc">
+                        <img src="{{ item.logo.src }}" class="lazy" alt="{{ item.logo.alt }}">
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</section>

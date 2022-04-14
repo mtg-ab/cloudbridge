@@ -126,6 +126,18 @@
                 "default": "Address"
             },
             {
+                "name": "phone_number",
+                "label": "Phone number",
+                "required": false,
+                "locked": false,
+                "validation_regex": "",
+                "allow_new_line": false,
+                "show_emoji_picker": false,
+                "type": "text",
+                "help_text" : "",
+                "default": "6 25 54 34 27 "
+            },
+            {
                 "name" : "footer_menu",
                 "label" : "Footer menu",
                 "required" : false,
@@ -143,7 +155,7 @@
             },
             {
                 "name" : "second_footer_menu",
-                "label" : "Second footer menu",
+                "label" : "Footer sub-menu",
                 "required" : false,
                 "locked" : false,
                 "type" : "menu",

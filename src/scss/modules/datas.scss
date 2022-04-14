@@ -1,0 +1,48 @@
+section.datas{
+    div.container{
+        div.bloc-title{
+            display:flex;
+            justify-content: space-between;
+            div.title{
+                max-width:740px;
+                h2{
+                    padding-left:95px;
+                    margin-bottom:20px;
+                    strong{
+                        display:block;
+                        transform: translateX(-95px);
+                    }
+                }
+                p{
+                    max-width:635px;
+                    padding-left:105px;
+                }
+            }
+            div.row-btns{
+                padding-top:40px;
+            }
+        }
+        div.bloc-items{
+            display:flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            flex-grow:2;
+            div.bloc{
+                height:407px;
+                border-radius:5px;
+                &:nth-child(4n+1){
+                    max-width:635px;
+                }
+                &:nth-child(4n+2){
+                    max-width:407px;
+                }
+                &:nth-child(4n+3){
+                    max-width:350px;
+                }
+                &:nth-child(4n+4){
+                    max-width:730px;
+                }
+            }
+        }
+    }
+}

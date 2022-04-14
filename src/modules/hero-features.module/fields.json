@@ -67,18 +67,6 @@
         ]
     },
     {
-        "name": "subtitle",
-        "label": "SubTitle",
-        "required": false,
-        "locked": false,
-        "validation_regex": "",
-        "allow_new_line": false,
-        "show_emoji_picker": false,
-        "type": "text",
-        "help_text" : "",
-        "default": "Key numbers"
-    },
-    {
         "name": "title",
         "label": "Title",
         "required": false,
@@ -88,7 +76,7 @@
         "show_emoji_picker": false,
         "type": "richtext",
         "help_text" : "",
-        "default": "<h2>Cloudbridge in numbers</h2>"
+        "default": "<h1>Discover Cloudbridge Features</h1>"
     },
     {
         "name": "text",
@@ -99,46 +87,73 @@
         "allow_new_line": false,
         "show_emoji_picker": false,
         "type": "richtext",
-        "help_text" : "",
-        "default": "<p>Enable the smooth flow of data between your apps, processes and systems with a central hub for data integration and master data managment.</p>"
+        "help_text" : "Title can describe your content properly.",
+        "default": "<p>Let your data flow smoothly between your systems, processes and apps with Cloudbridge -  a central hub for data integration and master data management.</p>"
     },
     {
-        "name" : "items",
-        "label" : "Items",
+        "name": "button_text",
+        "label": "Text button",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": "Contact Sales"
+    },
+    {
+        "name": "button_url",
+        "label": "URL button",
+        "required": false,
+        "locked": false,
+        "inline_help_text": "",
+        "help_text": "",
+        "supported_types": [
+        "EXTERNAL",
+        "CONTENT",
+        "FILE",
+        "EMAIL_ADDRESS",
+        "BLOG"
+        ],
+        "type": "url",
+        "default": {
+        "content_id": null,
+        "href": "",
+        "type": "EXTERNAL"}
+    },
+    {
+        "id" : "logos",
+        "name" : "logos",
+        "label" : "Logos",
         "required" : false,
         "locked" : false,
         "occurrence" : {
-          "min" : null,
+          "min" : 1,
           "max" : null,
-          "sorting_label_field" : "items.item",
+          "sorting_label_field" : "logo.item",
           "default" : null
         },
         "children" : [
             {
-                "name": "number",
-                "label": "Number",
+                "id" : "items.logo",
+                "name": "logo",
+                "label": "Logo",
                 "required": false,
                 "locked": false,
-                "validation_regex": "",
-                "allow_new_line": false,
-                "show_emoji_picker": false,
-                "type": "text",
-                "help_text" : "",
-                "default": "180000"
-            },
-            {
-                "name": "text",
-                "label": "Text",
-                "required": false,
-                "locked": false,
-                "validation_regex": "",
-                "allow_new_line": false,
-                "show_emoji_picker": false,
-                "type": "text",
-                "help_text" : "",
-                "default": "Data Treated"
+                "responsive": true,
+                "resizable": true,
+                "type": "image",
+                "default": {
+                    "size_type": "auto",
+                    "src": "https://via.placeholder.com/600",
+                    "alt": "Example of an image used in your module"
+                }
             }
         ],
         "type" : "group"
+        
     }
 ]

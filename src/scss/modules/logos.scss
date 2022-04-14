@@ -37,6 +37,11 @@ section.logos{
                 overflow: hidden;
                 transform: translateY(50px) rotate(30deg);
             }
+            &.active{
+                &:before,&:after{
+                    height:85%;
+                }
+            }
             &:before{
                 display:block;
                 content:'';
@@ -44,8 +49,9 @@ section.logos{
                 left:0px;
                 background-color: rgba(#fff,0.6);
                 width:1px;
-                height:85%;
+                height:0%;
                 top:53%;
+                transition: 1s;
                 @media(max-width:900px){
                     top:0px;
                 }
@@ -57,7 +63,9 @@ section.logos{
                 right:0px;
                 background-color: rgba(#fff,0.6);
                 width:1px;
-                height:85%;
+                height:0%;
+                bottom:0px;
+                transition: 1s;
             }
             div.bloc-line{
                 display: flex;

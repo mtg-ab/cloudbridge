@@ -10,13 +10,11 @@ jQuery( document ).ready(function() {
         let blocLine1 = jQuery('section.logos .bloc-line-1').height();
         let blocLine2 = jQuery('section.logos .bloc-line-2').height();
 
-
-
         var tween = gsap.to(".bloc-line-1", {
             y: "-"+blocLine1+"",
             ease: "none",
             scrollTrigger: {
-                trigger: "section.logod",
+                trigger: "section.logos",
                 start:"-=550",
                 scrub: 1.15,
             }
@@ -29,29 +27,34 @@ jQuery( document ).ready(function() {
                 trigger: "section.logos",
                 start:"-=550",
                 scrub: 1.15,
+                onEnter: () => jQuery( "section.logos div.bloc-logos").addClass('active'),
             }
         });
 
         //INIT TIMELINE
-        var tl = gsap.timeline({
+        let logos1 = gsap.timeline({
             scrollTrigger: {
-              trigger: "section.logos",
-              start:"-=450",
+                trigger: "section.logos",
+                start:"-=650",
+                scrub: 0,
             }
         });
         //INIT TIMELINE
+
         //INIT TIMELINE
-        var tl2 = gsap.timeline({
+        let logos2 = gsap.timeline({
             scrollTrigger: {
-              trigger: "section.logos",
-              start:"-=450",
+                trigger: "section.logos",
+                start:"-=650",
+                scrub: 0,
             }
         });
         //INIT TIMELINE
 
         //INIT ANIM
-        tl.staggerTo("section.logos div.bloc-line-1 div.bloc",0.75, { opacity:1,y:0,stagger:0.2,ease: "power2.inOut" });
-        tl2.staggerTo("section.logos div.bloc-line-2 div.bloc",0.75, { opacity:1,y:0,stagger:0.2,ease: "power2.inOut" });
+        logos1.staggerTo("section.logos div.bloc-line-1 div.bloc",0.75, { opacity:1,y:0,stagger:0.2,ease: "power2.inOut" });
+        logos2.staggerTo("section.logos div.bloc-line-2 div.bloc",0.75, { opacity:1,y:0,stagger:0.2,ease: "power2.inOut" });
+        //INIT ANIM
 
     }
     

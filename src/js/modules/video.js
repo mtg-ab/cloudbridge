@@ -1,5 +1,5 @@
 jQuery( document ).ready(function() {
-    if(jQuery("section").hasClass("case-studies")){
+    if(jQuery("section").hasClass("video")){
 
         //INIT GSAP
         const { gsap } = require("gsap/dist/gsap");
@@ -7,26 +7,26 @@ jQuery( document ).ready(function() {
         gsap.registerPlugin(ScrollTrigger);
         //INIT GSAP
 
-        if(jQuery("section.case-studies svg.line-1").length > 0){
+        if(jQuery("section.video svg.line-1").length > 0){
 
-            gsap.to("section.case-studies svg.line-1",{
+            gsap.to("section.video svg.line-1",{
                 scrollTrigger: {
-                trigger: "section.case-studies",
+                trigger: "section.video",
                 start:"-=450",
-                toggleClass: {targets: "section.case-studies svg.line-1", className: "active"}
+                toggleClass: {targets: "section.video svg.line-1", className: "active"}
                 }
             });
 
         }
 
-        if(jQuery("section.case-studies svg.line-2").length > 0){
+        if(jQuery("section.video svg.line-2").length > 0){
 
-            gsap.to("section.case-studies svg.line-2",{
+            gsap.to("section.video svg.line-2",{
                 scrollTrigger: {
-                    trigger: "section.case-studies svg.line-2",
+                    trigger: "section.video svg.line-2",
                     start: "-=450px",
                     end: "+=1500px",
-                    toggleClass: {targets: "section.case-studies svg.line-2", className: "active"}
+                    toggleClass: {targets: "section.video svg.line-2", className: "active"}
                 }
             });
 

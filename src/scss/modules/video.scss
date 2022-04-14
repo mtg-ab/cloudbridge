@@ -1,0 +1,70 @@
+section.video{
+    div.container{
+        p.subtitle{
+            text-align: center;
+            margin-top:90px;
+        }
+        h2{
+            text-align: center;
+        }
+        div.bloc-video{
+            height:475px;
+            max-width:920px;
+            margin:0 auto;
+            background-color: $color1;
+            border-radius:5px;
+            margin-top:50px;
+            margin-bottom:90px;
+        }
+        svg{
+            position: relative;
+            display: inline-block;
+            &.line-1{
+                left:70%;
+                transform: translateX(-50%);
+                &.active{
+                    path#line2{
+                        animation: followpathVideo1 2.8s ease-in-out;
+                        animation-fill-mode: forwards;
+                        @keyframes followpathVideo1 {
+                            to {
+                                stroke-dashoffset: -620;
+                            }
+                        }
+                    }
+                }
+                path{
+                    &#line2{
+                        stroke-dashoffset: 37;
+                        stroke-dasharray: 37 711;
+                    }
+                }
+            }
+            &.line-2{
+                left:50%;
+                transform: translateX(-50%);
+                &.active{
+                    
+                    path#line2{
+                        
+                        animation: followpathVideo2 2.8s ease-in-out;
+                        animation-fill-mode: forwards;
+                        @keyframes followpathVideo2 {
+                            to {
+                                stroke-dashoffset: -490;
+                            }
+                        }
+                        
+                    }
+                    
+                }
+                path{
+                    &#line2{
+                        stroke-dashoffset: 30;
+                        stroke-dasharray: 30 490;
+                    }
+                }
+            }
+        }
+    }
+}

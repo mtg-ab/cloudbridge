@@ -11,7 +11,14 @@
             <div class="bloc-number">
                 <div class="numbers">
                     {% for item in module.items %}
-                        <span>{{ item.item }}</span>
+                        <div class="number {% if loop.index == 1 %}first{% endif %}" data-splitting >{{ item.number }}</div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="bloc-text-number">
+                <div class="texts">
+                    {% for item in module.items %}
+                        <div class="text" data-splitting>{{ item.text }}</div>
                     {% endfor %}
                 </div>
             </div>

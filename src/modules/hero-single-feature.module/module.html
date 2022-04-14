@@ -1,0 +1,30 @@
+<section id="{{module.module_identity}}" class="hero-single-feature {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        <div class="bloc-title">
+            {% inline_rich_text field="rich_text" value="{{ module.title }}" %}
+            {% inline_rich_text field="rich_text" value="{{ module.text }}" %}
+            <div class="row-btns">
+                {% if module.button_url.href %}
+                    <a href="{{ module.button_url.href }}" class="btn primary"><span>{{ module.button_text }}</span></a>
+                {% else %}
+                    {{ module.cta_field }}
+                {% endif %}
+            </div>
+        </div>
+        <div class="bloc-img">
+            {% if module.image.src %}
+                <figure class="figure">
+                    <img class="img-fluid" src="{{ module.image.src }}" loading="lazy" alt="{{ module.image.alt }}" />
+                </figure>
+            {% else %}
+                <figure class="figure">
+                    <img class="img-fluid lazy" src="https://via.placeholder.com/600x600/919388/ffffff.png?text=600x600">
+                </figure>
+            {% endif %}
+        </div>
+        <svg width="287" height="191" viewBox="0 0 287 191" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M286 8.66437e-06L286 115.292C286 126.337 277.046 135.292 266 135.292L21 135.292C9.9543 135.292 1 144.246 1 155.292L1 191" stroke="white" stroke-opacity="0.6" stroke-width="0.5"/>
+            <path d="M286 8.66437e-06L286 115.292C286 126.337 277.046 135.292 266 135.292L21 135.292C9.9543 135.292 1 144.246 1 155.292L1 191" id="line2" stroke="white" stroke-width="2"/>
+        </svg>
+    </div>
+</section>

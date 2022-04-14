@@ -14,14 +14,16 @@
             </a>
             <nav>
                 <ul>
-                    <li>
-                        <a href="">Features</a>
-                    </li>
-                    <li>
-                        <a href="">Ressources</a>
-                    </li>
+                    {% for item in module.items %}
+                        <li>
+                        {% if item.link.url.href %}
+                            <a href="{{ item.link.url.href }}" class="menu-primary">
+                                {{ item.title }}
+                            </a>
+                        {% endif %}
+                    {% endfor %}
                 </ul>
-            </nav>
+            </nav>    
         </div>
         {% if module.button_url.href %}
             <a href="{{ module.button_url.href }}" class="btn primary"><span>{{ module.button_text }}</span></a>

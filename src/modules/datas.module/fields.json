@@ -63,29 +63,8 @@
                 "locked": false,
                 "type": "boolean",
                 "default": true
-            },
-            {
-                "name": "show_life_line",
-                "label": "Show life line",
-                "sortable": false,
-                "required": false,
-                "locked": false,
-                "type": "boolean",
-                "default": true
             }
         ]
-    },
-    {
-        "name": "subtitle",
-        "label": "Subitle",
-        "required": false,
-        "locked": false,
-        "validation_regex": "",
-        "allow_new_line": false,
-        "show_emoji_picker": false,
-        "type": "text",
-        "help_text" : "",
-        "default": "Case studies"
     },
     {
         "name": "title",
@@ -97,7 +76,7 @@
         "show_emoji_picker": false,
         "type": "richtext",
         "help_text" : "",
-        "default": "<h2>What do our clients say ?</h2>"
+        "default": "<h2>Get your data house in order</h2>"
     },
     {
         "name": "text",
@@ -109,7 +88,7 @@
         "show_emoji_picker": false,
         "type": "richtext",
         "help_text" : "",
-        "default": "<p>We deliver results on time to create client success.</p>"
+        "default": "<p>Cloudbridge sits at the center of your data and enterprise system providing a central hub to synchronize, enrich, review and edit your master data. Providing a golden source of data that ensures the information accessed by your team is trusted and accurate.</p>"
     },
     {
         "name": "button_type",
@@ -146,7 +125,7 @@
         "placeholder": "",
         "inline_help_text": "",
         "help_text": "",
-        "default": "Read our case studies",
+        "default": null,
         "visibility": {
             "controlling_field": "button_type_id",
             "controlling_value_regex": "btn",
@@ -199,15 +178,15 @@
         "required" : false,
         "locked" : false,
         "occurrence" : {
-            "min" : 1,
-            "max" : null,
-            "sorting_label_field" : "items.item",
-            "default" : null
+          "min" : 1,
+          "max" : null,
+          "sorting_label_field" : "items.item",
+          "default" : null
         },
         "children" : [
             {
-                "name": "nom",
-                "label": "Name",
+                "name": "title",
+                "label": "Title",
                 "required": false,
                 "locked": false,
                 "validation_regex": "",
@@ -215,19 +194,7 @@
                 "show_emoji_picker": false,
                 "type": "text",
                 "help_text" : "",
-                "default": "John Doe"
-            },
-            {
-                "name": "job",
-                "label": "Job",
-                "required": false,
-                "locked": false,
-                "validation_regex": "",
-                "allow_new_line": false,
-                "show_emoji_picker": false,
-                "type": "text",
-                "help_text" : "",
-                "default": "Co-Founder & Technical Director"
+                "default": "Manage & edit hierarchies"
             },
             {
                 "name": "text",
@@ -239,11 +206,23 @@
                 "show_emoji_picker": false,
                 "type": "richtext",
                 "help_text" : "",
-                "default": "<p>Integer morbi leo accumsan metus vestibulum vitae sit.</p>"
+                "default": "<p>Edit hierarchies rapidly using drag-and-drop and copy/paste functions or roll back to a previous version</p>"
             },
             {
-                "name": "logo",
-                "label": "Logo",
+                "name": "number",
+                "label": "Number",
+                "required": false,
+                "locked": false,
+                "validation_regex": "",
+                "allow_new_line": false,
+                "show_emoji_picker": false,
+                "type": "text",
+                "help_text" : "",
+                "default": "180 000"
+            },
+            {
+                "name": "image",
+                "label": "Image",
                 "required": false,
                 "locked": false,
                 "responsive": true,

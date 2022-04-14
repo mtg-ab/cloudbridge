@@ -12,17 +12,20 @@
     {{ standard_header_includes }}
   </head>
   <body>
-    <div class="body-wrapper {{ builtin_body_classes }}">
-      {% block header %}
-        {% global_partial path="../partials/header.html" %}
-      {% endblock header %}
-      
-      {% block body %}
-        <!-- Nothing to see here -->
-      {% endblock body %}
+      <div id="smooth-wrapper" class="body-wrapper {{ builtin_body_classes }}">
+        <div id="smooth-content">
+        {% block header %}
+          {% global_partial path="../partials/header.html" %}
+        {% endblock header %}
 
-      {% global_partial path="../partials/footer.html" %}
-    </div>
-    {{ standard_footer_includes }}
+        
+        {% block body %}
+          <!-- Nothing to see here -->
+        {% endblock body %}
+
+        {% global_partial path="../partials/footer.html" %}
+        {{ standard_footer_includes }}
+        </div>
+      </div>
   </body>
 </html>

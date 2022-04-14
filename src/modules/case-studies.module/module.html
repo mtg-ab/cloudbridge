@@ -1,8 +1,11 @@
-<section id="{{module.module_identity}}" class="case-studies {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
-    <svg width="82" class="line-1" height="141" viewBox="0 0 82 141" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M1 0V70C1 81.0457 9.95431 90 21 90H61C72.0457 90 81 98.9543 81 110V140.5" stroke="#022D54" stroke-opacity="0.4" stroke-width="0.5"/>
-        <path d="M1 37L1 67" stroke="#722281" stroke-width="2"/>
-    </svg>
+<section id="{{module.module_identity}}" class="case-studies  {% if module.content_style.show_life_line %}line-life{% endif %} {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    {% if module.content_style.show_life_line %}
+        <svg width="82" class="line-1" height="141" viewBox="0 0 82 141" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 0V70C1 81.0457 9.95431 90 21 90H61C72.0457 90 81 98.9543 81 110V140.5" id="line1" stroke="#722281" stroke-opacity="0.4" stroke-width="0.5"/>
+            <path d="M1 0V70C1 81.0457 9.95431 90 21 90H61C72.0457 90 81 98.9543 81 110V140.5" id="line2" stroke="#722281" stroke-width="2"/>
+        </svg>
+    {% endif %}
+    <span class="line"></span>
     <div class="container">
         <div class="bloc-slider">
             <div class="steps">
@@ -49,8 +52,10 @@
             </div>
         </div>
     </div>
-    <svg width="510" height="91" class="line-2" viewBox="0 0 510 91" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M509 90.5V65.5C509 54.4543 500.046 45.5 489 45.5H21C9.9543 45.5 1 36.5457 1 25.5V0" stroke="#022D54" stroke-opacity="0.4" stroke-width="0.5"/>
-        <path d="M216 45.5H266" stroke="#722281" stroke-width="2"/>
-    </svg>   
+    {% if module.content_style.show_life_line %}
+        <svg width="510" height="91" class="line-2" viewBox="0 0 510 91" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M509 90.5V65.5C509 54.4543 500.046 45.5 489 45.5H21C9.9543 45.5 1 36.5457 1 25.5V0" stroke="#022D54" stroke-opacity="0.4" stroke-width="0.5"/>
+            <path d="M509 90.5V65.5C509 54.4543 500.046 45.5 489 45.5H21C9.9543 45.5 1 36.5457 1 25.5V0" id="line2" stroke="#722281" stroke-width="2"/>
+        </svg>
+    {% endif %}
 </section>

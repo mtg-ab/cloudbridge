@@ -24,6 +24,9 @@
                 {% endif %}
             </div>
             {% inline_rich_text field="rich_text" value="{{ module.address }}" %}
+            {% if module.phone_number %}
+                <a href="tel:+33{{ module.phone_number }}" class="phone">+33 (0){{ module.phone_number }}</a>
+            {% endif %}
         </div>
         <div class="bloc-nav">
             <nav>

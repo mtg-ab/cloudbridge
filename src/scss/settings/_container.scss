@@ -6,15 +6,27 @@ $size4:768px;
 // Section managing
 .section-sm {
     padding: 60px 0;
+    @media(max-width:$size4){
+        padding:40px 0px;
+    }
 }
 .section-md, .section{
     padding: 90px 0;
+    @media(max-width:$size4){
+        padding:60px 0px;
+    }
 }
 .section-lg {
     padding: 120px 0;
+    @media(max-width:$size4){
+        padding:90px 0px;
+    }
 }
 .section-xl {
     padding: 170px 0;
+    @media(max-width:$size4){
+        padding:120px 0px;
+    }
 }
 
 // Container managing
@@ -38,7 +50,7 @@ $size4:768px;
     width: 100%;
     margin: 0 auto;
     @media(max-width:$size1){
-        padding:0px 20px;
+        padding:0px 30px;
     }
 }
 
