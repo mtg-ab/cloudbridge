@@ -30,5 +30,28 @@
         {% else %}
             {{ module.cta_field }}
         {% endif %}
+        <div class="burger-menu">
+            <div class="btn-open"></div>
+            <div class="btn-close"></div>
+        </div>
     </div>
-</header>    
+</header>  
+<div class="menu-mobile">
+    <nav>
+        <ul>
+            {% for item in module.items %}
+                <li>
+                {% if item.link.url.href %}
+                    <a href="{{ item.link.url.href }}" class="menu-primary">
+                        {{ item.title }}
+                    </a>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </nav>
+    {% if module.button_url.href %}
+        <a href="{{ module.button_url.href }}" class="btn primary"><span>{{ module.button_text }}</span></a>
+    {% else %}
+        {{ module.cta_field }}
+    {% endif %}
+</div>  

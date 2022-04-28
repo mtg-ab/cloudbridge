@@ -9,7 +9,7 @@ jQuery( document ).ready(function() {
         var tl = gsap.timeline({
             scrollTrigger: {
                 trigger: jQuery(this),
-                start:"-=450",
+                start:"-=550",
             }
         });
         //INIT TIMELINE
@@ -24,7 +24,7 @@ jQuery( document ).ready(function() {
         var tl = gsap.timeline({
             scrollTrigger: {
                 trigger: jQuery(this),
-                start:"-=450",
+                start:"-=550",
             }
         });
         //INIT TIMELINE

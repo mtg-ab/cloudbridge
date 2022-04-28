@@ -1,4 +1,5 @@
 <section id="{{module.module_identity}}" class="hero-features {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div id="contain-canvas"></div>
     <div class="container">
         <div class="bloc-title">
             {% inline_rich_text field="rich_text" value="{{ module.title }}" %}

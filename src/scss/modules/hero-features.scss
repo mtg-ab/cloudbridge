@@ -1,7 +1,21 @@
 section.hero-features{
-    background-image: url('https://25642218.fs1.hubspotusercontent-eu1.net/hubfs/25642218/bg-gradient.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    position: relative;
+    div#contain-canvas{
+        position: absolute;
+        top:0px;
+        left:0px;
+        z-index:0;
+        width:100%;
+        height:100%;
+        canvas{
+            position: absolute;
+            top:0px;
+            left:0px;
+            width:100%;
+            height:100%;
+            z-index:0;
+        }
+    }
     @media(max-width:$size4){
         padding-bottom:50px;
     }
@@ -33,9 +47,12 @@ section.hero-features{
             p{
                 color:#fff;
                 max-width:635px;
+                opacity:0;
             }
             div.row-btns{
                 margin-top:60px;
+                opacity:0;
+                transform: translateY(20px);
             }
             svg{
                 position: absolute;
@@ -60,7 +77,6 @@ section.hero-features{
         &.container-slide{
             max-width:100%;
             z-index:2;
-            opacity:1;
             position: relative;
             padding-top: 155px;
             padding-bottom:80px;
@@ -79,6 +95,7 @@ section.hero-features{
                 width:100%;
                 mask-image:linear-gradient(90deg,transparent,#000 80px,#000 90%,transparent);
                 -webkit-mask-image:linear-gradient(90deg,transparent,#000 80px,#000 90%,transparent);
+                opacity:0;
                 div.flickity-viewport{
                     width:100%;
                     div.flickity-slider{

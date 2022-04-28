@@ -1,6 +1,6 @@
 jQuery( document ).ready(function() {
 
-    if(jQuery("section.hero-features  div").hasClass("blocs")){
+    if(jQuery("section").hasClass("hero-features")){
 
         //INIT GSAP
         const { gsap } = require("gsap/dist/gsap");
@@ -8,13 +8,22 @@ jQuery( document ).ready(function() {
         gsap.registerPlugin(ScrollTrigger);
         //INIT GSAP
 
-        gsap.to("section.hero-features svg",{
+        var tl = gsap.timeline();
+        tl.to("section.hero-features div.bloc-title p",0.7, { opacity:1,ease: "power2.inOut",delay:0 });
+        tl.to("section.hero-features div.bloc-title div.row-btns",0.7, { opacity:1,y:0,ease: "power2.inOut",delay:-0.5 });
+
+        //INIT TIMELINE
+        var tl = gsap.timeline({
             scrollTrigger: {
-              trigger: "section.hero-features svg",
-              start:"-=500",
-              toggleClass: {targets: "section.hero-features svg", className: "active"}
+              trigger: "section.hero-features div.container-slide",
+              start:"-=450",
             }
         });
+        //INIT TIMELINE
+
+        //ANIM TIMELINE
+        tl.to("section.hero-features div.blocs",0.75, { opacity:1,x:0,stagger:0.2,ease: "power2.inOut" });
+        //ANIM TIMELINE
 
         var Flickity = require('flickity');
 

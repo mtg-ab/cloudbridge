@@ -1,0 +1,57 @@
+<section id="{{module.module_identity}}" class="hero-landing">
+    <div class="container">
+        {% if module.logo.src %}
+        <a href="{{ module.logo_link.url.href }}" class="logo">
+            <figure class="figure">
+                <img class="img-fluid"loading="lazy" width="{{ module.logo.width }}" height="{{ module.logo.height }}" src="{{ module.logo.src }}" alt="{{ module.logo.alt }}" />
+            </figure>
+        </a>
+        {% endif %}
+    </div>
+    <div class="container container-text">
+        <div class="bloc-txt">
+            {% inline_rich_text field="rich_text" value="{{ module.title }}" %}
+            {% inline_rich_text field="rich_text" value="{{ module.text }}" %}
+        </div>
+        <div class="bloc-form">
+            <div class="form-wrapper">
+                {% if module.left_col.type_form == "classic" %}
+                {% form
+                form_to_use="{{ module.form_field.form_id }}"
+                response_response_type="{{ module.form_field.response_type }}"
+                response_message="{{ module.form_field.message }}"
+                response_redirect_id="{{ module.form_field.redirect_id }}"
+                response_redirect_url="{{ module.form_field.redirect_url}}"
+                gotowebinar_webinar_key="{{ module.form_field.gotowebinar_webinar_key }}"
+                %}
+                {% else %}
+                <div class="copy-container multi-step-form">
+                    <div id="loader" class="loading">
+                    </div>
+                    <div id="step-form" class="form">
+                        <div id="multi-step-form" class="ms-survey-from">
+                            <div class="page-center">
+                                <div class="ms-form-steps">
+
+
+                                </div>
+                                <div class="ms-form-section">
+                                    {% form
+                                    form_key='{{ name }}',
+                                    form_to_use='{{ module.form_field.form_id }}'
+                                    %}
+                                </div>
+                            </div>
+                        </div>
+                        {% require_js %}
+                        <script>
+                           
+                        </script>
+                        {% end_require_js %}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

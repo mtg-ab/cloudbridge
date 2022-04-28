@@ -1,20 +1,27 @@
 section.key-numbers{
     height:100vh;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
     div.container{
         padding-right:100px;
         display:flex;
         justify-content: space-between;
-        height:100%;
         align-items: center;
+        padding:30px 0px 60px 0px;
         @media(max-width:$size4){
             flex-direction:column;
-            padding-right:20px;
+            padding-right:30px;
+            padding-left:30px;
+            justify-content: center;
+            padding-top:50px;
         }
         div.bloc-txt{
             max-width:430px;
             width:100%;
             @media(max-width:$size4){
                 max-width:100%;
+                margin-bottom:60px;
             }
             h2{
                 margin-bottom:30px;
@@ -60,16 +67,23 @@ section.key-numbers{
                         }
                     }
                     div.number{
-                        font-weight:600;
-                        font-size:110px;
-                        display: flex;
-                        align-items: center;
+                        
                         width:100%;
-                        line-height:110px;
-                        transform: rotate(-90deg);
-                        @media(max-width:$size4){
-                            font-size:60px;
-                            line-height:60px;
+                        
+                        
+                        
+                        div.contain-number{
+                            transform: rotate(-90deg) !important;
+                            line-height:110px;
+                            font-weight:600;
+                            font-size:110px;
+                            display: flex;
+                            align-items: center;
+                            width:100%;
+                            @media(max-width:$size4){
+                                font-size:60px;
+                                line-height:60px;
+                            }
                         }
                         &:nth-child(1){
                             span.word{
@@ -109,11 +123,16 @@ section.key-numbers{
                     }
                     div.text{
                         line-height:18px;
-                        transform: rotate(-90deg);
                         width:100%;
                         text-align: left;
                         opacity:0;
                         transition: 0.5s;
+                        div.contain-text{
+                            line-height:18px;
+                            transform: rotate(-90deg);
+                            width:100%;
+                            text-align: left;
+                        }
                         &:nth-child(1){
                             opacity:1;
                         }
@@ -129,5 +148,57 @@ section.key-numbers{
                 }
             }
         }
+    }
+    svg{
+        display:block;
+        position: relative;
+        @media(max-width:$size4){
+            display:none;
+        }
+        &.line-1{
+            left:53%;
+            transform: translateX(-50%);
+            &.active{
+                path#line2{
+                    animation: followpathNumbers1 2.8s ease-in-out;
+                    animation-fill-mode: forwards;
+                    @keyframes followpathNumbers1 {
+                        to {
+                            stroke-dashoffset: -620;
+                        }
+                    }
+                }
+            }
+            path#line2{
+                stroke-dashoffset: 46;
+                stroke-dasharray: 46 711;
+            }
+        }
+        &.line-2{
+            left:50%;
+            transform: translateX(-50%);
+            &.active{
+                
+                path#line2{
+                    
+                    animation: followpathNumbers2 2.8s ease-in-out;
+                    animation-fill-mode: forwards;
+                    @keyframes followpathNumbers2 {
+                        to {
+                            stroke-dashoffset: -525;
+                        }
+                    }
+                    
+                }
+                
+            }
+            path{
+                &#line2{
+                    stroke-dashoffset: 30;
+                    stroke-dasharray: 30 525;
+                }
+            }
+        }
+        
     }
 }

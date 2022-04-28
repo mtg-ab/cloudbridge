@@ -1,0 +1,316 @@
+
+section.pricing{
+    position: relative;
+    background-image: url('https://25642218.fs1.hubspotusercontent-eu1.net/hubfs/25642218/bg-gradient.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    div#contain-canvas{
+        position: fixed;
+        top:0px;
+        left:0px;
+        z-index:0;
+        width:100%;
+        height:100%;
+        canvas{
+            position: absolute;
+            top:0px;
+            left:0px;
+            width:100%;
+            height:100%;
+            z-index:0;
+        }
+    }
+    &:after{
+        display:block;
+        height:680px;
+        width:100%;
+        position: absolute;
+        bottom:-1px;
+        left:0px;
+        background-color: #fff;
+        content:'';
+        z-index:0;
+    }
+    div.container{
+        padding-top:194px;
+        position: relative;
+        z-index:2;
+        div.bloc-title{
+            color:#fff;
+            h1,h2{
+                line-height:110px;
+                @media(max-width:$size4){
+                    line-height:60px;
+                    margin-bottom:30px;
+                }
+            }
+            p{
+                color:#fff;
+                max-width:635px;
+            }
+        }
+        div.contain-bloc-offers{
+            position: relative;
+            @media(max-width:1170px){
+                overflow-x:scroll;
+                box-shadow: 0px 58px 80px rgba(0, 0, 0, 0.05), 0px 11.6px 45px rgba(0, 0, 0, 0.05);
+                border-radius: 10px;
+                margin-top:90px;
+                padding-bottom:35px;
+            }
+            div.bloc-offers{
+                min-width:1170px;
+                background-color: #fff;
+                padding:45px 30px;
+                box-shadow: 0px 58px 80px rgba(0, 0, 0, 0.05), 0px 11.6px 45px rgba(0, 0, 0, 0.05);
+                border-radius: 10px;
+                margin-top:90px;
+                left:50%;
+                transform: translateX(-50%);
+                position: relative;
+                display:flex;
+                flex-wrap:wrap;
+                flex-direction: column;
+                align-items:flex-end;
+                @media(max-width:1170px){
+                    left:0%;
+                    transform: translateX(0%);
+                    padding:0px 0px;
+                    min-width:1100px;
+                    margin-top:0px;
+                }
+                div.head-bloc-offers{
+                    display:flex;
+                    justify-content: flex-end;
+                    width:calc(100% - 365px);
+                    @media(max-width:$size4){
+                        width:calc(100% - 245px);
+                        justify-content: flex-start;
+                    }
+                    div.head-bloc{
+                        padding:30px 20px 75px 20px; 
+                        width:calc(100% / 4);
+                        position: relative;
+                        @media(max-width:$size4){
+                            padding:30px 20px 55px 20px;
+                        }
+                        span.line{
+                            width:1px;
+                            display:block;
+                            background-color: rgba($color1,0.3);
+                            position: absolute;
+                            left:0px;
+                            height:100%;
+                            top:0px;
+                            text-indent: -9999px;
+                        }
+                        &.selected{
+                            span.line{
+                                display:none;
+                            }
+                            p.title{
+                                color:#fff;
+                                z-index:2;
+                                position: relative;
+                            }
+                            p.price{
+                                color:#fff;
+                                opacity:0.6;
+                   
+                            }
+                            a.btn{
+                                border:1px solid #fff;
+                            }
+                            span.bg-color{
+                                display:block;
+                                content:'';
+                                position: absolute;
+                                left:0px;
+                                top:0px;
+                                width:100%;
+                                height:100%;
+                                background-color: $color1;
+                                z-index:0;
+                                border-top-left-radius: 10px;
+                                border-top-right-radius: 10px;
+                                border-bottom-left-radius: 10px;
+                                border-bottom-right-radius: 10px;
+                            }
+                        }          
+                        p.title{
+                            font-weight: 500;
+                            font-size: 22px;
+                            line-height: 26px;
+                            margin-bottom: 15px;
+                        }
+                        p.price{
+                            display: flex;
+                            align-items: center;
+                            min-height:35px;
+                            span{
+                                font-weight: 700;
+                                font-size: 30px;
+                                line-height: 35px;
+                                position: relative;
+                                display:inline-block;
+                                margin-right:7px;
+                            }
+                        }
+                        a.btn{
+                            border:1px solid $color1;
+                            margin-top:30px;
+                            font-size:13px;
+                        }
+                    }
+                }
+                div.contain-bloc-offers{
+                    width:100%;
+                    position: relative;
+                    z-index:2;
+                    box-shadow: none;
+                    div.bloc{
+                        padding:60px 0px;
+                        @media(max-width:$size4){
+                            padding:30px 0px
+                        }
+                        &:last-child{
+                            padding:60px 0px 30px 0px;
+                            @media(max-width:$size4){
+                                padding:30px 0px
+                            }
+                        }
+                        p.title{
+                            font-weight: 600;
+                            font-size: 14px;
+                            line-height: 16px;
+                            letter-spacing: 5px;
+                            text-transform: uppercase;
+                            color: rgba(114, 34, 129, 0.5);
+                            padding-left:30px;
+                            display: inline-block;
+                            
+                        }
+                        div.bloc-lines{
+                            div.row{
+                                margin:0px;
+                                min-height:83px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                padding-left:30px;
+                                width:100%;
+                                &:nth-child(2n+2){
+                                    background-color: rgba($color1,0.05);
+                                    border-radius:10px;
+                                }
+                                div.bloc{
+                                    padding:0px;
+                                    font-weight: 600;
+                                    font-size: 16px;
+                                    line-height: 19px;
+                                    max-width:335px;
+                                    position: relative;
+                                    padding-right:30px;
+                                    @media(max-width:$size4){
+                                        max-width:215px;
+                                    }
+                                    div.question{
+                                        position: absolute;
+                                        top:0px;
+                                        right:0px;
+                                        position: absolute;
+                                        width:20px;
+                                        height:20px;
+                                        display:block;
+                                        background-repeat: no-repeat;
+                                        background-position: 100% 50%;
+                                        background-size: contain;
+                                        cursor: pointer;
+                                        background-image: url("data:image/svg+xml,%3Csvg width='20' height='21' viewBox='0 0 20 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.4'%3E%3Cpath d='M20 10.922C20 5.39915 15.5228 0.921997 10 0.921997C4.47715 0.921997 0 5.39915 0 10.922C0 16.4448 4.47715 20.922 10 20.922C15.5228 20.922 20 16.4448 20 10.922Z' fill='%23033C71'/%3E%3Cpath d='M10.7346 12.9544V12.4583C10.7346 11.2318 13.0911 10.901 13.0911 8.64098C13.0911 6.86326 11.4236 5.93994 9.88019 5.93994C8.03356 5.93994 7 7.08375 7 7.08375L8.32296 8.69611L8.34608 8.67578C8.46706 8.57174 9.04416 8.10353 9.63214 8.10353C10.1558 8.10353 10.6106 8.44805 10.6106 8.9166C10.6106 10.0742 8.44699 10.4049 8.44699 12.2653V12.9544H10.7346ZM10.6795 15.9999V13.9328H8.50211V15.9999H10.6795Z' fill='white'/%3E%3C/g%3E%3C/svg%3E");
+                                        div.contain-question{
+                                            background-color: #fff;
+                                            width:300px;
+                                            padding:20px 30px;
+                                            position: absolute;
+                                            z-index:3;
+                                            left:60px;
+                                            top:-10px;
+                                            font-weight: 500;
+                                            font-size: 14px;
+                                            line-height: 20px;
+                                            border-radius:5px;
+                                            color:rgba($color1,0.7);
+                                            opacity: 0;
+                                            visibility: hidden;
+                                            transform: translateX(-20px);
+                                            transition: 0.35s;
+                                            box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.05), 0px 11.6px 13px rgba(0, 0, 0, 0.02);
+                                            &.open{
+                                                opacity: 1;
+                                                transform: translateX(0px);
+                                                visibility: visible;
+                                            }
+                                            &:after{
+                                                display:block;
+                                                content:'';
+                                                position: absolute;
+                                                display : inline-block;
+                                                height : 0;
+                                                width : 0;
+                                                left:-10px;
+                                                top:15px;
+                                                border-top : 6px solid transparent;
+                                                border-right : 10px solid #fff;
+                                                border-bottom : 6px solid transparent;
+                                            }
+                                        }
+                                    }
+                                }
+                                div.bloc-infos{
+                                    width:calc(100% - 335px);
+                                    display:flex;
+                                    height:100%;
+                                    min-height:83px;
+                                    @media(max-width:$size4){
+                                        width:calc(100% - 215px);
+                                    }
+                                    div.info{
+                                        width:calc(100% / 4);
+                                        height:100%;
+                                        min-height:83px;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        font-weight:bold;
+                                        &.selected{
+                                            color:#fff;
+                                            &.is-contain{
+                                                background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20ZM14.4929 7.66795C14.7389 7.33468 14.6681 6.86511 14.3348 6.61914C14.0015 6.37317 13.532 6.44395 13.286 6.77723L9.10415 12.4435L6.05884 10.0003C5.73575 9.74107 5.26371 9.79285 5.0045 10.1159C4.74529 10.439 4.79707 10.9111 5.12016 11.1703L8.77456 14.1022L9.38365 14.5909L9.84735 13.9625L14.4929 7.66795Z' fill='white'/%3E%3C/svg%3E"); 
+                                            }
+                                            &.not-contain{
+                                                background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.0303 7.03033C14.3232 6.73744 14.3232 6.26256 14.0303 5.96967C13.7374 5.67678 13.2626 5.67678 12.9697 5.96967L14.0303 7.03033ZM5.96967 12.9697C5.67678 13.2626 5.67678 13.7374 5.96967 14.0303C6.26256 14.3232 6.73744 14.3232 7.03033 14.0303L5.96967 12.9697ZM12.9697 5.96967L5.96967 12.9697L7.03033 14.0303L14.0303 7.03033L12.9697 5.96967Z' fill='white'/%3E%3Cpath d='M12.9697 14.0304C13.2626 14.3233 13.7374 14.3233 14.0303 14.0304C14.3232 13.7375 14.3232 13.2626 14.0303 12.9697L12.9697 14.0304ZM7.03033 5.96973C6.73744 5.67684 6.26256 5.67684 5.96967 5.96973C5.67678 6.26262 5.67678 6.7375 5.96967 7.03039L7.03033 5.96973ZM14.0303 12.9697L7.03033 5.96973L5.96967 7.03039L12.9697 14.0304L14.0303 12.9697Z' fill='white'/%3E%3Ccircle cx='10' cy='10' r='9.5' stroke='white'/%3E%3C/svg%3E");
+                                            }
+                                        }
+                                        &.is-contain{
+                                            background-position: center;
+                                            background-repeat: no-repeat;
+                                            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20ZM14.4929 7.66795C14.7389 7.33468 14.6681 6.86511 14.3348 6.61914C14.0015 6.37317 13.532 6.44395 13.286 6.77723L9.10415 12.4435L6.05884 10.0003C5.73575 9.74107 5.26371 9.79285 5.0045 10.1159C4.74529 10.439 4.79707 10.9111 5.12016 11.1703L8.77456 14.1022L9.38365 14.5909L9.84735 13.9625L14.4929 7.66795Z' fill='%23033C71'/%3E%3C/svg%3E");
+                                        }
+                                        &.not-contain{
+                                            background-position: center;
+                                            background-repeat: no-repeat;
+                                            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.0303 7.03033C14.3232 6.73744 14.3232 6.26256 14.0303 5.96967C13.7374 5.67678 13.2626 5.67678 12.9697 5.96967L14.0303 7.03033ZM5.96967 12.9697C5.67678 13.2626 5.67678 13.7374 5.96967 14.0303C6.26256 14.3232 6.73744 14.3232 7.03033 14.0303L5.96967 12.9697ZM12.9697 5.96967L5.96967 12.9697L7.03033 14.0303L14.0303 7.03033L12.9697 5.96967Z' fill='%23033C71'/%3E%3Cpath d='M12.9697 14.0303C13.2626 14.3232 13.7374 14.3232 14.0303 14.0303C14.3232 13.7374 14.3232 13.2626 14.0303 12.9697L12.9697 14.0303ZM7.03033 5.96967C6.73744 5.67678 6.26256 5.67678 5.96967 5.96967C5.67678 6.26256 5.67678 6.73744 5.96967 7.03033L7.03033 5.96967ZM14.0303 12.9697L7.03033 5.96967L5.96967 7.03033L12.9697 14.0303L14.0303 12.9697Z' fill='%23033C71'/%3E%3Ccircle cx='10' cy='10' r='9.5' stroke='%23033C71'/%3E%3C/svg%3E");
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+        
+    }
+}

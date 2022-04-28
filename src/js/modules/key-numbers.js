@@ -5,14 +5,34 @@ jQuery( document ).ready(function() {
 
         //INIT GSAP
         const { gsap } = require("gsap/dist/gsap");
-        var ScrollTrigger = require('gsap/ScrollTrigger');
+        const { ScrollTrigger } = require('gsap/dist/ScrollTrigger');
         gsap.registerPlugin(ScrollTrigger);
         //INIT GSAP
 
-        var h = jQuery("section.key-numbers").offset().top;
-        var wh = jQuery("section.key-numbers div.numbers").height();
-        var wh = wh + 460;
-        var h = h - 100;
+        if(jQuery("section.key-numbers svg.line-1").length > 0){
+
+            gsap.to("section.key-numbers svg.line-1",{
+                scrollTrigger: {
+                    trigger: "section.key-numbers",
+                    start:"-=450",
+                    toggleClass: {targets: "section.key-numbers svg.line-1", className: "active"}
+                }
+            });
+
+        }
+
+        if(jQuery("section.key-numbers svg.line-2").length > 0){
+
+            gsap.to("section.key-numbers svg.line-2",{
+                scrollTrigger: {
+                    trigger: "section.key-numbers svg.line-2",
+                    start: "-=450px",
+                    end: "+=1500px",
+                    toggleClass: {targets: "section.key-numbers svg.line-2", className: "active"}
+                }
+            });
+
+        }
 
         var Flickity = require('flickity');
 
@@ -93,19 +113,27 @@ jQuery( document ).ready(function() {
                 flickity_handle_wheel_event(e, flickity_1, flickity_1_is_animating);
                 flickity_handle_wheel_event_text(e, flickity_2, flickity_2_is_animating);
             }
+            jQuery(document).on('touchmove', function() {
+                flickity_handle_wheel_event(e, flickity_1, flickity_1_is_animating);
+                flickity_handle_wheel_event_text(e, flickity_2, flickity_2_is_animating);
+            });
         }
           
         
-        gsap.to("section.key-numbers div.numbers",{
-            scrollTrigger: {
-                trigger: "section.key-numbers",
-                pin: true,
-                start: "top 0",
-                scrub: 2.5,
-                end: () =>  "+=" + wh +"",
-                onEnter: () => initAnim(),
-            }
-        });
+        var h = jQuery("section.key-numbers").offset().top;
+        var wh = jQuery("section.key-numbers div.number").height();
+        var x = jQuery("section.key-numbers div.number").length;
+        var wh = wh * x;
+
+        ScrollTrigger.create({
+            trigger: "section.key-numbers",
+            pin: true,
+            start: 'top 0',
+            scrub:1,
+            end: () =>  '+='+wh+'',
+            animation: initAnim(),
+            //onEnter: () => initAnim(),
+        })
         
         
 

@@ -1,4 +1,4 @@
-<section id="{{module.module_identity}}" class="hero-section" data-scroll-section>
+<section id="{{module.module_identity}}" class="hero-section {% if module.video %}bg-file{% endif %} {% if module.image.src %}hero-section-img{% endif %}" data-scroll-section>
     <div class="hero-section-container container">
         <div class="hero-section-container__bloc-title">
             <div class="bloc-title">
@@ -28,14 +28,17 @@
         </div>
         <div class="hero-section-container__bloc">
             {% if module.image.src %}
-                <figure class="figure">
-                    <img class="img-fluid" src="{{ module.image.src }}" loading="lazy" alt="{{ module.image.alt }}" />
-                </figure>
-            {% else %}
-                <figure class="figure">
-                    <img class="img-fluid" loading="lazy" src="https://via.placeholder.com/600x600/919388/ffffff.png?text=600x600">
-                </figure>
+            <figure class="figure">
+                <img class="img-fluid" src="{{ module.image.src }}" loading="lazy" alt="{{ module.image.alt }}" />
+            </figure>
             {% endif %}
         </div>
     </div>
+    {% if module.video %}
+        <div class="bg-file">
+            <video muted preload="none" loop>            
+                <source src="{{ module.video }}"  type="video/mp4">            
+            </video>
+        </div>
+    {% endif %}
 </section>

@@ -76,7 +76,7 @@
         "show_emoji_picker": false,
         "type": "richtext",
         "help_text" : "",
-        "default": "<h2>Become data-fluid with Cloudbridge !</h2>"
+        "default": "<h2><strong>Become data-fluid</strong> with Cloudbridge !</h2>"
     },
     {
         "name": "button_type",

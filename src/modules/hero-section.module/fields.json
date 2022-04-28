@@ -104,5 +104,14 @@
             "src": "https://via.placeholder.com/600",
             "alt": "Example of an image used in your module"
         }
+    },
+    {
+        "name" : "video",
+        "label" : "Vidéo",
+        "required" : false,
+        "locked" : false,
+        "type" : "file",
+        "picker" : "file",
+        "default" : null
     }
 ]

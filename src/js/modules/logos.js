@@ -25,7 +25,7 @@ jQuery( document ).ready(function() {
             ease: "none",
             scrollTrigger: {
                 trigger: "section.logos",
-                start:"-=550",
+                start:"-=450",
                 scrub: 1.15,
                 onEnter: () => jQuery( "section.logos div.bloc-logos").addClass('active'),
             }
@@ -36,7 +36,6 @@ jQuery( document ).ready(function() {
             scrollTrigger: {
                 trigger: "section.logos",
                 start:"-=650",
-                scrub: 0,
             }
         });
         //INIT TIMELINE
@@ -46,7 +45,6 @@ jQuery( document ).ready(function() {
             scrollTrigger: {
                 trigger: "section.logos",
                 start:"-=650",
-                scrub: 0,
             }
         });
         //INIT TIMELINE
@@ -55,6 +53,7 @@ jQuery( document ).ready(function() {
         logos1.staggerTo("section.logos div.bloc-line-1 div.bloc",0.75, { opacity:1,y:0,stagger:0.2,ease: "power2.inOut" });
         logos2.staggerTo("section.logos div.bloc-line-2 div.bloc",0.75, { opacity:1,y:0,stagger:0.2,ease: "power2.inOut" });
         //INIT ANIM
+        
 
     }
     

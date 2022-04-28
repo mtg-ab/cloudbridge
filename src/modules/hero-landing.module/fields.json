@@ -1,0 +1,105 @@
+[
+    {
+        "name": "module_identity",
+        "label": "Module ID",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text"
+    },
+    {
+        "name": "logo",
+        "label": "Logo",
+        "required": false,
+        "locked": false,
+        "responsive": true,
+        "resizable": true,
+        "type": "image",
+        "default": {
+            "size_type": "auto",
+            "src": "https://via.placeholder.com/600",
+            "alt": "Example of an image used in your module"
+        }
+    },
+    {
+        "name" : "logo_link",
+        "label" : "Logo link",
+        "required" : false,
+        "locked" : false,
+        "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+        "type" : "link",
+        "inline_help_text": "",
+        "help_text": "",
+        "default" : {
+        "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+        } 
+    },
+    {
+        "name": "title",
+        "label": "Title",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "richtext",
+        "help_text" : "",
+        "default": "<h2>You’ve got <strong>a question</strong></h2>"
+    },
+    {
+        "name": "text",
+        "label": "Text",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "richtext",
+        "help_text" : "",
+        "default": "<p>Molestie cursus nec maecenas vestibulum at nunc. Id ultricies purus venenatis vel enim quam sodales enim.</p>"
+    },
+    {
+        "id": "type_form",
+        "name": "type_form",
+        "label": "Type de formulaire",
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "inline_help_text": "",
+        "help_text": "",
+        "choices": [
+        [
+          "classic",
+          "Formumaire classique"
+        ],
+        [
+          "multi_step",
+          "Multi-step"
+        ]
+        ],
+        "type": "choice",
+        "placeholder": "",
+        "default": "classic"
+    },
+    {
+        "name": "form_field",
+        "label": "Formulaire",
+        "required": false,
+        "locked": false,
+        "inline_help_text": "",
+        "help_text": "",
+        "type": "form",
+        "default": {
+          "response_type": "inline",
+          "message": "Thanks for submitting the form." } 
+    }
+
+]

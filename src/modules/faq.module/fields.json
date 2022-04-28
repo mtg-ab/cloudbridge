@@ -1,0 +1,131 @@
+[
+    {
+        "name": "module_identity",
+        "label": "Module ID",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text"
+    },
+    {
+        "type": "group",
+        "name": "content_style",
+        "label": "Content Style",
+        "children": [
+            {
+                "name": "section_type",
+                "label": "Section Type",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "display": "select",
+                "choices": [
+                    [
+                        "none",
+                        "None"
+                    ],
+                    [
+                        "sm",
+                        "Small"
+                    ],
+                    [
+                        "md",
+                        "Normal"
+                    ],
+                    [
+                        "lg",
+                        "Big"
+                    ],
+                    [
+                        "xl",
+                        "Giant"
+                    ]
+                ],
+                "type": "choice",
+                "default": "none"
+            },
+            {
+                "name": "padding_bottom",
+                "label": "Padding Bottom",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "name": "padding_top",
+                "label": "Padding Top",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "type": "boolean",
+                "default": true
+            }
+        ]
+    },
+    {
+        "name": "title",
+        "label": "Title",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "richtext",
+        "help_text" : "",
+        "default": "<h2>You’ ve got questions. <strong>We’ ve got answers</strong></h2>"
+    },
+    {
+        "name": "subtitle",
+        "label": "Subtitle",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "help_text" : "",
+        "default": "FAQ"
+    },
+    {
+        "name" : "faqs",
+        "label" : "FAQS",
+        "required" : false,
+        "locked" : false,
+        "occurrence" : {
+          "min" : 1,
+          "max" : null,
+          "default" : null
+        },
+        "children" : [
+            {
+                "name": "title",
+                "label": "Title",
+                "required": false,
+                "locked": false,
+                "validation_regex": "",
+                "allow_new_line": false,
+                "show_emoji_picker": false,
+                "type": "text",
+                "help_text" : "",
+                "default": "Purus aenean aliquet sed nunc egestas tempus in leo. "
+            },
+            {
+                "name": "text",
+                "label": "Text",
+                "required": false,
+                "locked": false,
+                "validation_regex": "",
+                "allow_new_line": false,
+                "show_emoji_picker": false,
+                "type": "richtext",
+                "help_text" : "",
+                "default": "<p>Nunc facilisis risus amet habitant a. Neque ut hac volutpat facilisis non sed. At proin nulla nisl fusce nunc euismod risus diam id. Id condimentum sit aliquet nunc, sagittis scelerisque ac ac donec. A non fermentum tempus risus enim vivamus enim. Odio pellentesque diam dolor id. Nibh blandit.</p>"
+            }
+        ],
+        "type" : "group"
+    }
+]

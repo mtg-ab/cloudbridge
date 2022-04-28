@@ -1,0 +1,239 @@
+section.hero-landing{
+    background-image: url('https://25642218.fs1.hubspotusercontent-eu1.net/hubfs/25642218/bg-gradient.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top:60px;
+    position: relative;
+    margin-bottom:80px;
+    &:after{
+        display:block;
+        content:'';
+        height:140px;
+        position: absolute;
+        bottom:-2px;
+        width:100%;
+        background-color: #fff;
+        z-index:0;
+    }
+    div.container{
+        position: relative;
+        z-index:1;
+        a.logo{
+            width:266px;
+            height:52px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            display:block;
+            margin:0 auto;
+            position: relative;
+            @media(max-width:$size4){
+                width:130px;
+                height:25px;
+            }
+            figure{
+                display:block;
+                width:100%;
+                height:100%;
+                margin:0px;
+                img{
+                    display:block;
+                    max-width:100%;
+                    max-height:100%;
+                    width:100%;
+                }
+            }
+        }
+        &.container-text{
+            display:flex;
+            justify-content: space-between;
+            margin-top:170px;
+            @media(max-width:$size4){
+                flex-direction:column;
+                margin-top:100px;
+            }
+            div.bloc-txt{
+                color:#fff;
+                @media(max-width:$size4){
+                    width:100%;
+                }
+                h1,h2,h3,h4{
+                    color:#fff;
+                    font-size:60px;
+                    line-height:70px;
+                    margin-bottom:25px;
+                    @media(max-width:$size4){
+                        font-size:50px;
+                        line-height:59px;
+                    }
+                    strong{
+                        display:block;
+                        padding-left:95px;
+                    }
+                }
+                p,a{
+                    color:#fff;
+                    max-width:350px;
+                }
+            }
+            
+            div.bloc-form{
+                width:100%;
+                background: rgba(255, 255, 255, 0.6);
+                box-shadow: 0px 58px 80px rgba(0, 0, 0, 0.1), 0px 11.6px 13px rgba(0, 0, 0, 0.05);
+                backdrop-filter: blur(60px);
+                max-width:582px;
+                border-radius: 10px;
+                padding:6px;
+                min-height:560px;
+                @media(max-width:$size4){
+                    width:100%;
+                    margin-top:45px;
+                }
+                div.form-wrapper{
+                    height:100%;
+                    div.multi-step-form{
+                        height:100%;
+                    }
+                }
+                div#step-form{
+                    background-color: #fff;
+                    width:100%;
+                    height:100%;
+                    border-radius: 10px;
+                    padding-top:60px;
+                    div.page-center{
+                        div.ms-form-steps{
+                            display:flex;
+                            justify-content: center;
+                            div.from-step-outer{
+                                display:block;
+                                width:40px;
+                                height:40px;
+                                border-radius:50%;
+                                display:flex;
+                                justify-content: center;
+                                align-items:center;
+                                border:1px solid $color1;
+                                font-weight: 600;
+                                font-size: 20px;
+                                line-height: 25px;
+                                margin:0px 15px;
+                                position: relative;
+                                &:after{
+                                    display:block;
+                                    content:'';
+                                    position: absolute;
+                                    width:31px;
+                                    height:2px;
+                                    background-color: $color1;
+                                    top:50%;
+                                    transform: translateY(-50%);
+                                    right:-31px;
+                                }
+                                &:last-child{
+                                    &:after{
+                                        display:none;
+                                    }
+                                }
+                                &.active{
+                                    background-color: $color1;
+                                    color:#fff;
+                                }
+                            }
+                        }
+                        form{
+                            div.form-step-content{
+                                display:none;
+                                &.step1{
+                                    display:block;
+                                }
+                            }
+                            a.next-btn{
+                                height:48px;
+                                width:100%;
+                                margin-top:50px;
+                                background-color: $color2;
+                                border-radius:5px;
+                                color:#fff;
+                                padding:16px 0px;
+                                &:before{
+                                    z-index:2;
+                                    display:block;
+                                    width:15px;
+                                    height:15px;
+                                    content:'';
+                                    position: absolute;
+                                    right:calc(50% - 59px);
+                                    top:50%;
+                                    transition: 0s;
+                                    font-weight:600;
+                                    transform: translateY(20px) translateX(-20px);
+                                    background-color: #fff;
+                                    mask-repeat: no-repeat;
+                                    mask-size:15px;
+                                    opacity:0;
+                                    mask-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_519_1543' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='15' height='15'%3E%3Crect width='15' height='15' fill='%23C4C4C4'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_519_1543)'%3E%3Cpath d='M10.7272 4.18201H11.2727V3.63655H10.7272V4.18201ZM4.36328 3.63655H3.81783V4.72746H4.36328V3.63655ZM10.1818 10.546L10.1818 11.0914L11.2727 11.0914L11.2727 10.546L10.1818 10.546ZM10.7272 3.63655L4.36328 3.63655V4.72746L10.7272 4.72746V3.63655ZM10.1818 4.18201L10.1818 10.546L11.2727 10.546L11.2727 4.18201H10.1818Z' fill='%23033C71'/%3E%3Cpath d='M2.61431 11.5234L2.22861 11.9091L3 12.6805L3.38569 12.2948L2.61431 11.5234ZM10.6588 5.02171L11.0445 4.63602L10.2731 3.86463L9.8874 4.25032L10.6588 5.02171ZM3.38569 12.2948L10.6588 5.02171L9.8874 4.25032L2.61431 11.5234L3.38569 12.2948Z' fill='%23033C71'/%3E%3C/g%3E%3C/svg%3E");
+                                    -webkit-mask-repeat: no-repeat;
+                                    -webkit-mask-size:15px;
+                                    -webkit-mask-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_519_1543' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='15' height='15'%3E%3Crect width='15' height='15' fill='%23C4C4C4'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_519_1543)'%3E%3Cpath d='M10.7272 4.18201H11.2727V3.63655H10.7272V4.18201ZM4.36328 3.63655H3.81783V4.72746H4.36328V3.63655ZM10.1818 10.546L10.1818 11.0914L11.2727 11.0914L11.2727 10.546L10.1818 10.546ZM10.7272 3.63655L4.36328 3.63655V4.72746L10.7272 4.72746V3.63655ZM10.1818 4.18201L10.1818 10.546L11.2727 10.546L11.2727 4.18201H10.1818Z' fill='%23033C71'/%3E%3Cpath d='M2.61431 11.5234L2.22861 11.9091L3 12.6805L3.38569 12.2948L2.61431 11.5234ZM10.6588 5.02171L11.0445 4.63602L10.2731 3.86463L9.8874 4.25032L10.6588 5.02171ZM3.38569 12.2948L10.6588 5.02171L9.8874 4.25032L2.61431 11.5234L3.38569 12.2948Z' fill='%23033C71'/%3E%3C/g%3E%3C/svg%3E");
+                                }
+                                &:after{
+                                    z-index:2;
+                                    display:block;
+                                    width:15px;
+                                    height:15px;
+                                    content:'';
+                                    position: absolute;
+                                    right:calc(50% - 59px);
+                                    top:50%;
+                                    transition: 0s;
+                                    font-weight:600;
+                                    transform: translateY(-50%);
+                                    background-color: #fff;
+                                    mask-repeat: no-repeat;
+                                    mask-size:15px;
+                                    mask-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_519_1543' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='15' height='15'%3E%3Crect width='15' height='15' fill='%23C4C4C4'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_519_1543)'%3E%3Cpath d='M10.7272 4.18201H11.2727V3.63655H10.7272V4.18201ZM4.36328 3.63655H3.81783V4.72746H4.36328V3.63655ZM10.1818 10.546L10.1818 11.0914L11.2727 11.0914L11.2727 10.546L10.1818 10.546ZM10.7272 3.63655L4.36328 3.63655V4.72746L10.7272 4.72746V3.63655ZM10.1818 4.18201L10.1818 10.546L11.2727 10.546L11.2727 4.18201H10.1818Z' fill='%23033C71'/%3E%3Cpath d='M2.61431 11.5234L2.22861 11.9091L3 12.6805L3.38569 12.2948L2.61431 11.5234ZM10.6588 5.02171L11.0445 4.63602L10.2731 3.86463L9.8874 4.25032L10.6588 5.02171ZM3.38569 12.2948L10.6588 5.02171L9.8874 4.25032L2.61431 11.5234L3.38569 12.2948Z' fill='%23033C71'/%3E%3C/g%3E%3C/svg%3E");
+                                    -webkit-mask-repeat: no-repeat;
+                                    -webkit-mask-size:15px;
+                                    -webkit-mask-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_519_1543' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='15' height='15'%3E%3Crect width='15' height='15' fill='%23C4C4C4'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_519_1543)'%3E%3Cpath d='M10.7272 4.18201H11.2727V3.63655H10.7272V4.18201ZM4.36328 3.63655H3.81783V4.72746H4.36328V3.63655ZM10.1818 10.546L10.1818 11.0914L11.2727 11.0914L11.2727 10.546L10.1818 10.546ZM10.7272 3.63655L4.36328 3.63655V4.72746L10.7272 4.72746V3.63655ZM10.1818 4.18201L10.1818 10.546L11.2727 10.546L11.2727 4.18201H10.1818Z' fill='%23033C71'/%3E%3Cpath d='M2.61431 11.5234L2.22861 11.9091L3 12.6805L3.38569 12.2948L2.61431 11.5234ZM10.6588 5.02171L11.0445 4.63602L10.2731 3.86463L9.8874 4.25032L10.6588 5.02171ZM3.38569 12.2948L10.6588 5.02171L9.8874 4.25032L2.61431 11.5234L3.38569 12.2948Z' fill='%23033C71'/%3E%3C/g%3E%3C/svg%3E");
+                                }
+                                &:hover {
+                                    &:before{
+                                        transform: translateY(-50%) translateX(0px);
+                                        opacity:1;
+                                        transition: 0.35s;
+                                    }
+                                    &:after{
+                                        transform: translateY(-20px) translateX(10px);
+                                        opacity:0;
+                                        transition: 0.35s;
+                                    }
+                                }
+                            }
+                            div.actions{
+                                position: relative;
+                                a.btn{
+                                    &:after,&:before{
+                                        background-color: #fff;
+                                        right:calc(50% - 59px);
+                                    }
+                                }
+                                input{
+                                    display:block;
+                                    position: absolute;
+                                    width:100%;
+                                    height:100%;
+                                    top:0px;
+                                    left:0px;
+                                    visibility: hidden;
+                                }
+                            }
+                        }
+                       
+                    }
+                }
+            }
+        }
+    }
+}

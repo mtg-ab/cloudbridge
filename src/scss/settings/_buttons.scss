@@ -18,7 +18,7 @@
     background-color: #fff;
     color: #033C71;
     height:38px;
-    padding:11px 40px 10px 15px;
+    padding:11px 39px 10px 15px;
     position: relative;
     overflow:hidden;
     border-radius: 7px;
@@ -106,6 +106,13 @@
     padding-right:25px;
     padding-top:8px;
     font-size:15px;
+    &.blue{
+      color:#033C71;
+      border-bottom:1px solid #033C71;
+      &:before,&:after{
+        background-color: #033C71;
+      }
+    }
     &:before{
       z-index:2;
       display:block;

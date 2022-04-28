@@ -32,7 +32,17 @@ jQuery( document ).ready(function() {
 
         }
 
-        
+        //INIT TIMELINE
+        let slider = gsap.timeline({
+            scrollTrigger: {
+                trigger: "section.case-studies",
+                start:"-=350",
+            }
+        });
+        //INIT TIMELINE
+
+        //INIT ANIM
+        slider.to("section.case-studies div.bloc-slider",0.75, { opacity:1,y:0,ease: "power2.inOut" });
 
 
         var numItems = jQuery('section.case-studies div.slider div.bloc').length;

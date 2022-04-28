@@ -16,13 +16,33 @@
         <div class="bloc-items">
             {% for item in module.items %}
                 <div class="bloc">
-                    {% if item.number %}
-                        <p class="number">{{ item.number }}</p>
+                    <div class="bloc-txt {% if item.button_url_item.href %}txt-btn{% endif %}">
+                        <div class="title ">
+                            {% if item.number %}
+                                <p class="number">{{ item.number }}</p>
+                            {% endif %}
+                            {% if item.title %}
+                                <p class="title">{{ item.title }}</p>
+                            {% endif %}
+                            {{ item.text }}
+                        </div>
+                        {% if item.button_url_item.href %}
+                            <div class="row-btns">
+                                <a href="{{ item.button_url_item.href }}" class="btn secondary blue"><span>{{ item.button_text_item }}</span></a>
+                            </div>
+                        {% else %}
+                            <div class="row-btns">
+                                {{ item.cta_field }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    {% if item.image.src %}
+                        <div class="bloc-img">
+                            <figure class="figure">
+                                <img class="img-fluid" src="{{ item.image.src }}" loading="lazy" alt="{{ item.image.alt }}" />
+                            </figure>
+                        </div>
                     {% endif %}
-                    {% if item.title %}
-                        <p class="title">{{ item.title }}</p>
-                    {% endif %}
-                    {{ item.text }}
                 </div>
             {% endfor %}
         </div>

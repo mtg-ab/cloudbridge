@@ -1,8 +1,21 @@
 section.hero-single-feature{
-    background-image: url('https://25642218.fs1.hubspotusercontent-eu1.net/hubfs/25642218/bg-gradient.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    
+    position: relative;
+    div#contain-canvas{
+        position: absolute;
+        top:0px;
+        left:0px;
+        z-index:0;
+        width:100%;
+        height:100%;
+        canvas{
+            position: absolute;
+            top:0px;
+            left:0px;
+            width:100%;
+            height:100%;
+            z-index:0;
+        }
+    }
     @media(max-width:$size4){
         padding-bottom:50px;
     }
@@ -12,6 +25,10 @@ section.hero-single-feature{
         justify-content: space-between;
         position: relative;
         padding-bottom:263px;
+        @media(max-width:$size4){
+           flex-direction: column;
+           padding-bottom:50px;
+        }
         div.bloc-title{
             padding-bottom:5px;
             h1{
@@ -38,14 +55,22 @@ section.hero-single-feature{
             p{
                 color:#fff;
                 max-width:540px;
+                opacity:0;
             }
             div.row-btns{
                 margin-top:60px;
+                opacity:0;
+                transform: translateY(20px);
             }
         }
         div.bloc-img{
             max-width:500px;
             padding-top:80px;
+            opacity:0;
+            transform: translateY(0px);
+            @media(max-width:$size4){
+                padding-top:40px;
+             }
         }
         svg{
             position: absolute;

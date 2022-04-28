@@ -8,7 +8,25 @@
             <p class="subtitle">{{ module.subtitle }}</p>
         {% endif %}
         {% inline_rich_text field="rich_text" value="{{ module.title }}" %}
-        <div class="bloc-video"></div>
+        <div class="bloc-video">
+            <div class="video-cover">
+                <figure>
+                    <div class="video-wrapper">
+                        <img loading="lazy" src="{{ module.poster.src }}" alt="Video cover">
+                        <div class="btn-play">
+                            <span></span>
+                        </div>                     
+                        {% if module.youtube == 'true' %}
+                            <iframe width="560" height="315" data-src="{{ module.video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        {% else %}
+                            <video controls>
+                                <source src="{{ module.video}}" type="video/mp4">
+                            </video>
+                        {% endif %}
+                    </div>
+                </figure>
+            </div>
+        </div>
         <svg width="352" height="141" class="line-2" viewBox="0 0 352 141" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 0V70.3203C1 81.366 9.95431 90.3203 21 90.3203H331C342.046 90.3203 351 99.2746 351 110.32V141" stroke="#022D54" stroke-opacity="0.4" stroke-width="0.5"/>
             <path d="M1 0V70.3203C1 81.366 9.95431 90.3203 21 90.3203H331C342.046 90.3203 351 99.2746 351 110.32V141" id="line2" stroke="#722281" stroke-opacity="1" stroke-width="2"/>

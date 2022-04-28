@@ -32,40 +32,37 @@ jQuery( document ).ready(function() {
 
         }
 
+        var mrUtil = function ($) {
+            var Util = {
+                activateIframeSrc: function activateIframeSrc(iframe) {
+                    var $iframe = $(iframe);
+                    if ($iframe.attr('data-src')) {
+                        $iframe.attr('src', $iframe.attr('data-src'));
+                    }
+                },
+                idleIframeSrc: function idleIframeSrc(iframe) {
+                    var $iframe = $(iframe);
+                    $iframe.attr('data-src', $iframe.attr('src')).attr('src', '');
+                }
+            };
+            return Util;
+        }(jQuery);
         
 
+        jQuery("section.video div.btn-play").click(function( index ) {        
+            jQuery(this).fadeOut();
+            jQuery(this).parent().find("img").fadeOut();
+            jQuery(this).parent().find("video").trigger('play');
+            
+            var $iframe = jQuery(this).parent().find('iframe');
+            mrUtil.activateIframeSrc($iframe);
+            var symbol = jQuery(this).parent().find("iframe")[0].src.indexOf("?") > -1 ? "&" : "?";
+            //modify source to autoplay and start video
+            jQuery(this).parent().find("iframe")[0].src += symbol + "autoplay=1";
 
-        var numItems = jQuery('section.case-studies div.slider div.bloc').length;
-        var num = 100 / numItems;
-        jQuery( "section.case-studies div.steps i" ).css("width",""+num+"%")
-        var Flickity = require('flickity-fade');
-
-        var flky = new Flickity( 'section.case-studies div.slider', {
-            freeScroll: true,
-            wrapAround: true,
-            pageDots: false,
-            fade:true,
-            on:{
-                change: function( index ) {
-                    var id = index;
-                    
-                    jQuery( "section.case-studies div.slider div.bloc" ).each(function( index ) {
-                        if(jQuery(this).hasClass('is-selected')){
-                            var numItems = jQuery('section.case-studies div.slider div.bloc').length;
-                            var num = 100 / numItems;
-                            var id = jQuery(this).data('id');
-                            var num = num * id;
-                            jQuery( "section.case-studies div.steps i" ).css("width",""+num+"%")
-                            if(id < 10){
-                                jQuery("span.actual").html("0"+id+"")
-                            }else{
-                                jQuery("span.actual").html(""+id+"")
-                            }
-                        }
-                    })
-                } 
-            }
         })
+
+        
 
     }
 })

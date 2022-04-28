@@ -2,13 +2,15 @@
     <div class="container">
         <div class="bloc-title">
             {% inline_rich_text field="rich_text" value="{{ module.title }}" %}
-            <div class="row-btns">
-                {% if module.button_url.href %}
+            {% if module.button_url.href %}
+                <div class="row-btns">
                     <a href="{{ module.button_url.href }}" class="btn primary"><span>{{ module.button_text }}</span></a>
-                {% else %}
+                </div>
+            {% else if module.cta_field %}
+                <div class="row-btns">
                     {{ module.cta_field }}
-                {% endif %}
-            </div>
+                </div>
+            {% endif %}
         </div>
     </div>
 </section>

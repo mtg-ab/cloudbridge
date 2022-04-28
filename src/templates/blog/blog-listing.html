@@ -1,11 +1,13 @@
 <!--
   templateType: blog
   isAvailableForNewContent: true
-  label: Boilerplate V2 - Blog Listing Template
+  label: CloudBridge - Blog Listing Template
 -->
 {% extends "../layouts/base-blog.html" %}
 {% block body %}
-<div class="blog-listing">
+{% module_block module "header" path="../../modules/header.module", label="Header"%}{% end_module_block %}
+
+<main class="blog-listing">
   {% if blog_author %}
   {# Author Block Listing - You can manage it here #}
   <div class="section hero-section">
@@ -20,61 +22,114 @@
   </div>
   {% elif tag %}
   {# Tag Listing - You can manage it here #}
-  <div class="section hero-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 offset-md-2">
-          <h1 class="mb-2 text-center">{{ page_meta.html_title|split(' | ')|last }}</h1>
+    <!--Classic Listing - You can manage it here -->
+    <section class="hero-section-blog">
+      <div class="container">
+        <div class="bloc-title">
+          <div>
+            <h1>{{ page_meta.html_title|split(' | ')|last }}</h1>
+            <p>Find out the latest news, product information, events and many other things form Cloudbridge.</p>
+          </div>
+          <svg width="256" height="117" viewBox="0 0 256 117" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M-4.02033e-06 1.13086L235 1.13087C246.046 1.13087 255 10.0852 255 21.1309L255 116.131" stroke="white" stroke-opacity="0.6" stroke-width="0.5"/>
+            <path d="M-4.02033e-06 1.13086L235 1.13087C246.046 1.13087 255 10.0852 255 21.1309L255 116.131" id="line2" stroke="white"/>
+          </svg>
+        </div>
+        <div class="bloc-post">
+          {% set rec_posts = blog_recent_posts("default", 1) %}
+          {% for rec_post in rec_posts %}
+            <div class="bloc-txt">
+              <div class="infos">
+                <p>{% for item in rec_post.topic_list %}<span>{{ item }}</span>{% endfor %}</p>
+                <p>{% if rec_post.post_body|wordcount > 0 %}{{rec_post.post_body|wordcount|float|divide(300)|round(0, 'ceil')}}{% else %}1{% endif %}min read</p>
+              </div>
+              <p class="title">{{ rec_post.name }}</p>
+            </div>
+            <a href="{{ rec_post.absolute_url }}" class="bloc-img">
+              <figure class="position-relative h-100 mr-n1 mb-0 overflow-hidden">
+                <img class="fit-cover" loading="lazy" src="{{ rec_post.featured_image }}" alt="{{ rec_post.featured_image_alt }}">
+              </figure>
+            </a>
+          {% endfor %}
         </div>
       </div>
-    </div>
-  </div>
+    </section>
   {% else %}
   <!--Classic Listing - You can manage it here -->
-  <div class="section hero-section">
+  <section class="hero-section-blog">
     <div class="container">
-      <div class="row">
-        <div class="col-md-8 offset-md-2">
-          <h1 class="mb-2 text-center">Your incredible blog listing</h1>
-          <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at elit volutpat,
-            aliquam leo non, eleifend
-            odio. Pellentesque ultrices vehicula eros eget vulputate. </p>
+      <div class="bloc-title">
+        <div>
+          <h1>{{ page_meta.html_title|split(' | ')|last }}</h1>
+          <p>Find out the latest news, product information, events and many other things form Cloudbridge.</p>
         </div>
+        <svg width="256" height="117" viewBox="0 0 256 117" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M-4.02033e-06 1.13086L235 1.13087C246.046 1.13087 255 10.0852 255 21.1309L255 116.131" stroke="white" stroke-opacity="0.6" stroke-width="0.5"/>
+          <path d="M-4.02033e-06 1.13086L235 1.13087C246.046 1.13087 255 10.0852 255 21.1309L255 116.131" id="line2" stroke="white"/>
+        </svg>
       </div>
-    </div>
-  </div>
-  {% endif %}
-  <div class="section">
-    <div class="container">
-      <div class="row">
-        {% for post in contents %}
-        <div class="{% if loop.index == 1 %}col-md-8{% else %}col-md-4{% endif %}">
-          <div class="single-post rounded shadow overflow-hidden">
-            <a class="feat-img d-block position-relative" href="{{ post.absolute_url }}">
-              <img class="fit-cover" src="{{ post.featured_image }}" alt="{{ post.name }}">
-            </a>
-            <div class="content-wrapper p-2">
-              <div class="container-tags mb-1">
-                {% for tag in post.tag_list %}
-                <a class="label black text-decoration-none" href="{{ blog_tag_url(group.id, tag.slug) }}">{{
-                  tag.name
-                  }}</a>
-                {% if not loop.last %}{% endif %}
-                {% endfor %}
-              </div>
-              <h3>
-                <a class="text-decoration-none" href="{{ post.absolute_url }}">{{ post.name }}</a>
-              </h3>
+      <div class="bloc-post">
+        {% set rec_posts = blog_recent_posts("default", 1) %}
+        {% for rec_post in rec_posts %}
+          <div class="bloc-txt">
+            <div class="infos">
+              <p>{% for item in rec_post.topic_list %}<span>{{ item }}</span>{% endfor %}</p>
+              <p>{% if rec_post.post_body|wordcount > 0 %}{{rec_post.post_body|wordcount|float|divide(300)|round(0, 'ceil')}}{% else %}1{% endif %}min read</p>
             </div>
+            <p class="title">{{ rec_post.name }}</p>
           </div>
-        </div>
+          <a href="{{ rec_post.absolute_url }}" class="bloc-img">
+            <figure class="position-relative h-100 mr-n1 mb-0 overflow-hidden">
+              <img class="fit-cover" loading="lazy" src="{{ rec_post.featured_image }}" alt="{{ rec_post.featured_image_alt }}">
+            </figure>
+          </a>
         {% endfor %}
       </div>
     </div>
-  </div>
+  </section>
+  {% endif %}
+  <section class="listing-posts">
+    <div class="container">
+      {% set my_tags = blog_tags("default", 250) %}
+      <div class="bloc-list-tags">
+        <a href="" class="tag selected">
+          <span class="number">01</span>
+          <span class="item">All articles</span>
+        </a>
+        {% set i = 1 %}
+        {% for item in my_tags %}
+          {% set i = i + 1 %}
+          <a href="{{ blog_tag_url(group.id, item.slug) }}" class="tag">
+            <span class="number">{% if i < 10 %}0{% endif %}{{ i }}</span>
+            <span class="item">{{ item }}</span>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="container">
+      {% for post in contents %}
+        <div class="bloc">
+          <a class="bloc-img" href="{{ post.absolute_url }}">
+            <img class="fit-cover" src="{{ post.featured_image }}" alt="{{ post.name }}">
+          </a>
+          <div class="bloc-tags">
+            {% for tag in post.tag_list %}
+            <a class="tag" href="{{ blog_tag_url(group.id, tag.slug) }}">{{
+              tag.name
+              }}</a>
+            {% if not loop.last %}{% endif %}
+            {% endfor %}
+          </div>
+          <h3>
+            <a class="text-decoration-none" href="{{ post.absolute_url }}">{{ post.name }}</a>
+          </h3>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
   <!-- Pagination - You can manage it here -->
   {% if next_page_num %}
-  <nav class="blog-pagination d-flex justify-content-center py-5">
+  <nav class="blog-pagination">
 
 
     {% set page_list = [-2, -1, 0, 1, 2] %}
@@ -84,24 +139,25 @@
     {% elif current_page_num == 1 %}{% set offset = 2 %}
     {% else %}{% set offset = 0 %}{% endif %}
 
-    <a class="previous d-flex justify-content-center align-items-center text-decoration-none mr-3"
+    <a class="previous"
       href="{{ blog_page_link(last_page_num) }}">
     </a>
-    <div class="container-pagination-link px-3 px-md-5 d-flex justify-content-center align-items-center">
+    <div class="container-pagination-link">
       {% for page in page_list %}
       {% set this_page = current_page_num + page + offset %}
       {% if this_page > 0 and this_page <= contents.total_page_count %} <a
-        class="blog-pagination__number-link d-flex justify-content-center align-items-center text-decoration-none rounded bold {{ "
+        class="blog-pagination__number-link {{ "
         blog-pagination__link--active" if this_page==current_page_num }}" href="{{ blog_page_link(this_page) }}">{{
         this_page }}</a>
         {% endif %}
         {% endfor %}
     </div>
-    <a class="next d-flex justify-content-center align-items-center text-decoration-none ml-3 {{ "
+    <a class="next {{ "
       blog-pagination__next-link--disabled" if !next_page_num }}" href="{{ blog_page_link(current_page_num + 1) }}">
     </a>
   </nav>
   {% endif %}
-
-</div>
+  {% module_block module "banner-cta" path="../../modules/banner-cta.module", label="Banner CTA"%}{% end_module_block %}
+</main>
+{% module_block module "footer" path="../../modules/footer.module", label="Footer"%}{% end_module_block %}
 {% endblock body %}

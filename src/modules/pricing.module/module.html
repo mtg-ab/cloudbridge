@@ -1,0 +1,61 @@
+<section id="{{module.module_identity}}" class="pricing {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div id="contain-canvas"></div>
+    <div class="container">
+        <div class="bloc-title">
+            {{ module.title }}
+            {{ module.text }}
+        </div>
+        <div class="contain-bloc-offers">
+            <div class="bloc-offers">
+                <div class="head-bloc-offers">
+                    {% for item in module.offers %}
+                        <div class="head-bloc {% if item.active_column %}selected{% endif %}">
+                            <span class="line">line</span>
+                            {% if item.active_column %}<span class="bg-color"></span>{% endif %}
+                            {% if item.title %}
+                                <p class="title">{{ item.title }}</p>
+                            {% endif %}
+                            {% if item.price or item.text %}
+                                <p class="price">{% if item.price %}<span>{{ item.price }}</span>{% endif %} {% if item.text %}{{ item.text }}{% endif %}</p>
+                            {% endif %}
+                            {% if item.link %}
+                                <a href="{{ item.link.url.href }}" class="btn primary"><span>Ask for quote</span></a>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="contain-bloc-offers">
+                    {% for item in module.features %}
+                        <div class="bloc">
+                            <p class="title">{{ item.title }}</p>
+                            <div class="bloc-lines">
+                                {% for item in item.items %}
+                                    <div class="row">
+                                        <div class="bloc ">
+                                            {{ item.title }}
+                                            {% if item.question %}
+                                                <div class="question">
+                                                    <div class="contain-question">
+                                                        {{ item.question }}
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                        <div class="bloc-infos">
+                                            {% for item in item.offers %}
+                                                <div class="info {% if item.text_offer %}{%else%}{% if item.content_offer %}is-contain{% else %}not-contain{% endif %}{% endif %}">
+                                                    {{ item.text_offer  }}
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

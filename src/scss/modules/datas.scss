@@ -3,19 +3,31 @@ section.datas{
         div.bloc-title{
             display:flex;
             justify-content: space-between;
+            @media(max-width:$size4){
+                flex-direction:column
+            }
             div.title{
                 max-width:740px;
                 h2{
                     padding-left:95px;
                     margin-bottom:20px;
+                    @media(max-width:$size4){
+                        padding-left:0px;
+                    }
                     strong{
                         display:block;
                         transform: translateX(-95px);
+                        @media(max-width:$size4){
+                            transform: translateX(0px);
+                        }
                     }
                 }
                 p{
                     max-width:635px;
-                    padding-left:105px;
+                    padding-left:95px;
+                    @media(max-width:$size4){
+                        padding-left:0px;
+                    }
                 }
             }
             div.row-btns{
@@ -27,20 +39,114 @@ section.datas{
             justify-content: space-between;
             flex-wrap: wrap;
             flex-grow:2;
+            margin-top:90px;
             div.bloc{
                 height:407px;
                 border-radius:5px;
+                display:flex;
+                align-items: flex-end;
+                width:100%;
+                padding:45px 30px;
+                margin-bottom:30px;
+                background: rgba(#033C71,0.1);
+                overflow: hidden;
+                position: relative;
+                opacity:0;
+                transform: translateY(40px);
+                &:before{
+                    display:block;
+                    content:'';
+                    width:645px;
+                    height:475px;
+                    background: rgba(255, 255, 255, 0.7);
+                    filter: blur(140px);
+                    transform: matrix(0.91, 0.58, -0.37, 0.86, 0, 0);
+                    position: absolute;
+                    right:-100px;
+                    bottom:-150px;
+                }
                 &:nth-child(4n+1){
                     max-width:635px;
+                    @media(max-width:$size4){
+                        max-width:100%;
+                    }
+                    div.bloc-img{
+                        right:0px;
+                        top:0px;
+                    }
                 }
                 &:nth-child(4n+2){
-                    max-width:407px;
+                    max-width:445px;
+                    @media(max-width:$size4){
+                        max-width:100%;
+                    }
+                    div.bloc-img{
+                        right:0px;
+                        top:0px;
+                    }
                 }
                 &:nth-child(4n+3){
                     max-width:350px;
+                    @media(max-width:$size4){
+                        max-width:100%;
+                    }
+                    
                 }
                 &:nth-child(4n+4){
                     max-width:730px;
+                    justify-content: flex-end;
+                    @media(max-width:$size4){
+                        max-width:100%;
+                    }
+                    @media(max-width:600px){
+                        justify-content: flex-start;
+                        div.bloc-txt{
+                            justify-content: flex-start;
+                        }
+                    }
+                    div.bloc-img{
+                        left:0px;
+                        bottom:0px;
+                    }
+                }
+                div.bloc-txt{
+                    max-width:255px;
+                    z-index:2;
+                    position: relative;
+                    height:100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    &.txt-btn{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                    }
+                    p.number{
+                        font-size:60px;
+                        line-height:70px;
+                        font-weight:600;
+                        margin-bottom:40px;
+                    }
+                    p.title{
+                        font-weight:700;
+                        font-size:16px;
+                        line-height:18px;
+                        margin-bottom:15px;
+                    }
+                    div.row-btns{}
+                }
+                div.bloc-img{
+                    position: absolute;
+                    z-index:2;
+                    figure{
+                        margin:0px;
+                        img{
+                            @media(max-width:600px){
+                                max-height:250px;
+                            }
+                        }
+                    }
                 }
             }
         }

@@ -221,18 +221,95 @@
                 "default": "180 000"
             },
             {
+                "name": "button_type_item",
+                "id":"button_type_id_item",
+                "label": "Button type",
+                "required": false,
+                "locked": false,
+                "display": "select",
+                "inline_help_text": "",
+                "help_text": "",
+                "choices": [
+                [
+                "btn",
+                "Classic button"
+                ],
+                [
+                "cta",
+                "Hubspot Cta"
+                ]
+                ],
+                "type": "choice",
+                "placeholder": "",
+                "default": "btn" 
+            },
+            {
+                "name": "button_text_item",
+                "label": "Texte button",
+                "required": false,
+                "locked": false,
+                "validation_regex": "",
+                "allow_new_line": false,
+                "show_emoji_picker": false,
+                "type": "text",
+                "placeholder": "",
+                "inline_help_text": "",
+                "help_text": "",
+                "default": null,
+                "visibility": {
+                    "controlling_field": "button_type_id",
+                    "controlling_value_regex": "btn",
+                    "operator": "EQUAL"
+                }
+            },
+            {
+                "name": "button_url_item",
+                "label": "URL button",
+                "required": false,
+                "locked": false,
+                "inline_help_text": "",
+                "help_text": "",
+                "supported_types": [
+                "EXTERNAL",
+                "CONTENT",
+                "FILE",
+                "EMAIL_ADDRESS",
+                "BLOG"
+                ],
+                "type": "url",
+                "default": {
+                "content_id": null,
+                "href": "",
+                "type": "EXTERNAL"},
+                "visibility": {
+                    "controlling_field": "button_type_id",
+                    "controlling_value_regex": "btn",
+                    "operator": "EQUAL"
+                } 
+            },
+            {
+                "name": "cta_field_item",
+                "label": "CTA field",
+                "required": false,
+                "locked": false,
+                "inline_help_text": "",
+                "help_text": "",
+                "type": "cta",
+                "default": null,
+                "visibility": {
+                    "controlling_field": "button_type_id_item",
+                    "controlling_value_regex": "cta",
+                    "operator": "EQUAL"
+                } 
+            },
+            {
                 "name": "image",
                 "label": "Image",
                 "required": false,
                 "locked": false,
                 "responsive": true,
                 "resizable": true,
-                "type": "image",
-                "default": {
-                    "size_type": "auto",
-                    "src": "https://via.placeholder.com/600",
-                    "alt": "Example of an image used in your module"
-                }
+                "type": "image"
             }
         ],
         "type" : "group"

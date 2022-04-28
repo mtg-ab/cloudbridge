@@ -1,0 +1,272 @@
+[
+    {
+        "name": "module_identity",
+        "label": "Module ID",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text"
+    },
+    {
+        "type": "group",
+        "name": "content_style",
+        "label": "Content Style",
+        "children": [
+            {
+                "name": "section_type",
+                "label": "Section Type",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "display": "select",
+                "choices": [
+                    [
+                        "none",
+                        "None"
+                    ],
+                    [
+                        "sm",
+                        "Small"
+                    ],
+                    [
+                        "md",
+                        "Normal"
+                    ],
+                    [
+                        "lg",
+                        "Big"
+                    ],
+                    [
+                        "xl",
+                        "Giant"
+                    ]
+                ],
+                "type": "choice",
+                "default": "none"
+            },
+            {
+                "name": "padding_bottom",
+                "label": "Padding Bottom",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "name": "padding_top",
+                "label": "Padding Top",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "type": "boolean",
+                "default": true
+            }
+        ]
+    },
+    {
+        "name": "title",
+        "label": "Title",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "richtext",
+        "help_text" : "",
+        "default": "<h1>Simple, <strong>transparent pricing</strong></h1>"
+    },
+    {
+        "name": "text",
+        "label": "Text",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "richtext",
+        "help_text" : "",
+        "default": "<p>Let your data flow smoothly between your systems, processes and apps with Cloudbridge -  a central hub for data integration and master data management.</p>"
+    },
+    {
+        "name" : "offers",
+        "label" : "Offers",
+        "required" : false,
+        "locked" : false,
+        "occurrence" : {
+          "min" : 1,
+          "max" : 4,
+          "default" : null
+        },
+        "children" : [
+            {
+                "name": "title",
+                "label": "Title",
+                "required": false,
+                "locked": false,
+                "validation_regex": "",
+                "allow_new_line": false,
+                "show_emoji_picker": false,
+                "type": "text",
+                "help_text" : "",
+                "default": "Intro"
+            },
+            {
+                "name": "price",
+                "label": "Price",
+                "required": false,
+                "locked": false,
+                "validation_regex": "",
+                "allow_new_line": false,
+                "show_emoji_picker": false,
+                "type": "text",
+                "help_text" : "",
+                "default": "$19"
+            },
+            {
+                "name": "text",
+                "label": "Text",
+                "required": false,
+                "locked": false,
+                "validation_regex": "",
+                "allow_new_line": false,
+                "show_emoji_picker": false,
+                "type": "text",
+                "help_text" : "",
+                "default": "/ Month"
+            },
+            {
+                "name": "active_column",
+                "label": "Active column",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "type": "boolean",
+                "default": false
+            },
+            {
+                "name" : "link",
+                "label" : "Link",
+                "required" : false,
+                "locked" : false,
+                "supported_types" : [ "EXTERNAL", "CONTENT" ],
+                "type" : "link",
+                "show_advanced_rel_options" : false,
+                "default" : {
+                  "url" : {
+                    "content_id" : null,
+                    "type" : "CONTENT",
+                    "href" : ""
+                  },
+                  "open_in_new_tab" : false,
+                  "no_follow" : false,
+                  "sponsored" : false,
+                  "user_generated_content" : false
+                }
+            }
+        ],
+        "type" : "group"
+    },
+    {
+        "name" : "features",
+        "label" : "Features",
+        "required" : false,
+        "locked" : false,
+        "occurrence" : {
+          "min" : null,
+          "max" : null,
+          "default" : null
+        },
+        "children" : [
+            {
+                "name": "title",
+                "label": "Title",
+                "required": false,
+                "locked": false,
+                "validation_regex": "",
+                "allow_new_line": false,
+                "show_emoji_picker": false,
+                "type": "text",
+                "help_text" : "",
+                "default": "Intro"
+            },
+            
+            {
+                "name" : "items",
+                "label" : "Items",
+                "required" : false,
+                "locked" : false,
+                "occurrence" : {
+                  "min" : null,
+                  "max" : null,
+                  "default" : null
+                },
+                "children" : [
+                    {
+                        "name": "title",
+                        "label": "Title",
+                        "required": false,
+                        "locked": false,
+                        "validation_regex": "",
+                        "allow_new_line": false,
+                        "show_emoji_picker": false,
+                        "type": "text",
+                        "help_text" : "",
+                        "default": "Time-triggered"
+                    },
+                    {
+                        "name": "question",
+                        "label": "Question",
+                        "required": false,
+                        "locked": false,
+                        "validation_regex": "",
+                        "allow_new_line": false,
+                        "show_emoji_picker": false,
+                        "type": "richtext",
+                        "help_text" : "",
+                        "default": ""
+                    },
+                    {
+                        "name" : "offers",
+                        "label" : "Offers",
+                        "required" : false,
+                        "locked" : false,
+                        "occurrence" : {
+                          "min" : null,
+                          "max" : 4,
+                          "default" : null
+                        },
+                        "children" : [
+                            {
+                                "name": "content_offer",
+                                "label": "Content in the offer",
+                                "sortable": false,
+                                "required": false,
+                                "locked": false,
+                                "type": "boolean",
+                                "default": true
+                            },
+                            {
+                                "name": "text_offer",
+                                "label": "Text for the offer",
+                                "required": false,
+                                "locked": false,
+                                "validation_regex": "",
+                                "allow_new_line": false,
+                                "show_emoji_picker": false,
+                                "type": "text",
+                                "help_text" : "",
+                                "default": ""
+                            }
+                        ],
+                        "type" : "group"
+                    }
+                ],
+                "type" : "group"
+            }
+        ],
+        "type" : "group"
+    }
+]

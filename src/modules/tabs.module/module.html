@@ -1,5 +1,13 @@
 <section id="{{module.module_identity}}" data-scroll-section class="tabs {% if module.content_style.background == 'black' %}bg-black{% endif %} {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
     <div class="container">
+        <div class="bloc-title">
+            {% if module.subtitle %}
+                <p class="subtitle">{{ module.subtitle }}</p>
+            {% endif %}
+            {% inline_rich_text field="rich_text" value="{{ module.Title }}" %}
+        </div>
+    </div>
+    <div class="container">
         <div class="bloc-titles">
             {% set i = 0 %}
             {% for item in module.tabs %}

@@ -15,7 +15,7 @@
     "gen:fields": "gulp generate-fields",
     "gen:module": "yarn plop; yarn gen:fields",
     "hs:auth": "hs auth personalaccesskey",
-    "hs:sync-prod": "yarn gen:fields; hs upload --overwrite --portal=prod  dist MTG-HS-Boilerplate",
+    "hs:sync-prod": "yarn gen:fields; hs upload --overwrite --portal=qubix  dist MTG-HS-Boilerplate",
     "hs:sync-dev": "yarn gen:fields;  hs upload --overwrite --portal=mtg-dev-andrew  dist CloudBridge",
     "hs:module": "yarn plop; yarn gen:fields",
     "hs:watch": "hs watch --portal=mtg-dev-andrew dist CloudBridge",
@@ -77,17 +77,20 @@
   "dependencies": {
     "aos": "^3.0.0-beta.6",
     "bootstrap": "^4.4.1",
-    "flickity": "^2.2.1",
+    "flickity": "^2.3.0",
     "flickity-fade": "^1.0.0",
     "flickity-fullscreen": "^1.1.1",
     "flickity-imagesloaded": "^2.0.0",
-    "gsap": "npm:@gsap/business",
+    "glsl-noise": "0.0.0",
+    "gsap": "npm:@gsap/business@^3.10.4",
     "infinite-scroll": "^3.0.6",
     "isotope-layout": "^3.0.6",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.1",
     "splitting": "^1.0.6",
     "sticky-js": "^1.2.2",
+    "three": "^0.139.2",
+    "three-orbitcontrols": "^2.110.3",
     "vanilla-lazyload": "^14.0.0"
   }
 }

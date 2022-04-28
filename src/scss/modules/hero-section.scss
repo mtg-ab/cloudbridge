@@ -1,21 +1,37 @@
 section.hero-section{
-    background-color: $color2;
     position: relative;
-    background-image: url('https://25642218.fs1.hubspotusercontent-eu1.net/hubfs/25642218/bg-gradient.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
     padding-top:190px;
-    &:after{
-        display: block;
-        content:'';
-        width:100%;
-        height:351px;
-        background-color: #fff;
-        position: absolute;
-        bottom:-1px;
-        z-index:0;
-        @media(max-width:$size4){
-            height:150px;
+    padding-bottom:190px;
+    margin-bottom:160px;
+    @media(max-width:$size4){
+        padding-bottom:70px;
+        margin-bottom:110px;
+    }
+    &.bg-file{
+        background-image: none;
+    }
+    &.hero-section-img{
+        padding-bottom:0px;
+        margin-bottom:0px;
+        &:after{
+            display: block;
+            content:'';
+            width:100%;
+            height:351px;
+            background-color: #fff;
+            position: absolute;
+            bottom:-1px;
+            z-index:0;
+            @media(max-width:$size4){
+                height:150px;
+            }
+        }
+        div.hero-section-container__bloc-title{
+            div.bloc-title{
+                svg{
+                    bottom:-140px;
+                }
+            }
         }
     }
     div.container{
@@ -46,7 +62,10 @@ section.hero-section{
                 svg{
                     position: absolute;
                     left:0px;
-                    bottom:-140px;
+                    bottom:0px;
+                    @media(max-width:$size4){
+                        display:none;
+                    }
                     path#line2{
                         stroke-dashoffset: 52;
                         stroke-dasharray: 52 711;
@@ -84,12 +103,42 @@ section.hero-section{
             position: relative;
             opacity:0;
             transform: translateY(50px);
+            z-index:2;
             figure{
                 img{
                     display:block;
                     margin:0 auto;
+                    max-height:470px;
                 }
             }
+        }
+    }
+    div.bg-file{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width:100%;
+        pointer-events: none;
+        overflow:hidden;
+        &:after{
+            display:block;
+            content:'';
+            position: absolute;
+            width:100%;
+            height:100%;
+            opacity:0.65;
+            z-index:1;
+            top:0px;
+            left:0px;
+            background-image: url('https://25642218.fs1.hubspotusercontent-eu1.net/hubfs/25642218/bg-gradient.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        video{
+            width:100%;
+            object-fit: cover;
+            height:100%;
         }
     }
 }

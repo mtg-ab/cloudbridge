@@ -35,7 +35,9 @@
                             <p>{% if rec_post.post_body|wordcount > 0 %}{{rec_post.post_body|wordcount|float|divide(300)|round(0, 'ceil')}}{% else %}1{% endif %} min read</p>
                             </div>
                             <p class="title">{{ rec_post.name }}</p>
-                            {{ rec_post.post_summary }}
+                            <div class="text">
+                                {{ rec_post.post_summary }}
+                            </div>
                             <a href="{{ rec_post.absolute_url }}" class="btn secondary"><span class="arrow"></span>Read the article</a>
                         </div>
                     </div>
