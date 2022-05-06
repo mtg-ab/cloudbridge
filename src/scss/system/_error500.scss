@@ -1,0 +1,29 @@
+main.error-page{
+    section.error500-page{
+        padding:250px 0px;
+        position: relative;
+        div#contain-canvas{
+            position: absolute;
+            width:100%;
+            height:100%;
+            top:0px;
+            left:0px;
+            @media(max-width:$size4){
+                height:100%;
+            }
+        }
+        div.container{
+            position: relative;
+            z-index:2;
+            h1{
+                line-height:95px;
+            }
+            h1,p{
+                color:#fff;
+            }
+            a.btn{
+                margin-top:30px;
+            }
+        }
+    }
+}

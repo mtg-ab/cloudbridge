@@ -1,22 +1,22 @@
-{% if  module.content_group.show_module %}
+{% if  module.show_module %}
     <div id="{{module.module_identity}}" class="bloc-testimonial-post {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
         <div class="text">
-            {% inline_rich_text field="rich_text" value="{{ module.content_group.text }}" %}
+            {% inline_rich_text field="rich_text" value="{{ module.text }}" %}
         </div>
         <div class="infos">
             <div class="bloc-txt">
-                {% if module.content_group.nom %}
-                    <p class="name">{{ module.content_group.nom }}</p>
+                {% if module.nom %}
+                    <p class="name">{{ module.nom }}</p>
                 {% endif %}
-                {% if module.content_group.job %}
-                    <p class="job">, {{ module.content_group.job }}</p>
+                {% if module.job %}
+                    <p class="job">, {{ module.job }}</p>
                 {% endif %}
             </div>
-            {% if module.content_group.logo.src %}
+            {% if module.logo.src %}
                 <div class="bloc-img">
                     <figure class="figure">
                         <img class="img-fluid"
-                            src="{{ module.content_group.logo.src }}" width="{{ module.content_group.logo.width }}" height="{{ module.content_group.logo.height }}" loading="lazy" alt="{{ module.content_group.logo.alt }}" />
+                            src="{{ module.logo.src }}" width="{{ module.logo.width }}" height="{{ module.logo.height }}" loading="lazy" alt="{{ module.logo.alt }}" />
                     </figure>
                 </div>        
             {% endif %}

@@ -44,7 +44,7 @@
                     ]
                 ],
                 "type": "choice",
-                "default": "none"
+                "default": "lg"
             },
             {
                 "name": "padding_bottom",
@@ -115,7 +115,7 @@
     },
     {
         "name": "button_text",
-        "label": "Texte button",
+        "label": "Text button",
         "required": false,
         "locked": false,
         "validation_regex": "",

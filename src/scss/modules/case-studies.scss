@@ -111,7 +111,7 @@ section.case-studies{
                     transition: 0.5s;
                 }
             }
-            button{
+            span.btn-slider{
                 position: absolute;
                 width:20px;
                 height:20px;
@@ -134,10 +134,10 @@ section.case-studies{
                 @media(max-width:$size4){
                     bottom:20px;
                 }
-                &.previous{
+                &.btn-prev{
                     right:25px;
                 }
-                &.next{
+                &.btn-next{
                     right:0px;
                     transform: rotate(180deg);
                 }
@@ -155,6 +155,7 @@ section.case-studies{
                 }
             }
             div.bloc{
+                transition: 0s !important;
                 div.testimonial{
                     font-weight: 600;
                     font-size: 30px;
@@ -162,16 +163,34 @@ section.case-studies{
                     p{
                         font-size:30px;
                         line-height:45px;
+                        span.word{
+                            position: relative;
+                            display: inline-block;
+                            overflow:hidden;
+                            span.char{
+                                position: relative;
+                                display: inline-block;
+                            }
+                        }
                     }
                 }
                 p.name{
                     margin-top:45px;
                     margin-bottom:15px;
+                    overflow:hidden;
+                    strong,span{
+                        position: relative;
+                        display: inline-block;
+                    }
                 }
-                img{
-                    max-height:30px;
-                    max-width:120px;
+                figure{
+                    overflow:hidden;
+                    img{
+                        max-height:30px;
+                        max-width:120px;
+                    }
                 }
+                
             }
         }
         div.bloc-title{

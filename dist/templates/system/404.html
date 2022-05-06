@@ -7,12 +7,17 @@
 
 
 {% block body %}
-<div class="content-wrapper">
-  <div class="error-page" data-error="404">
-    <h1 class="error-page_heading">
-      Page not found.
-    </h1>
-    <a class="hs-button" href="/">Go Home</a>
-  </div>
-</div>
+{% module_block module "header" path="../../modules/header.module", label="Header"%}{% end_module_block %}
+
+<main class="error-page">
+  <section class="error404-page">
+    <div id="contain-canvas"></div>
+    <div class="container">
+      <h1>Page not found.</h1>
+      <a class="btn primary white" href="/">Go Home</a>
+    </div>
+  </section>
+</main>
+
+{% module_block module "footer" path="../../modules/footer.module", label="Footer"%}{% end_module_block %}
 {% endblock body %}

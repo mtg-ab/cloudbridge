@@ -1,0 +1,48 @@
+<div id="{{module.module_identity}}" class="contain-blog-post-cta {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    {% for item in module.items %}
+    <div class="bloc">
+        {% if item.image %}
+        <div class="bloc-img">
+            {% if item.image.src %}
+                <figure class="figure">
+                    <img src="{{ item.image.src }}" loading="lazy" alt="{{ item.image.alt }}" />
+                </figure>
+            {% else %}
+                <figure class="figure">
+                    <img loading="lazy" src="https://via.placeholder.com/600x600/919388/ffffff.png?text=600x600">
+                </figure>
+            {% endif %}
+        </div>
+        {% endif %}
+        <div class="bloc-txt">
+            {% if item.subtitle %}
+                <p class="subtitle">{{ item.subtitle }}</p>
+            {% endif %}
+            {% if item.title %}
+                <h3>{{ item.title }}</h3>
+            {% endif %}
+            <div class="row-btn">
+                {% if item.button_url.href %}
+                    <div class="row-btns">
+                        <a href="{{ item.button_url.href }}" class="btn primary"><span>{{ item.button_text }}</span></a>
+                    </div>
+                {% else if item.cta_field %}
+                    <div class="row-btns">
+                        {{ item.cta_field }}
+                    </div>
+                {% endif %}
+                {% if item.button_url_2.href %}
+                    <div class="row-btns">
+                        <a href="{{ item.button_url_2.href }}" class="btn secondary"><span>{{ item.button_text_2 }}</span></a>
+                    </div>
+                {% else if item.cta_field_2 %}
+                    <div class="row-btns">
+                        {{ item.cta_field }}
+                    </div>
+                {% endif %}
+            </div>
+            
+        </div>
+    </div>
+    {% endfor %}
+</div>

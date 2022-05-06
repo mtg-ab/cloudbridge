@@ -10,116 +10,59 @@
 <main class="blog-listing">
   {% if blog_author %}
   {# Author Block Listing - You can manage it here #}
-  <div class="section hero-section">
+  <section class="hero-section-blog">
+    <div id="contain-canvas"></div>
     <div class="container">
-      <div class="row">
-        <div class="col-md-8 offset-md-2">
-          <h1 class="mb-2 text-center">{{ blog_author.display_name }}</h1>
-          <p class="text-center">{{ blog_author.bio }}</p>
+      <div class="bloc-title">
+        <div>
+          <h1>{{ blog_author.display_name }}</h1>
+          <p>{{ blog_author.bio }}</p>
         </div>
-      </div>
+      </div>          
     </div>
-  </div>
+  </section>
   {% elif tag %}
-  {# Tag Listing - You can manage it here #}
-    <!--Classic Listing - You can manage it here -->
-    <section class="hero-section-blog">
+    {% module_block module "blog-listing-hero" path="../../modules/blog-listing-hero.module", label="Blog listing hero"%}{% end_module_block %}
+  {% else %}
+    {% module_block module "blog-listing-hero" path="../../modules/blog-listing-hero.module", label="Blog listing hero"%}{% end_module_block %}
+  {% endif %}
+  <section class="listing-posts {% if tag == "case-studies" %}listing-posts-tags{% endif %}">
+    {% if tag == "case-studies" %}
+    {% else %}
       <div class="container">
-        <div class="bloc-title">
-          <div>
-            <h1>{{ page_meta.html_title|split(' | ')|last }}</h1>
-            <p>Find out the latest news, product information, events and many other things form Cloudbridge.</p>
-          </div>
-          <svg width="256" height="117" viewBox="0 0 256 117" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M-4.02033e-06 1.13086L235 1.13087C246.046 1.13087 255 10.0852 255 21.1309L255 116.131" stroke="white" stroke-opacity="0.6" stroke-width="0.5"/>
-            <path d="M-4.02033e-06 1.13086L235 1.13087C246.046 1.13087 255 10.0852 255 21.1309L255 116.131" id="line2" stroke="white"/>
-          </svg>
-        </div>
-        <div class="bloc-post">
-          {% set rec_posts = blog_recent_posts("default", 1) %}
-          {% for rec_post in rec_posts %}
-            <div class="bloc-txt">
-              <div class="infos">
-                <p>{% for item in rec_post.topic_list %}<span>{{ item }}</span>{% endfor %}</p>
-                <p>{% if rec_post.post_body|wordcount > 0 %}{{rec_post.post_body|wordcount|float|divide(300)|round(0, 'ceil')}}{% else %}1{% endif %}min read</p>
-              </div>
-              <p class="title">{{ rec_post.name }}</p>
-            </div>
-            <a href="{{ rec_post.absolute_url }}" class="bloc-img">
-              <figure class="position-relative h-100 mr-n1 mb-0 overflow-hidden">
-                <img class="fit-cover" loading="lazy" src="{{ rec_post.featured_image }}" alt="{{ rec_post.featured_image_alt }}">
-              </figure>
+        {% set my_tags = blog_tags("default", 250) %}
+        <div class="bloc-list-tags">
+          <a href="" class="tag selected">
+            <span class="number">01</span>
+            <span class="item">All articles</span>
+          </a>
+          {% set i = 1 %}
+          {% for item in my_tags %}
+            {% set i = i + 1 %}
+            <a href="{{ blog_tag_url(group.id, item.slug) }}" class="tag">
+              <span class="number">{% if i < 10 %}0{% endif %}{{ i }}</span>
+              <span class="item">{{ item }}</span>
             </a>
           {% endfor %}
         </div>
       </div>
-    </section>
-  {% else %}
-  <!--Classic Listing - You can manage it here -->
-  <section class="hero-section-blog">
-    <div class="container">
-      <div class="bloc-title">
-        <div>
-          <h1>{{ page_meta.html_title|split(' | ')|last }}</h1>
-          <p>Find out the latest news, product information, events and many other things form Cloudbridge.</p>
-        </div>
-        <svg width="256" height="117" viewBox="0 0 256 117" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M-4.02033e-06 1.13086L235 1.13087C246.046 1.13087 255 10.0852 255 21.1309L255 116.131" stroke="white" stroke-opacity="0.6" stroke-width="0.5"/>
-          <path d="M-4.02033e-06 1.13086L235 1.13087C246.046 1.13087 255 10.0852 255 21.1309L255 116.131" id="line2" stroke="white"/>
-        </svg>
-      </div>
-      <div class="bloc-post">
-        {% set rec_posts = blog_recent_posts("default", 1) %}
-        {% for rec_post in rec_posts %}
-          <div class="bloc-txt">
-            <div class="infos">
-              <p>{% for item in rec_post.topic_list %}<span>{{ item }}</span>{% endfor %}</p>
-              <p>{% if rec_post.post_body|wordcount > 0 %}{{rec_post.post_body|wordcount|float|divide(300)|round(0, 'ceil')}}{% else %}1{% endif %}min read</p>
-            </div>
-            <p class="title">{{ rec_post.name }}</p>
-          </div>
-          <a href="{{ rec_post.absolute_url }}" class="bloc-img">
-            <figure class="position-relative h-100 mr-n1 mb-0 overflow-hidden">
-              <img class="fit-cover" loading="lazy" src="{{ rec_post.featured_image }}" alt="{{ rec_post.featured_image_alt }}">
-            </figure>
-          </a>
-        {% endfor %}
-      </div>
-    </div>
-  </section>
-  {% endif %}
-  <section class="listing-posts">
-    <div class="container">
-      {% set my_tags = blog_tags("default", 250) %}
-      <div class="bloc-list-tags">
-        <a href="" class="tag selected">
-          <span class="number">01</span>
-          <span class="item">All articles</span>
-        </a>
-        {% set i = 1 %}
-        {% for item in my_tags %}
-          {% set i = i + 1 %}
-          <a href="{{ blog_tag_url(group.id, item.slug) }}" class="tag">
-            <span class="number">{% if i < 10 %}0{% endif %}{{ i }}</span>
-            <span class="item">{{ item }}</span>
-          </a>
-        {% endfor %}
-      </div>
-    </div>
+    {% endif %}
     <div class="container">
       {% for post in contents %}
         <div class="bloc">
           <a class="bloc-img" href="{{ post.absolute_url }}">
             <img class="fit-cover" src="{{ post.featured_image }}" alt="{{ post.name }}">
           </a>
-          <div class="bloc-tags">
-            {% for tag in post.tag_list %}
-            <a class="tag" href="{{ blog_tag_url(group.id, tag.slug) }}">{{
-              tag.name
-              }}</a>
-            {% if not loop.last %}{% endif %}
-            {% endfor %}
-          </div>
+          {% if tag != "case-studies" %}
+            <div class="bloc-tags">
+              {% for tag in post.tag_list %}
+              <a class="tag" href="{{ blog_tag_url(group.id, tag.slug) }}">{{
+                tag.name
+                }}</a>
+              {% if not loop.last %}{% endif %}
+              {% endfor %}
+            </div>
+          {% endif %}
           <h3>
             <a class="text-decoration-none" href="{{ post.absolute_url }}">{{ post.name }}</a>
           </h3>

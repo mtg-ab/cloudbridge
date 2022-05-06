@@ -1,0 +1,77 @@
+main.subscription-preferences{
+    section.subscription-preferences{
+        padding:250px 0px;
+        position: relative;
+        div#contain-canvas{
+            position: absolute;
+            width:100%;
+            height:100%;
+            top:0px;
+            left:0px;
+            @media(max-width:$size4){
+                height:100%;
+            }
+        }
+        div.container{
+            position: relative;
+            z-index:2;
+            color:#fff;
+            h1{
+                line-height:95px;
+            }
+            h1,p{
+                color:#fff;
+            }
+            h2{
+                color:#fff;
+            }
+            form{
+                display:flex;
+                flex-direction:column;
+                max-width:800px;
+                div.item,div.subscribe-options{
+                    margin-top:20px;
+                }
+                input[type="checkbox"]{
+                    appearance:none;
+                    width:20px;
+                    height:20px;
+                    margin:0px 5px 0px 0px;
+                    border:1px solid #fff;
+                    position: relative;
+                    &:checked{
+                        &:after{
+                            content:'';
+                            position: absolute;
+                            display: block;
+                            left: 6px;
+                            top: 4px;
+                            width: 5px;
+                            height: 9px;
+                            border: solid #fff;
+                            border-width: 0 2px 2px 0;
+                            transform: rotate(45deg);
+                        }
+                    }
+                   
+                }
+                input[type="submit"]{
+                    height: 48px;
+                    width: 100%;
+                    margin-top: 50px;
+                    background-color: $color2;
+                    border-radius: 5px;
+                    color: #fff;
+                    padding: 14px 0;
+                    margin-top:25px;
+                    border:none;
+                    max-width:300px;
+                    transition: 0.5s;
+                    &:hover{
+                        background-color: $color1;
+                    }
+                }
+            }
+        }
+    }
+}

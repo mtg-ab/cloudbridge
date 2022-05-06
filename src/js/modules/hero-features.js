@@ -11,19 +11,8 @@ jQuery( document ).ready(function() {
         var tl = gsap.timeline();
         tl.to("section.hero-features div.bloc-title p",0.7, { opacity:1,ease: "power2.inOut",delay:0 });
         tl.to("section.hero-features div.bloc-title div.row-btns",0.7, { opacity:1,y:0,ease: "power2.inOut",delay:-0.5 });
+        tl.to("section.hero-features div.blocs div.bloc img",0.75, { opacity:1,x:0,stagger:0.2,delay:0,ease: "power2.inOut" });
 
-        //INIT TIMELINE
-        var tl = gsap.timeline({
-            scrollTrigger: {
-              trigger: "section.hero-features div.container-slide",
-              start:"-=450",
-            }
-        });
-        //INIT TIMELINE
-
-        //ANIM TIMELINE
-        tl.to("section.hero-features div.blocs",0.75, { opacity:1,x:0,stagger:0.2,ease: "power2.inOut" });
-        //ANIM TIMELINE
 
         var Flickity = require('flickity');
 

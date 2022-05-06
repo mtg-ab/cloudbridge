@@ -1,14 +1,12 @@
-import * as THREE from 'three';
-
 if(document.getElementById("contain-canvas")){
-
+    /*
     const camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.001, 1000 );
     camera.position.set(0,0,1);
-
+    
     const scene = new THREE.Scene();
 
     //INIT SHADERS
-    const vertex = `
+    var vertex = `
     uniform float time;
         varying vec2 vUv;
         varying vec3 vPosition;
@@ -21,7 +19,7 @@ if(document.getElementById("contain-canvas")){
         }
     `;
 
-    const fragment = `uniform float time;
+    var fragment = `uniform float time;
     uniform float progress;
     uniform sampler2D texture1;
     uniform vec4 resolution;
@@ -87,8 +85,8 @@ if(document.getElementById("contain-canvas")){
         gl_FragColor = vec4(vec3(secondBaseColor),1.);
 
     }`;
-
-    const material  = new THREE.ShaderMaterial( {
+    
+    var material  = new THREE.ShaderMaterial( {
         side:THREE.DoubleSide,
         uniforms: { 
             time: { // float initialized to 0
@@ -103,15 +101,15 @@ if(document.getElementById("contain-canvas")){
         fragmentShader: fragment
     });
 
-    const geometry = new THREE.SphereBufferGeometry( 1.5, 32, 32 );
+    var geometry = new THREE.SphereBufferGeometry( 1.5, 32, 32 );
 
-    const plane = new THREE.Mesh( geometry, material );
+    var plane = new THREE.Mesh( geometry, material );
     plane.rotation.z -= 200;
     scene.add( plane );
 
-    const height = document.querySelector('#contain-canvas').offsetHeight
+    var height = document.querySelector('#contain-canvas').offsetHeight
 
-    const renderer = new THREE.WebGLRenderer( );
+    var renderer = new THREE.WebGLRenderer( );
     renderer.setSize( window.innerWidth, height );
     renderer.setAnimationLoop( render );
     document.getElementById("contain-canvas").appendChild( renderer.domElement );
@@ -125,6 +123,7 @@ if(document.getElementById("contain-canvas")){
     }
 
     //RESIZE
+    
     window.addEventListener( 'resize', onWindowResize, false );
 
     function onWindowResize(){
@@ -136,7 +135,13 @@ if(document.getElementById("contain-canvas")){
         renderer.setSize( window.innerWidth, height );
 
     }
+
+    */
+    
 }
+
+
+
 
 jQuery( document ).ready(function() {
     if(jQuery("section").hasClass("hero-section")){

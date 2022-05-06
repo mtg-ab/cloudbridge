@@ -6,9 +6,16 @@
 {% extends "../layouts/base.html" %}
 
 {% block body %}
-<div class="content-wrapper">
-  <div class="systems-page">
-    {% module "backup_unsubscribe" path="@hubspot/email_simple_subscription" %}
-  </div>
-</div>
+{% module_block module "header" path="../../modules/header.module", label="Header"%}{% end_module_block %}
+
+<main class="unsubscribe">
+  <section class="unsubscribe">
+    <div id="contain-canvas"></div>
+    <div class="container">
+      {% module "backup_unsubscribe" path="@hubspot/email_simple_subscription" %}
+    </div>
+  </section>
+</main>
+
+{% module_block module "footer" path="../../modules/footer.module", label="Footer"%}{% end_module_block %}
 {% endblock body %}

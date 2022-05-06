@@ -26,9 +26,9 @@ jQuery( document ).ready(function() {
                             
                             jQuery( "section.latest-news div.steps i" ).css("width",""+num+"%")
                             if(id < 10){
-                                jQuery("span.actual").html("0"+id+"")
+                                jQuery("section.latest-news span.actual").html("0"+id+"")
                             }else{
-                                jQuery("span.actual").html(""+id+"")
+                                jQuery("section.latest-news span.actual").html(""+id+"")
                             }
                         }
                     })

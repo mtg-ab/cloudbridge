@@ -90,12 +90,12 @@
       &:before{
         transform: translateY(-50%) translateX(0px);
         opacity:1;
-        transition: 0.35s;
+        transition: all .5s cubic-bezier(.23,1,.32,1) .2s;
       }
       &:after{
         transform: translateY(-20px) translateX(10px);
         opacity:0;
-        transition: 0.35s;
+        transition: all .5s cubic-bezier(.23,1,.32,1) .2s;
       }
     }
   }
@@ -158,12 +158,12 @@
       &:before{
         transform: translateY(-50%) translateX(0px);
         opacity:1;
-        transition: 0.35s;
+        transition: all .5s cubic-bezier(.23,1,.32,1) .2s;
       }
       &:after{
         transform: translateY(-20px) translateX(10px);
         opacity:0;
-        transition: 0.35s;
+        transition: all .5s cubic-bezier(.23,1,.32,1) .2s;
       }
     }
   }

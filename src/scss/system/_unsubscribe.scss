@@ -1,0 +1,72 @@
+main.unsubscribe{
+    section.unsubscribe{
+        padding:250px 0px;
+        position: relative;
+        div#contain-canvas{
+            position: absolute;
+            width:100%;
+            height:100%;
+            top:0px;
+            left:0px;
+            @media(max-width:$size4){
+                height:100%;
+            }
+        }
+        div.container{
+            position: relative;
+            z-index:2;
+            h1{
+                line-height:95px;
+            }
+            h1,h3,p{
+                color:#fff;
+            }
+            a.btn{
+                margin-top:30px;
+            }
+            form{
+                display:flex;
+                flex-direction:column;
+                max-width:800px;
+                div.item,div.subscribe-options{
+                    margin-top:20px;
+                }
+                input[type="email"]{
+                    appearance:none;
+                    margin:0px 5px 0px 0px;
+                    border:none;
+                    border-bottom:1px solid #fff;
+                    position: relative;
+                    background-color: transparent;
+                    color:#fff;
+                    margin-top:30px;
+                    &:focus{
+                        border:none;
+                        border-bottom:1px solid #fff;
+                        outline: none;
+                    }
+                    &::placeholder{
+                        color:#fff;
+                        opacity:1;
+                    }            
+                }
+                input[type="submit"]{
+                    height: 48px;
+                    width: 100%;
+                    margin-top: 50px;
+                    background-color: $color2;
+                    border-radius: 5px;
+                    color: #fff;
+                    padding: 14px 0;
+                    margin-top:25px;
+                    border:none;
+                    max-width:300px;
+                    transition: 0.5s;
+                    &:hover{
+                        background-color: $color1;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -6,12 +6,18 @@
 {% extends "../layouts/base.html" %}
 
 {% block body %}
-<div class="content-wrapper">
-  <div class="error-page" data-error="500">
-    <h1 class="error-page_heading">
-      Something isn't quite right
-    </h1>
-    <p>Sorry, an internal server error occurred. But have no fear, we're on the case!</p>
-  </div>
-</div>
+{% module_block module "header" path="../../modules/header.module", label="Header"%}{% end_module_block %}
+
+<main class="error-page">
+  <section class="error500-page">
+    <div id="contain-canvas"></div>
+    <div class="container">
+      <h1>Something isn't quite right</h1>
+      <p>Sorry, an internal server error occurred. But have no fear, we're on the case!</p>
+      <a class="btn primary white" href="/">Go Home</a>
+    </div>
+  </section>
+</main>
+
+{% module_block module "footer" path="../../modules/footer.module", label="Footer"%}{% end_module_block %}
 {% endblock body %}

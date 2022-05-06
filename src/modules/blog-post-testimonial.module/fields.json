@@ -67,73 +67,66 @@
         ]
     },
     {
-        "type": "group",
-        "name": "content_group",
-        "label": "Content Group",
-        "children": [
-            {
-                "name": "show_module",
-                "label": "Show module",
-                "sortable": false,
-                "required": false,
-                "locked": false,
-                "type": "boolean",
-                "default": false
-            },
-            {
-                "name": "text",
-                "label": "Text",
-                "required": false,
-                "locked": false,
-                "validation_regex": "",
-                "allow_new_line": false,
-                "show_emoji_picker": false,
-                "type": "richtext",
-                "help_text" : "Text",
-                "default": "<p>Ultrices ac feugiat quam metus. Vestibulum montes, leo nisl, nunc dignissim nisl adipiscing nibh eu. Auctor porttitor malesuada massa sed massa ac feugiat nunc nulla.</p>"
-            },
-            {
-                "name": "nom",
-                "label": "Name",
-                "required": false,
-                "locked": false,
-                "validation_regex": "",
-                "allow_new_line": false,
-                "show_emoji_picker": false,
-                "type": "text",
-                "help_text" : "Name",
-                "default": "Name"
-            },
-            {
-                "name": "job",
-                "label": "Job",
-                "required": false,
-                "locked": false,
-                "validation_regex": "",
-                "allow_new_line": false,
-                "show_emoji_picker": false,
-                "type": "text",
-                "help_text" : "Job",
-                "default": "Job"
-            },
-            {
-                "name": "logo",
-                "label": "Logo",
-                "required": false,
-                "locked": false,
-                "inline_help_text": "",
-                "help_text": "",
-                "responsive": true,
-                "resizable": true,
-                "show_loading": false,
-                "type": "image",
-                "default": {
-                    "size_type": "auto",
-                    "src": "https://via.placeholder.com/600",
-                    "alt": null,
-                    "loading": "disabled"
-                }
-            }
-        ]
+        "name": "show_module",
+        "label": "Show module",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "default": false
+    },
+    {
+        "name": "text",
+        "label": "Text",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "richtext",
+        "help_text" : "Text",
+        "default": "<p>Ultrices ac feugiat quam metus. Vestibulum montes, leo nisl, nunc dignissim nisl adipiscing nibh eu. Auctor porttitor malesuada massa sed massa ac feugiat nunc nulla.</p>"
+    },
+    {
+        "name": "nom",
+        "label": "Name",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "help_text" : "Name",
+        "default": "Name"
+    },
+    {
+        "name": "job",
+        "label": "Job",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "help_text" : "Job",
+        "default": "Job"
+    },
+    {
+        "name": "logo",
+        "label": "Logo",
+        "required": false,
+        "locked": false,
+        "inline_help_text": "",
+        "help_text": "",
+        "responsive": true,
+        "resizable": true,
+        "show_loading": false,
+        "type": "image",
+        "default": {
+            "size_type": "auto",
+            "src": "https://via.placeholder.com/600",
+            "alt": null,
+            "loading": "disabled"
+        }
     }
 ]

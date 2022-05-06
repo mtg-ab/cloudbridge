@@ -13,18 +13,19 @@ var Sticky = require('sticky-js');
 
 var Flickity = require('flickity');
 var Flickity = require('flickity-fade');
-
-
 import Splitting from "splitting";
+import { gsap } from "gsap";
+//import * as THREE from 'three';
+
 
 
 Splitting({
-    target: "h2, [data-splitting], h1",
+    target: "h2, [data-splitting], h1, div.testimonial p",
     by: "chars",
     key: null
 }); 
 
-import { gsap } from "gsap";
+
 const { ScrollSmoother } = require('gsap/dist/ScrollSmoother.js');
 const { ScrollTrigger } = require('gsap/dist/ScrollTrigger');
 gsap.registerPlugin(ScrollTrigger,ScrollSmoother);
@@ -39,6 +40,9 @@ jQuery( document ).ready(function() {
     });
     
 })
+
+
+
 
 
 

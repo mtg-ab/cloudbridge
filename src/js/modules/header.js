@@ -8,14 +8,20 @@ jQuery( document ).ready(function() {
         else sticky.removeClass('sticky');
     });
 
-    jQuery(window).on('wheel', function(event){
-        if(event.originalEvent.deltaY < 0){
-            jQuery('header').addClass('active')
-        }
-        else {
-            jQuery('header').removeClass('active')
-        }
-    });
+
+    if (window.matchMedia("(min-width: 768px)").matches) {
+
+        jQuery(window).on('wheel', function(event){
+            if(event.originalEvent.deltaY < 0){
+                jQuery('header').addClass('active')
+            }
+            else {
+                jQuery('header').removeClass('active')
+            }
+        });
+
+    }
+    
 
     jQuery('header div.burger-menu').click(function(){
 

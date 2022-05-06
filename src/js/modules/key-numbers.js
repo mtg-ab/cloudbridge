@@ -40,9 +40,13 @@ jQuery( document ).ready(function() {
             if (!flickity_is_animating) {    
                 var direction = (Math.abs(e.deltaX) > Math.abs(e.deltaY)) ? e.deltaX : e.deltaY;
                 if (direction > 0) {
-                    flickity_instance.next();
+                    if (direction > 1) {
+                        flickity_instance.next();
+                    }
                 } else {
-                    flickity_instance.previous();
+                    if (direction < -1) {
+                        flickity_instance.previous();
+                    }
                 }
             }
         }
@@ -51,9 +55,13 @@ jQuery( document ).ready(function() {
             if (!flickity_is_animating) {    
                 var direction = (Math.abs(e.deltaX) > Math.abs(e.deltaY)) ? e.deltaX : e.deltaY;
                 if (direction > 0) {
-                    flickity_instance.next();
+                    if (direction > 1) {
+                        flickity_instance.next();
+                    }
                 } else {
-                    flickity_instance.previous();
+                    if (direction < -1) {
+                        flickity_instance.previous();
+                    }
                 }
             }
         }
@@ -121,7 +129,7 @@ jQuery( document ).ready(function() {
           
         
         var h = jQuery("section.key-numbers").offset().top;
-        var wh = jQuery("section.key-numbers div.number").height();
+        var wh = jQuery("section.key-numbers div.number").height() + 300;
         var x = jQuery("section.key-numbers div.number").length;
         var wh = wh * x;
 

@@ -1,4 +1,5 @@
 jQuery( document ).ready(function() {
+    /*
     if(jQuery("section").hasClass("banner-cta")){
         var bannerH = jQuery("section.banner-cta").height();
         var bannerF = jQuery("footer").height();
@@ -6,4 +7,5 @@ jQuery( document ).ready(function() {
         jQuery("footer span.bg-color").css('height',''+h+'px')
 
     }
+    */
 })

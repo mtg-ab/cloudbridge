@@ -6,10 +6,12 @@
 {% extends "../layouts/base.html" %}
 
 {% block body %}
-<div class="content-wrapper">
-  <div class="systems-page">
+<section class="search-page content-wrapper">
+  <div class="container">
     <h1>Results for "{{ request.query_dict.term|escape }}"</h1>
-    {% module "search_results" path="@hubspot/search_results" %}
+    <div class="bloc-results-seach">
+      {% module "search_results" path="@hubspot/search_results" %}
+    </div>
   </div>
-</div>
+</section>
 {% endblock body %}

@@ -20,8 +20,11 @@ section.faq{
                 border-bottom: 1px solid rgba(#033C71,0.6);
                 padding:45px 0px 15px 0px;
                 transition: 0.5s;
+                opacity:0;
+                transform: translateY(30px);
                 &.hide{
-                    opacity:0.3;
+                    opacity:0.3 !important;
+                    
                 }
                 &.open{
                     padding:45px 0px 30px 0px;
