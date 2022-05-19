@@ -1,0 +1,162 @@
+[
+    {
+        "name": "module_identity",
+        "label": "Module ID",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text"
+    },
+    {
+        "type": "group",
+        "name": "content_style",
+        "label": "Content Style",
+        "children": [
+            {
+                "name": "section_type",
+                "label": "Section Type",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "display": "select",
+                "choices": [
+                    [
+                        "none",
+                        "None"
+                    ],
+                    [
+                        "sm",
+                        "Small"
+                    ],
+                    [
+                        "md",
+                        "Normal"
+                    ],
+                    [
+                        "lg",
+                        "Big"
+                    ],
+                    [
+                        "xl",
+                        "Giant"
+                    ]
+                ],
+                "type": "choice",
+                "default": "lg"
+            },
+            {
+                "name": "padding_bottom",
+                "label": "Padding Bottom",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "name": "padding_top",
+                "label": "Padding Top",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "type": "boolean",
+                "default": true
+            }
+        ]
+    },
+    {
+        "name": "title",
+        "label": "Title",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "richtext",
+        "help_text" : "",
+        "default": "<h2><strong>Latest news</strong> about CloudBridge</h2>"
+    },
+    {
+        "name": "subtitle",
+        "label": "Subtitle",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "help_text" : "",
+        "default": "News"
+    },
+    {
+        "name": "button_type",
+        "id":"button_type_id",
+        "label": "Button type",
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "inline_help_text": "",
+        "help_text": "",
+        "choices": [
+        [
+        "btn",
+        "Classic button"
+        ],
+        [
+        "cta",
+        "Hubspot Cta"
+        ]
+        ],
+        "type": "choice",
+        "placeholder": "",
+        "default": "btn" 
+    },
+    {
+        "name": "button_text",
+        "label": "Text button",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null,
+        "visibility": {
+            "controlling_field": "button_type_id",
+            "controlling_value_regex": "btn",
+            "operator": "EQUAL"
+        }
+    },
+    {
+        "name": "button_url",
+        "label": "URL button",
+        "required": false,
+        "locked": false,
+        "inline_help_text": "",
+        "help_text": "",
+        "supported_types": [
+        "EXTERNAL",
+        "CONTENT",
+        "FILE",
+        "EMAIL_ADDRESS",
+        "BLOG"
+        ],
+        "type": "url",
+        "default": {
+        "content_id": null,
+        "href": "",
+        "type": "EXTERNAL"},
+        "visibility": {
+            "controlling_field": "button_type_id",
+            "controlling_value_regex": "btn",
+            "operator": "EQUAL"
+        } 
+    }
+
+
+]

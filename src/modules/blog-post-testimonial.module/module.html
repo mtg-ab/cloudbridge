@@ -1,4 +1,5 @@
 {% if  module.show_module %}
+<div class="contain-bloc-testimonial-post">
     <div id="{{module.module_identity}}" class="bloc-testimonial-post {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
         <div class="text">
             {% inline_rich_text field="rich_text" value="{{ module.text }}" %}
@@ -15,11 +16,11 @@
             {% if module.logo.src %}
                 <div class="bloc-img">
                     <figure class="figure">
-                        <img class="img-fluid"
-                            src="{{ module.logo.src }}" width="{{ module.logo.width }}" height="{{ module.logo.height }}" loading="lazy" alt="{{ module.logo.alt }}" />
+                        <img src="{{ module.logo.src }}" width="{{ module.logo.width }}" height="{{ module.logo.height }}" loading="lazy" alt="{{ module.logo.alt }}" />
                     </figure>
                 </div>        
             {% endif %}
         </div>        
     </div>
+</div>
 {% endif %}

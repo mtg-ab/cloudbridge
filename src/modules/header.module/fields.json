@@ -75,6 +75,51 @@
                   "sponsored" : false,
                   "user_generated_content" : false
                 }
+            },
+            {
+                "name" : "submenu",
+                "label" : "Submenu",
+                "required" : false,
+                "locked" : false,
+                "occurrence" : {
+                  "min" : null,
+                  "max" : null,
+                  "default" : null
+                },
+                "children" : [
+                    {
+                        "name" : "title",
+                        "label" : "Title",
+                        "required" : false,
+                        "locked" : false,
+                        "validation_regex" : "",
+                        "allow_new_line" : false,
+                        "show_emoji_picker" : false,
+                        "type" : "text",
+                        "default" : ""
+                    },
+                    {
+                        "name" : "link",
+                        "label" : "Link",
+                        "required" : false,
+                        "locked" : false,
+                        "supported_types" : [ "EXTERNAL", "CONTENT" ],
+                        "type" : "link",
+                        "show_advanced_rel_options" : false,
+                        "default" : {
+                          "url" : {
+                            "content_id" : null,
+                            "type" : "CONTENT",
+                            "href" : ""
+                          },
+                          "open_in_new_tab" : false,
+                          "no_follow" : false,
+                          "sponsored" : false,
+                          "user_generated_content" : false
+                        }
+                    }
+                ],
+                "type" : "group"  
             }
         ],
         "type" : "group"  

@@ -1,20 +1,9 @@
 section.hero-landing{
-    background-image: url('https://25642218.fs1.hubspotusercontent-eu1.net/hubfs/25642218/bg-gradient.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color:$color1;
     padding-top:60px;
     position: relative;
-    margin-bottom:80px;
-    &:after{
-        display:block;
-        content:'';
-        height:140px;
-        position: absolute;
-        bottom:-2px;
-        width:100%;
-        background-color: #fff;
-        z-index:0;
-    }
+    padding-bottom:80px;
+    
     div.container{
         position: relative;
         z-index:1;
@@ -88,7 +77,9 @@ section.hero-landing{
                 min-height:560px;
                 @media(max-width:$size4){
                     width:100%;
+                    margin:0 auto;
                     margin-top:45px;
+                    
                 }
                 div.form-wrapper{
                     height:100%;
@@ -102,6 +93,7 @@ section.hero-landing{
                     height:100%;
                     border-radius: 10px;
                     padding-top:60px;
+                    min-height:450px;
                     div.page-center{
                         div.ms-form-steps{
                             display:flex;

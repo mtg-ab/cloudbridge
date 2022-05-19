@@ -67,15 +67,6 @@
         ]
     },
     {
-        "name": "show_module",
-        "label": "Show module",
-        "sortable": false,
-        "required": false,
-        "locked": false,
-        "type": "boolean",
-        "default": false
-    },
-    {
         "name" : "items",
         "label" : "Items",
         "required" : false,

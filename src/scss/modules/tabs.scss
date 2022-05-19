@@ -6,6 +6,9 @@ section.tabs{
         div.bloc-title{
             text-align: center;
             margin-bottom:80px;
+            max-width:800px;
+            margin:0 auto;
+            margin-bottom:50px;
             h2,p.subtitle{
                 text-align: center;
             }
@@ -24,7 +27,7 @@ section.tabs{
                 }
             }
             div.bloc{
-                max-width:150px;
+                max-width:120px;
                 margin-right:50px;
                 transition: 0.5s;
                 cursor:pointer;
@@ -111,6 +114,7 @@ section.tabs{
             position: relative;
             @media(max-width:$size4){
                 height:inherit;
+                margin-top:20px;
             }
             div.bloc{
                 visibility: hidden;
@@ -119,8 +123,9 @@ section.tabs{
                 top:0px;
                 left:0px;
                 transition: 0.5s;
+                width:100%;
                 @media(max-width:$size4){
-                    width:calc(100% - 20px);
+                    width:calc(100%);
                     display:none;
                     position: relative;
                 }
@@ -143,8 +148,13 @@ section.tabs{
                     div.bloc-img{
                         opacity:0;
                         transform: translateY(40px);
+                        height:355px;
+                        max-width:500px;
+                        width:100%;
                         figure{
                             margin-bottom:0px;
+                            width:100%;
+                            height:100%;
                             img{
                                 max-height:355px;
                             }
@@ -161,6 +171,9 @@ section.tabs{
                         h2{
                             margin-bottom:45px;
                             font-weight:600;
+                            @media(max-width:$size4){
+                                margin-bottom:30px;
+                            }
                         }
                         div.txt{
                             max-width:480px;
@@ -170,6 +183,9 @@ section.tabs{
                             color:$color2;
                             border-bottom:1px solid $color2;
                             margin-top:45px;
+                            @media(max-width:$size4){
+                                margin-top:30px;
+                            }
                             &:before,&:after{
                                 background-color: $color2;
                             }

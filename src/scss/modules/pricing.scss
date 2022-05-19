@@ -1,29 +1,12 @@
 
 section.pricing{
     position: relative;
-    background-image: url('https://25642218.fs1.hubspotusercontent-eu1.net/hubfs/25642218/bg-gradient.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color:$color1;
     position: relative;
-    div#contain-canvas{
-        position: absolute;
-        top:0px;
-        left:0px;
-        z-index:0;
-        width:100%;
-        height:100%;
-        canvas{
-            position: absolute;
-            top:0px;
-            left:0px;
-            width:100%;
-            height:100%;
-            z-index:0;
-        }
-    }
+
     &:after{
         display:block;
-        height:680px;
+        height:40%;
         width:100%;
         position: absolute;
         bottom:-1px;
@@ -57,7 +40,7 @@ section.pricing{
                 box-shadow: 0px 58px 80px rgba(0, 0, 0, 0.05), 0px 11.6px 45px rgba(0, 0, 0, 0.05);
                 border-radius: 10px;
                 margin-top:90px;
-                padding-bottom:35px;
+                padding-bottom:0px;
             }
             div.bloc-offers{
                 min-width:1170px;

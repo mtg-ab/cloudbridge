@@ -13,12 +13,12 @@
             <div class="bloc-txt">
                 {% inline_rich_text field="rich_text" value="{{ module.text }}" %}
                 <div class="row-btns">
-                    {% if module.button_url.href %}
+                    {% if module.button_text %}
                         <a href="{{ module.button_url.href }}" class="btn primary"><span>{{ module.button_text }}</span></a>
                     {% else %}
                         {{ module.cta_field }}
                     {% endif %}
-                    {% if module.second_button_url.href %}
+                    {% if module.second_button_text %}
                         <a href="{{ module.second_button_url.href }}" class="btn secondary">{{ module.second_button_text }}</a>
                     {% else %}
                         {{ module.cta_field }}
@@ -29,14 +29,14 @@
         <div class="hero-section-container__bloc">
             {% if module.image.src %}
             <figure class="figure">
-                <img class="img-fluid" src="{{ module.image.src }}" loading="lazy" alt="{{ module.image.alt }}" />
+                <img class="img-fluid" data-speed="0.85" src="{{ module.image.src }}" loading="lazy" alt="{{ module.image.alt }}" />
             </figure>
             {% endif %}
         </div>
     </div>
     {% if module.video %}
         <div class="bg-file">
-            <video muted preload="none" loop>            
+            <video muted preload="none" data-speed="0.85" loop>            
                 <source src="{{ module.video }}"  type="video/mp4">            
             </video>
         </div>

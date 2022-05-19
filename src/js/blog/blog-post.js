@@ -1,6 +1,8 @@
 jQuery( document ).ready(function() {
     if(jQuery("main").hasClass("single-post")){
-        
+        const { gsap } = require("gsap/dist/gsap");
+        const { ScrollTrigger } = require('gsap/dist/ScrollTrigger');
+        gsap.registerPlugin(ScrollTrigger);
         //ANCHOR
 
         jQuery('div.bloc-contain-post h2').each(function(index) {
@@ -10,6 +12,21 @@ jQuery( document ).ready(function() {
             
             
         });
+
+        if(jQuery("div").hasClass("bloc-case-study")){
+
+            var wh = jQuery("section.contain-post div.bloc-case-study").height() - 40;
+
+            ScrollTrigger.create({
+                trigger: "section.contain-post div.bloc-case-study div.bloc",
+                pin: true,
+                start: 'top 70px',
+                scrub:1,
+                end: () =>  '+='+wh+'',
+            })
+
+            
+        }
 
         if(jQuery('div.bloc-anchor-post ul li').length < 1){
             jQuery('div.bloc-anchor-post').remove();

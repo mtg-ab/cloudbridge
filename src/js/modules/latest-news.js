@@ -13,6 +13,7 @@ jQuery( document ).ready(function() {
             fade:true,
             prevNextButtons: false,
             autoPlay: 4500,
+            draggable:false,
             on:{
                 change: function( index ) {
                     var id = index;

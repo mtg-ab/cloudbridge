@@ -30,6 +30,7 @@ section.our-client{
         }
     }
     div.container{
+        
         padding:0px 120px 0px 120px;
         border-radius: 5px;
         @media(max-width:1260px){
@@ -68,6 +69,9 @@ section.our-client{
             margin-top:60px;
             flex-wrap: wrap;
             flex-grow:2;
+            @media(max-width:$size4){
+                margin-top:30px;
+            }
             div.bloc{
                 max-width:340px;
                 margin-right:95px;
@@ -75,11 +79,12 @@ section.our-client{
                 @media(max-width:$size4){
                     max-width:calc(100%);
                     margin-right:0px;
+                    margin-bottom:40px;
                 }
                 figure{
                     margin-bottom:0px;
                     img{
-                        max-height:25px;
+                        max-height:40px;
                     }
                 }
                 p{

@@ -1,0 +1,32 @@
+<div class="bloc {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    {% if module.logo %}
+        <div>
+        <div class="contain-logo-case-study">
+            <img src="{{ module.logo.src }}" loading="lazy" alt="{{ module.logo.alt }}">
+        </div>
+        </div>
+    {% endif %}
+    {% if module.industry %}
+        <p class="title">Industry</p>
+        <p>{{ module.industry }}</p>
+    {% endif %}
+    {% if module.employees %}
+        <p class="title">Employees</p>
+        <p>{{ module.employees }}</p>
+    {% endif %}
+    {% if module.hq %}
+        <p class="title">HQ</p>
+        <p>{{ module.hq }}</p>
+    {% endif %}
+    {% if module.website.href %}
+        <p class="title">Website</p>
+        <a href="{{ module.website.href }}" target="_blank" class="btn secondary blue" rel="noopener">Visit the website</a>
+    {% endif %}
+    {% if module.product_service %}
+        <p class="title">PRODUCT & SERVICES USED</p>
+        <p>{{ module.product_service }}</p>
+    {% endif %}
+    {% if module.case_study %}
+        <a href="{{ module.case_study }}" target="_blank" rel="noopener" class="btn primary blue">Download case study</a>
+    {% endif %}
+</div>

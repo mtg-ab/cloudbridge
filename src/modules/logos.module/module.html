@@ -4,6 +4,11 @@
             <p class="subtitle">{{ module.subtitle }}</p>
             {% inline_rich_text field="rich_text" value="{{ module.title }}" %}
             {% inline_rich_text field="rich_text" value="{{ module.text }}" %}
+            {% if module.button_url.href %}
+                <a href="{{ module.button_url.href }}" class="btn primary"><span>{{ module.button_text }}</span></a>
+            {% else %}
+                {{ module.cta_field }}
+            {% endif %}
         </div>
         <div class="bloc-logos">
             <div class="bloc-line bloc-line-1">

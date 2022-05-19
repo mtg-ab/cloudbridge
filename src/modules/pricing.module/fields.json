@@ -96,7 +96,7 @@
         "required" : false,
         "locked" : false,
         "occurrence" : {
-          "min" : 1,
+          "min" : null,
           "max" : 4,
           "default" : null
         },

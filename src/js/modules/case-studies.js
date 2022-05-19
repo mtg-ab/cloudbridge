@@ -54,13 +54,19 @@ jQuery( document ).ready(function() {
         var Flickity = require('flickity');
         require('flickity-fade');
 
+        if(jQuery('section.testimonials div.bloc-testimonials div.bloc').length > 1){
+            var button = true
+        }else{
+            var button = false
+        }
+
         var flkty = new Flickity( 'section.case-studies div.slider', {
             wrapAround: true,
             pageDots: false,
             fade:true,
             draggable:false,
             autoPlay: false,
-            prevNextButtons: false,
+            prevNextButtons: button,
             on:{
                 change: function( index ) {
                     var id = index;

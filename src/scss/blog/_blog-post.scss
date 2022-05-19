@@ -1,8 +1,17 @@
 main.single-post{
+  &.single-case-studies{
+    section.single-post-hero{
+      padding-bottom:0px;
+      margin-bottom:100px;
+      &:after{
+        display:none;
+      }
+    }
+  }
   section.single-post-hero{
     position: relative;
     padding-top:200px;
-    padding-bottom:60px;
+    //padding-bottom:60px;
     background-color: $color1;
     @media(max-width:$size4){
       margin-bottom:45px;
@@ -20,13 +29,34 @@ main.single-post{
         display:none;
       }
     }
-    div#contain-canvas{
-      position: absolute;
+    div.bloc-img-case-study{
       width:100%;
-      height:815px;
-      top:0px;
+      height: 100%;
+      overflow: hidden;
+      position: absolute;
       left:0px;
-      @media(max-width:$size4){
+      top:0px;
+      figure{
+        display:block;
+        width:100%;
+        height:100%;
+        img{
+          display:block;
+          width:120%;
+          height:120%;
+          object-position: center;
+          object-fit: cover;
+          top:-10%;
+        }
+      }
+      &:after{
+        display: block;
+        content:'';
+        position: absolute;
+        left:0px;
+        top:0px;
+        background-color: rgba($color1,0.85);
+        width:100%;
         height:100%;
       }
     }
@@ -63,13 +93,26 @@ main.single-post{
           }
           div{
             margin-right:80px;
+            @media(max-width:$size4){
+              margin-right:40px;
+            }
             p.title{
-              color: rgba(255, 255, 255, 0.3);
+              color: rgba(255, 255, 255, 0.63);
+              font-weight:bold;
             }
             p,a{
               color:#fff;
-              opacity:0.8;
+              opacity:1;
               text-decoration: none;
+            }
+            div.contain-logo-case-study{
+              height:100%;
+              display:flex;
+              align-items: flex-end;
+              img{
+                max-width:195px;
+                max-height:45px;
+              }
             }
           }
         }
@@ -172,6 +215,77 @@ main.single-post{
     margin-bottom:150px;
     div.container{
       max-width:730px;
+      &.bloc-case-studies{
+        max-width:1020px;
+        display:flex;
+        justify-content: space-between;
+        @media(max-width:$size4){
+          flex-direction:column;
+        }
+        div.bloc-case-study{
+          max-width:280px;
+          width:100%;
+          padding:0px 50px 45px 0px;
+          background-color: #fff;
+          border-right:1px solid rgba($color1,0.1);
+          margin-right:75px;
+          position: relative;
+          @media(max-width:$size4){
+            max-width:100%;
+            border:none;
+            margin-right:0px;
+            order:2;
+          }
+          div.bloc{
+            margin-top:30px;
+            div.contain-logo-case-study{
+              width:100%;
+              margin-bottom:30px;
+              img{
+                max-width:170px;
+                max-height:78px;
+              }
+            }
+            &.active{
+              position: fixed;
+            }
+            p.title{
+              font-weight:bold;
+              margin-top:20px;
+              font-size:18px;
+              line-height:20px;
+              color:$color1;
+              &:nth-child(1){
+                margin-top:0px;
+              }
+            }
+            a{
+              color:$color1;
+              margin-bottom:20px;
+              display: inline-block;
+              margin-top:3px;
+              &.btn{
+                margin-top:25px;
+                color:#fff;
+                &.secondary{
+                  color:$color1;
+                  margin-top:3px;
+                }
+                &:hover{
+                  color:$color1;
+                }
+              }
+            }
+          }
+        }
+        div.bloc-post{
+          width:100%;
+          @media(max-width:$size4){
+            order:1;
+          }
+        }
+      }
+      
       div.bloc-anchor-post{
         border-top:1px solid rgba(2, 45, 84, 0.05);
         border-bottom:1px solid rgba(2, 45, 84, 0.05);
@@ -210,47 +324,12 @@ main.single-post{
           padding:20px 0px;
           width:100% !important;
         }
-        div.bloc-testimonial-post{
-          div.text{
-            font-weight: 500;
-            font-size: 25px;
-            line-height: 35px;
-            border-bottom: 1px solid rgba(#022D54,0.2);
-            padding-bottom:20px;
-            margin-bottom:20px;
-          }
-          div.infos{
-            display:flex;
-            justify-content: space-between;
-            align-items:center;
-            @media(max-width:$size4){
-              flex-direction:column;
-              align-items:flex-start;
-            }
-            div.bloc-txt{
-              display: flex;
-              @media(max-width:$size4){
-                margin-bottom:6px;
-              }
-              p{
-                color: #000000;
-                &.name{
-                  font-weight:bold;
-                }
-              }
-            }
-            div.bloc-img{
-              figure{
-                img{
-                  max-width:110px;
-                  max-height:35px;
-                  padding:0px;
-                }
-              }
-            }
-          }
+        a{
+          color:$color2;
+          text-decoration: underline;
         }
       }
+      
       div.bloc-author{
         padding-top:34px;
         border-top: 1px solid rgba(16, 22, 35, 0.5);

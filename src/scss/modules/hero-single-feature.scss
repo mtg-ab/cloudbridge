@@ -25,9 +25,10 @@ section.hero-single-feature{
         display:flex;
         justify-content: space-between;
         position: relative;
-        padding-bottom:263px;
+        padding-bottom:260px;
         @media(max-width:$size4){
            flex-direction: column;
+           padding-top:170px;
            padding-bottom:50px;
         }
         div.bloc-title{
@@ -67,15 +68,23 @@ section.hero-single-feature{
         div.bloc-img{
             max-width:500px;
             padding-top:80px;
+            max-height:470px;
             opacity:0;
             transform: translateY(0px);
             @media(max-width:$size4){
                 padding-top:40px;
-             }
+            }
+            figure{
+                margin:0px;
+                height:100%;
+                img{
+                    height:100%;
+                }
+            }
         }
         svg{
             position: absolute;
-            left:45%;
+            left:37%;
             transform: translateX(-50%);
             bottom:110px;
             @media(max-width:$size4){

@@ -24,6 +24,9 @@ section.hero-features{
         position: relative;
         padding-top:240px;
         max-width:965px;
+        @media(max-width:$size4){
+            padding-top:170px;
+        }
         div.bloc-title{
             padding-bottom:5px;
             h1{
@@ -32,8 +35,8 @@ section.hero-features{
                 line-height:93px;
                 margin-bottom:30px;
                 @media(max-width:$size4){
-                    font-size:55px;
-                    line-height:60px;
+                    font-size:45px;
+                    line-height:50px;
                 }
                 strong{
                     display: block;
@@ -96,7 +99,7 @@ section.hero-features{
                 width:100%;
                 mask-image:linear-gradient(90deg,transparent,#000 80px,#000 90%,transparent);
                 -webkit-mask-image:linear-gradient(90deg,transparent,#000 80px,#000 90%,transparent);
-                opacity:0;
+                opacity:1;
                 div.flickity-viewport{
                     width:100%;
                     div.flickity-slider{
@@ -104,17 +107,20 @@ section.hero-features{
                     }
                 }
                 div.bloc{
-                    height:50px;
-                    margin:0px 22px;
+                    margin:0px 42px;
                     display:flex;
                     align-items: center;
                     justify-content:center;
-                    width:200px;
                     opacity:0.5;
+                    height:40px;
                     img{
-                        max-width:100%;
-                        max-height:100%;
-                        opacity:0;
+                        max-width:140px;
+                        max-height:30px;
+                        opacity:1;
+                        @media(max-width:$size4){
+                            max-height:30px;
+                            max-width:130px;
+                        }
                     }
                 }
             }

@@ -1,7 +1,7 @@
 {
     "css_assets": [],
     "external_js": [],
-    "global": false,
+    "global": true,
     "help_text": "",
     "label": "Tabs",
     "host_template_types": ["PAGE"],

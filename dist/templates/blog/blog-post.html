@@ -7,16 +7,24 @@
 {% block body %}
 {% module_block module "header" path="../../modules/header.module", label="Header"%}{% end_module_block %}
 
-<main class="single-post">
+<main class="single-post {% if content.topic_list|map('name')== '[Case studies]' %}single-case-studies{% endif %}">
   <section class="single-post-hero">
-    <div id="contain-canvas"></div>
+    {% if content.topic_list|map('name') == '[Case studies]' %}
+      {% if content.featured_image %}
+        <div class="bloc-img-case-study">
+          <figure class="position-relative h-100 mr-n1 mb-0 overflow-hidden">
+            <img class="fit-cover" data-speed="0.85" loading="lazy" src="{{ content.featured_image }}" alt="{{ content.featured_image_alt }}">
+          </figure>
+        </div>
+      {% endif %}
+    {% endif %}
     <div class="container">
       <div class="bloc-title">
         <h1>{{ content.name }}</h1>
         <div class="infos">
           {% if content.topic_list %}
             <div>
-              <p class="title">category</p>
+              <p class="title">topic</p>
               {% for tags in content.topic_list %}
                 <a href="{{ blog_tag_url(group.id, tags.slug) }}">{{tags|replace('-', ' ') }}</a>
               {% endfor %}
@@ -28,21 +36,26 @@
               <p>{{content.publish_date|datetimeformat('%d/%m/%Y')}}</p>
             </div>
           {% endif %}
-          {% if content.blog_post_author.display_name %}
-            <div>
-              <p class="title">author</p>
-              <p>{{content.blog_post_author.display_name}}</p>
+          {% if content.topic_list|map('name') != '[Case studies]' %}
+            {% if content.blog_post_author.display_name %}
+              <div>
+                <p class="title">author</p>
+                <p>{{content.blog_post_author.display_name}}</p>
+              </div>
+            {% endif %}
+          {% endif %}
+          
+        </div>
+        {% if content.topic_list|map('name')!= '[Case studies]' %}
+          {% if content.featured_image %}
+            <div class="bloc-img">
+              <figure class="position-relative h-100 mr-n1 mb-0 overflow-hidden">
+                <img class="fit-cover" src="{{ content.featured_image }}" loading="lazy" alt="{{ content.featured_image_alt }}">
+              </figure>
             </div>
           {% endif %}
-        </div>
-        {% if content.featured_image %}
-          <div class="bloc-img">
-            <figure class="position-relative h-100 mr-n1 mb-0 overflow-hidden">
-              <img class="fit-cover" src="{{ content.featured_image }}"
-                  alt="{{ content.featured_image_alt }}">
-            </figure>
-          </div>
         {% endif %}
+        {% if content.topic_list|map('name')!= '[Case studies]' %}
         <div class="bloc-breadcrumb">
           <nav>
             <ul itemscope itemtype="https://schema.org/BreadcrumbList"
@@ -63,48 +76,61 @@
             </ul>
           </nav>
         </div>
+        {% endif %}
       </div>
       <div class="bloc-txt">
         <svg width="256" height="117" viewBox="0 0 256 117" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M-4.02033e-06 1.13086L235 1.13087C246.046 1.13087 255 10.0852 255 21.1309L255 116.131" stroke="white" stroke-opacity="0.6" stroke-width="0.5"/>
           <path d="M-4.02033e-06 1.13086L235 1.13087C246.046 1.13087 255 10.0852 255 21.1309L255 116.131" id="line2" stroke="white" stroke-width="2"/>
         </svg>
-        <p>
-          Lectus sollicitudin quis tellus viverra rhoncus, vel. At ut tellus eget viverra gravida neque. Dignissim enim.
-          Adipiscing mattis lorem cursus quam molestie. At sodales eu est turpis sit. Felis potenti quis sem sed tincidunt viverra amet feugiat. In vel praesent.
-        </p>
+        {{ content.widgets.introduction.body.text }}
       </div>    
     </div>
   </section>
   <section class="contain-post">
-    <div class="container">
-      <div class="bloc-anchor-post">
-        <ul>
-          
-        </ul>
-      </div>
-      <div class="bloc-contain-post">
-        {{ content.post_body }}
-        {% module_block module "blog-post-testimonial" path="../../modules/blog-post-testimonial.module", label="Blog post testimonial"%}{% end_module_block %}
-        {% module_block module "blog-post-cta" path="../../modules/blog-post-cta.module", label="Blog post CTA"%}{% end_module_block %}
-
-      </div>
-      <div class="bloc-author">
-        <div class="bloc-img">
-          {% if content.blog_post_author.avatar %}
-            <figure>
-              <img class="img-fluid" src="{{ content.blog_post_author.avatar }}" alt="Photo de {{ blog_author.display_name }}" />
-            </figure>
-          {% endif %}
+    <div class="container {% if content.topic_list|map('name') == '[Case studies]' %}bloc-case-studies{% endif %}">
+      {% if content.topic_list|map('name') == '[Case studies]' %}
+        <div class="bloc-case-study">
+          {% module_block module "case_study_informations" path="../../modules/case-study-informations.module", label="Case study informations"%}{% end_module_block %}
         </div>
-        <div class="bloc-infos">
-          <p class="name">{{content.blog_post_author.display_name}}</p>
-          <p>{{ content.blog_author.bio }}</p>
+      {% endif %}
+      <div class="bloc-post">
+        <div class="bloc-anchor-post">
+          <ul>
+          </ul>
         </div>
-      </div>
+        <div class="bloc-contain-post">
+          <div class="contain-post">
+              {{ content.post_body }}
+          </div>
+          <div class="bloc-hide">
+            {% module_block module "blog-post-testimonial" path="../../modules/blog-post-testimonial.module", label="Blog post testimonial"%}{% end_module_block %}
+            {% module_block module "blog-post-cta" path="../../modules/blog-post-cta.module", label="Blog post CTA"%}{% end_module_block %}
+          </div>
+        </div>
+        {% if content.topic_list|map('name') != '[Case studies]' %}
+        <div class="bloc-author">
+          <div class="bloc-img">
+            {% if content.blog_post_author.avatar %}
+              <figure>
+                <img class="img-fluid" loading="lazy" src="{{ content.blog_post_author.avatar }}" alt="Photo de {{ blog_author.display_name }}" />
+              </figure>
+            {% endif %}
+          </div>
+          <div class="bloc-infos">
+            <p class="name">{{content.blog_post_author.display_name}}</p>
+            <p>{{ content.blog_author.bio }}</p>
+          </div>
+        </div>
+        {% endif %}
+      </div>       
     </div>
   </section>
-  {% module_block module "latest-news" path="../../modules/latest-news.module", label="Latest news"%}{% end_module_block %}
+  {% if content.topic_list|map('name') == '[Case studies]' %}
+    {% module_block module "latest-case-studies" path="../../modules/latest-case-studies.module", label="Latest case studies"%}{% end_module_block %}
+  {% else %}
+    {% module_block module "latest-news" path="../../modules/latest-news.module", label="Latest news"%}{% end_module_block %}
+  {% endif %}
   {% module_block module "banner-cta" path="../../modules/banner-cta.module", label="Banner CTA"%}{% end_module_block %}
 </main>
 <!-- Here you can manage your blog post -->

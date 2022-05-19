@@ -7,19 +7,19 @@
                 </a>
             {% endif %}
             <div class="bloc-socials">
-                {% if module.facebook_link %}
+                {% if module.facebook_link.url.href %}
                     <a href="{{ module.facebook_link.url.href }}" target="_blank" rel="noopener" class="fb">FB</a>
                 {% endif %}
-                {% if module.youtube_link %}
+                {% if module.youtube_link.url.href %}
                     <a href="{{ module.youtube_link.url.href }}" target="_blank" rel="noopener" class="youtube">Youtube</a>
                 {% endif %}
-                {% if module.linkedin_link %}
+                {% if module.linkedin_link.url.href %}
                     <a href="{{ module.linkedin_link.url.href }}" target="_blank" rel="noopener" class="linkedin">LinkedIn</a>
                 {% endif %}
-                {% if module.twitter_link %}
+                {% if module.twitter_link.url.href %}
                     <a href="{{ module.twitter_link.url.href }}" target="_blank" rel="noopener" class="twitter">Twitter</a>
                 {% endif %}
-                {% if module.instagram_link %}
+                {% if module.instagram_link.url.href %}
                     <a href="{{ module.instagram_link.url.href }}" target="_blank" rel="noopener" class="instagram">Instagram</a>
                 {% endif %}
             </div>

@@ -79,6 +79,9 @@ section.latest-news{
                 @media(max-width:$size4){
                     flex-direction:column;
                 }
+                &.is-selected{
+                    z-index:3;
+                }
                 a.bloc-img{
                     display:block;
                     width:100%;

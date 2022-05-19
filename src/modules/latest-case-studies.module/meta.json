@@ -1,0 +1,13 @@
+{
+    "css_assets": [],
+    "external_js": [],
+    "global": true,
+    "help_text": "",
+    "label": "Latest case studies",
+    "host_template_types": ["PAGE"],
+    "js_assets": [],
+    "other_assets": [],
+    "smart_type": "CONTACT_LIST",
+    "tags": [],
+    "is_available_for_new_content": true
+}

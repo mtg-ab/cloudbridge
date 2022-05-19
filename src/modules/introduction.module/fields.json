@@ -1,0 +1,81 @@
+[
+    {
+        "name": "module_identity",
+        "label": "Module ID",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text"
+    },
+    {
+        "type": "group",
+        "name": "content_style",
+        "label": "Content Style",
+        "children": [
+            {
+                "name": "section_type",
+                "label": "Section Type",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "display": "select",
+                "choices": [
+                    [
+                        "none",
+                        "None"
+                    ],
+                    [
+                        "sm",
+                        "Small"
+                    ],
+                    [
+                        "md",
+                        "Normal"
+                    ],
+                    [
+                        "lg",
+                        "Big"
+                    ],
+                    [
+                        "xl",
+                        "Giant"
+                    ]
+                ],
+                "type": "choice",
+                "default": "none"
+            },
+            {
+                "name": "padding_bottom",
+                "label": "Padding Bottom",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "name": "padding_top",
+                "label": "Padding Top",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "type": "boolean",
+                "default": true
+            }
+        ]
+    },
+    {
+        "name": "text",
+        "label": "Text",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "richtext",
+        "help_text" : "Title can describe your content properly.",
+        "default": "<p>Lectus sollicitudin quis tellus viverra rhoncus, vel. At ut tellus eget viverra gravida neque. Dignissim enim. Adipiscing mattis lorem cursus quam molestie. At sodales eu est turpis sit. Felis potenti quis sem sed tincidunt viverra amet feugiat. In vel praesent.</p>"
+    }
+]

@@ -6,8 +6,8 @@
         <div class="container">
           <div class="bloc-title">
             <div>
-                <h1>Discover our <strong>{{ page_meta.html_title|split(' | ')|last }}</strong></h1>
-                <p>Find out the latest news, product information, events and many other things form Cloudbridge.</p>
+                <h1>{{ page_meta.html_title|split(' | ')|last }}</h1>
+                <p>Explore the challenges of our clients, the solutions we implemented and the results achieved.</p>
                 {% if module.button_url.href %}
                     <a href="{{ module.button_url.href }}" class="btn primary"><span>{{ module.button_text }}</span></a>
                 {% else %}

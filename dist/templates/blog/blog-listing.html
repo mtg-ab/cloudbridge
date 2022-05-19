@@ -11,7 +11,6 @@
   {% if blog_author %}
   {# Author Block Listing - You can manage it here #}
   <section class="hero-section-blog">
-    <div id="contain-canvas"></div>
     <div class="container">
       <div class="bloc-title">
         <div>
@@ -26,6 +25,7 @@
   {% else %}
     {% module_block module "blog-listing-hero" path="../../modules/blog-listing-hero.module", label="Blog listing hero"%}{% end_module_block %}
   {% endif %}
+
   <section class="listing-posts {% if tag == "case-studies" %}listing-posts-tags{% endif %}">
     {% if tag == "case-studies" %}
     {% else %}
@@ -39,10 +39,13 @@
           {% set i = 1 %}
           {% for item in my_tags %}
             {% set i = i + 1 %}
-            <a href="{{ blog_tag_url(group.id, item.slug) }}" class="tag">
-              <span class="number">{% if i < 10 %}0{% endif %}{{ i }}</span>
-              <span class="item">{{ item }}</span>
-            </a>
+            {% if item != "Case studies" %}
+              <a href="{{ blog_tag_url(group.id, item.slug) }}" class="tag">
+                <span class="number">{% if i < 10 %}0{% endif %}{{ i }}</span>
+                
+                <span class="item">{{ item }}</span>
+              </a>
+            {% endif %}
           {% endfor %}
         </div>
       </div>
@@ -51,7 +54,18 @@
       {% for post in contents %}
         <div class="bloc">
           <a class="bloc-img" href="{{ post.absolute_url }}">
-            <img class="fit-cover" src="{{ post.featured_image }}" alt="{{ post.name }}">
+            <img class="fit-cover" src="{{ post.featured_image }}" loading="lazy" alt="{{ post.name }}">
+            {% if tag == 'case-studies' %}
+              {% if post.widgets.case_study_informations.body.white_logo.src %}
+                <div class="bloc-logo">
+                  <img src="{{ post.widgets.case_study_informations.body.white_logo.src }}" loading="lazy" alt="{{ post.widgets.case_study_informations.body.white_logo.alt }}">
+                </div>
+              {% else %}
+                <div class="bloc-logo">
+                  <img src="{{ post.widgets.case_study_informations.body.logo.src }}" loading="lazy" alt="{{ post.widgets.case_study_informations.body.logo.alt }}">
+                </div>
+              {% endif %}
+            {% endif %}
           </a>
           {% if tag != "case-studies" %}
             <div class="bloc-tags">
@@ -100,6 +114,7 @@
     </a>
   </nav>
   {% endif %}
+
   {% module_block module "banner-cta" path="../../modules/banner-cta.module", label="Banner CTA"%}{% end_module_block %}
 </main>
 {% module_block module "footer" path="../../modules/footer.module", label="Footer"%}{% end_module_block %}

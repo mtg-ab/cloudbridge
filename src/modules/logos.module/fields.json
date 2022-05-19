@@ -103,12 +103,94 @@
         "default": "<p>Reiciendis tempora nemo voluptas. Ratione dolores ad est facilis repellendus earum. ReReiciendis tempora nemo voluptas.</p>"
     },
     {
+        "name": "button_type",
+        "id":"button_type_id",
+        "label": "Button type",
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "inline_help_text": "",
+        "help_text": "",
+        "choices": [
+        [
+        "btn",
+        "Classic button"
+        ],
+        [
+        "cta",
+        "Hubspot Cta"
+        ]
+        ],
+        "type": "choice",
+        "placeholder": "",
+        "default": "btn" 
+    },
+    {
+        "name": "button_text",
+        "label": "Texte button",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": "Read our case studies",
+        "visibility": {
+            "controlling_field": "button_type_id",
+            "controlling_value_regex": "btn",
+            "operator": "EQUAL"
+        }
+    },
+    {
+        "name": "button_url",
+        "label": "URL button",
+        "required": false,
+        "locked": false,
+        "inline_help_text": "",
+        "help_text": "",
+        "supported_types": [
+        "EXTERNAL",
+        "CONTENT",
+        "FILE",
+        "EMAIL_ADDRESS",
+        "BLOG"
+        ],
+        "type": "url",
+        "default": {
+        "content_id": null,
+        "href": "",
+        "type": "EXTERNAL"},
+        "visibility": {
+            "controlling_field": "button_type_id",
+            "controlling_value_regex": "btn",
+            "operator": "EQUAL"
+        } 
+    },
+    {
+        "name": "cta_field",
+        "label": "CTA field",
+        "required": false,
+        "locked": false,
+        "inline_help_text": "",
+        "help_text": "",
+        "type": "cta",
+        "default": null,
+        "visibility": {
+            "controlling_field": "button_type_id",
+            "controlling_value_regex": "cta",
+            "operator": "EQUAL"
+        } 
+    },
+    {
         "name" : "logos",
         "label" : "Logos",
         "required" : false,
         "locked" : false,
         "occurrence" : {
-          "min" : 1,
+          "min" : null,
           "max" : null,
           "sorting_label_field" : "logo.item",
           "default" : null
@@ -137,7 +219,7 @@
         "required" : false,
         "locked" : false,
         "occurrence" : {
-          "min" : 1,
+          "min" : null,
           "max" : null,
           "sorting_label_field" : "logo.item",
           "default" : null

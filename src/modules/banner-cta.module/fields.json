@@ -63,6 +63,26 @@
                 "locked": false,
                 "type": "boolean",
                 "default": true
+            },
+            {
+                "name": "background_color",
+                "label": "Background color",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "display": "select",
+                "choices": [
+                    [
+                        "blue",
+                        "Blue"
+                    ],
+                    [
+                        "purple",
+                        "Purple"
+                    ]
+                ],
+                "type": "choice",
+                "default": "blue"
             }
         ]
     },

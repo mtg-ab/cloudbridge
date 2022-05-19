@@ -13,7 +13,7 @@
                 {% endif %}
             </div>
         </div>
-        <div class="bloc-items">
+        <div class="bloc-items bloc-{{ module.items|length }}">
             {% for item in module.items %}
                 <div class="bloc">
                     <div class="bloc-txt {% if item.button_url_item.href %}txt-btn{% endif %}">
@@ -38,9 +38,7 @@
                     </div>
                     {% if item.image.src %}
                         <div class="bloc-img">
-                            <figure class="figure">
-                                <img class="img-fluid" src="{{ item.image.src }}" loading="lazy" alt="{{ item.image.alt }}" />
-                            </figure>
+                            <img src="{{ item.image.src }}" loading="lazy" alt="{{ item.image.alt }}" />
                         </div>
                     {% endif %}
                 </div>

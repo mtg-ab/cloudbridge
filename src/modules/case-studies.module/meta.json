@@ -1,7 +1,7 @@
 {
     "css_assets": [],
     "external_js": [],
-    "global": false,
+    "global": true,
     "help_text": "",
     "label": "Case studies",
     "host_template_types": ["PAGE"],

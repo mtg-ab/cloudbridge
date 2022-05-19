@@ -15,11 +15,24 @@
             <nav>
                 <ul>
                     {% for item in module.items %}
-                        <li>
+                        <li {% if item.submenu %}class="sub-menu"{% endif %}>
                         {% if item.link.url.href %}
                             <a href="{{ item.link.url.href }}" class="menu-primary">
                                 {{ item.title }}
                             </a>
+                        {% endif %}
+                        {% if item.submenu %}
+                            <div class="sub-menu">
+                                <ul>
+                                    {% for item in item.submenu %}
+                                    <li>
+                                        <a href="{{ item.link.url.href }}">
+                                            {{ item.title }}
+                                        </a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
                         {% endif %}
                     {% endfor %}
                 </ul>
@@ -40,12 +53,27 @@
     <nav>
         <ul>
             {% for item in module.items %}
-                <li>
-                {% if item.link.url.href %}
-                    <a href="{{ item.link.url.href }}" class="menu-primary">
-                        {{ item.title }}
-                    </a>
-                {% endif %}
+                <li {% if item.submenu %}class="sub-menu"{% endif %}>
+                    {% if item.link.url.href %}
+                        <a href="{{ item.link.url.href }}" class="menu-primary">
+                            {{ item.title }}
+                        </a>
+                        
+                    {% endif %}
+                    {% if item.submenu %}
+                        <div class="sub-menu">
+                            <ul>
+                                {% for item in item.submenu %}
+                                <li>
+                                    <a href="{{ item.link.url.href }}">
+                                        {{ item.title }}
+                                    </a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
+                </li>
             {% endfor %}
         </ul>
     </nav>

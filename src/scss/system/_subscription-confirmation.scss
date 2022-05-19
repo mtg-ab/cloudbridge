@@ -2,16 +2,7 @@ main.subscription-confirmation{
     section.subscription-confirmation{
         padding:250px 0px;
         position: relative;
-        div#contain-canvas{
-            position: absolute;
-            width:100%;
-            height:100%;
-            top:0px;
-            left:0px;
-            @media(max-width:$size4){
-                height:100%;
-            }
-        }
+        background-color: $color1;
         div.container{
             position: relative;
             z-index:2;

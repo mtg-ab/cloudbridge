@@ -161,8 +161,8 @@ section.case-studies{
                     font-size: 30px;
                     line-height:45px;
                     p{
-                        font-size:30px;
-                        line-height:45px;
+                        font-size:25px;
+                        line-height:32px;
                         span.word{
                             position: relative;
                             display: inline-block;
@@ -176,18 +176,21 @@ section.case-studies{
                 }
                 p.name{
                     margin-top:45px;
-                    margin-bottom:15px;
+                    margin-bottom:10px;
                     overflow:hidden;
                     strong,span{
                         position: relative;
                         display: inline-block;
                     }
+                    strong{
+                        margin-right:4px;
+                    }
                 }
                 figure{
                     overflow:hidden;
                     img{
-                        max-height:30px;
-                        max-width:120px;
+                        max-height:50px;
+                        max-width:160px;
                     }
                 }
                 

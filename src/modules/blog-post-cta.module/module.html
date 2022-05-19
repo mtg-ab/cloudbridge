@@ -1,3 +1,4 @@
+{% if module.items %}
 <div id="{{module.module_identity}}" class="contain-blog-post-cta {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
     {% for item in module.items %}
     <div class="bloc">
@@ -6,10 +7,6 @@
             {% if item.image.src %}
                 <figure class="figure">
                     <img src="{{ item.image.src }}" loading="lazy" alt="{{ item.image.alt }}" />
-                </figure>
-            {% else %}
-                <figure class="figure">
-                    <img loading="lazy" src="https://via.placeholder.com/600x600/919388/ffffff.png?text=600x600">
                 </figure>
             {% endif %}
         </div>
@@ -46,3 +43,4 @@
     </div>
     {% endfor %}
 </div>
+{% endif %}
