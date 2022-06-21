@@ -4,11 +4,11 @@
             <a href="{{ module.logo_link.url.href }}" class="logo">
                 {% if module.logo.src %}
                     <figure class="figure">
-                        <img class="img-fluid" loading="lazy" src="{{ module.logo.src }}" alt="{{ module.logo.alt }}" />
+                        <img class="img-fluid" loading="lazy" width="{{ module.logo.width }}" height="{{ module.logo.height }}" src="{{ module.logo.src }}" alt="{{ module.logo.alt }}" />
                     </figure>
                 {% else %}
                     <figure class="figure">
-                        <img class="img-fluid" loading="lazy" src="https://via.placeholder.com/600x600/919388/ffffff.png?text=600x600">
+                        <img class="img-fluid" loading="lazy" width="{{ module.logo.width }}" height="{{ module.logo.height }}" src="https://via.placeholder.com/600x600/919388/ffffff.png?text=600x600">
                     </figure>
                 {% endif %}
             </a>

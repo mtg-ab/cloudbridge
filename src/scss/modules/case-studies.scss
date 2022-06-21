@@ -188,9 +188,13 @@ section.case-studies{
                 }
                 figure{
                     overflow:hidden;
+                    margin:0px;
+                    height:70px;
                     img{
-                        max-height:50px;
-                        max-width:160px;
+                        max-height:70px;
+                        max-width:170px;
+                        width:auto;
+                        height:100%;
                     }
                 }
                 

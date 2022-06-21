@@ -36,7 +36,7 @@
                         <div class="bloc-img " >
                             {% if item.image.src %}
                                 <figure class="figure">
-                                    <img class="img-fluid" src="{{ item.image.src }}" loading="lazy" alt="{{ item.image.alt }}" />
+                                    <img class="img-fluid" src="{{ item.image.src }}" width="{{ item.image.width }}" height="{{ item.image.height }}" loading="lazy" alt="{{ item.image.alt }}" />
                                 </figure>
                             {% else %}
                                 <figure class="figure">

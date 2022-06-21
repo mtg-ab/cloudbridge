@@ -161,27 +161,12 @@ main.blog-listing{
             text-decoration: none;
           }
         }
-        h3{
-          padding-bottom:0px;
+        a.bloc-txt{
           position: relative;
+          padding-bottom:45px;
+          text-decoration: none;
+          display:block;
           overflow:hidden;
-          font-weight: 600;
-          font-size: 18px;
-          line-height: 25px;
-          color: rgba(3, 60, 113, 0.6);
-          transition: 0.5s;
-          &:hover{
-            color: rgba(3, 60, 113, 1);
-            a{
-              color: rgba(3, 60, 113, 1);
-            }
-          }
-          a{
-            padding-bottom:45px;
-            display:block;
-            color: rgba(3, 60, 113, 0.6);
-            transition: 0.5s;
-          }
           &:hover{
             &:before{
               transform: translateX(100%);
@@ -213,7 +198,31 @@ main.blog-listing{
             transform: translateX(-100%);
             transition: 0.5s;
           }
+          h3{
+            position: relative;
+            overflow:hidden;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 25px;
+            color: rgba(3, 60, 113, 0.6);
+            padding-bottom:20px;
+            display:block;
+            color: rgba(3, 60, 113, 0.6);
+            transition: 0.5s;
+            &:hover{
+              color: rgba(3, 60, 113, 1);
+            }
+          }
+          div.text{
+            p{
+              font-weight: 400 !important;
+              font-size: 18px;
+              line-height: 28px;
+              color: #022D54;
+            }
+          }
         }
+        
       }
     }
   }

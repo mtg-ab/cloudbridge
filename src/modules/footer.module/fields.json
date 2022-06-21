@@ -14,6 +14,25 @@
                 }
             },
             {
+                "name" : "logo_link",
+                "label" : "Link logo",
+                "required" : false,
+                "locked" : false,
+                "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+                "type" : "link",
+                "inline_help_text": "",
+                "help_text": "",
+                "default" : {
+                "url" : {
+                    "content_id" : null,
+                    "type" : "EXTERNAL",
+                    "href" : ""
+                },
+                "open_in_new_tab" : false,
+                "no_follow" : false
+                } 
+            },
+            {
                 "name" : "facebook_link",
                 "label" : "Facebook link",
                 "required" : false,

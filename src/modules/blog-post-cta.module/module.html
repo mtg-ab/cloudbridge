@@ -6,7 +6,7 @@
         <div class="bloc-img">
             {% if item.image.src %}
                 <figure class="figure">
-                    <img src="{{ item.image.src }}" loading="lazy" alt="{{ item.image.alt }}" />
+                    <img src="{{ item.image.src }}" width="{{ item.image.width }}" height="{{ item.image.height }}" loading="lazy" alt="{{ item.image.alt }}" />
                 </figure>
             {% endif %}
         </div>

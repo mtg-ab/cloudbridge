@@ -2,8 +2,8 @@
     <div class="container container-head-footer">
         <div class="bloc-informations">
             {% if module.logo.src %}
-                <a href="" class="logo">
-                    <img src="{{ module.logo.src }}" loading="lazy" alt="{{ module.logo.src }}">
+                <a href="{{ module.logo_link.url.href }}" class="logo">
+                    <img src="{{ module.logo.src }}" loading="lazy" width="{{ module.logo.width }}" height="{{ module.logo.height }}" alt="{{ module.logo.alt }}">
                 </a>
             {% endif %}
             <div class="bloc-socials">

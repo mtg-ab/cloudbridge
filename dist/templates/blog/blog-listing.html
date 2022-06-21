@@ -54,11 +54,11 @@
       {% for post in contents %}
         <div class="bloc">
           <a class="bloc-img" href="{{ post.absolute_url }}">
-            <img class="fit-cover" src="{{ post.featured_image }}" loading="lazy" alt="{{ post.name }}">
+            <img class="fit-cover" src="{{ post.featured_image }}" width="{{ post.featured_image.width }}" height="{{ post.featured_image.height }}" loading="lazy" alt="{{ post.name }}">
             {% if tag == 'case-studies' %}
               {% if post.widgets.case_study_informations.body.white_logo.src %}
                 <div class="bloc-logo">
-                  <img src="{{ post.widgets.case_study_informations.body.white_logo.src }}" loading="lazy" alt="{{ post.widgets.case_study_informations.body.white_logo.alt }}">
+                  <img src="{{ post.widgets.case_study_informations.body.white_logo.src }}" width="{{ post.widgets.case_study_informations.body.white_logo.width }}" height="{{ post.widgets.case_study_informations.body.white_logo.height }}" loading="lazy" alt="{{ post.widgets.case_study_informations.body.white_logo.alt }}">
                 </div>
               {% else %}
                 <div class="bloc-logo">
@@ -77,44 +77,52 @@
               {% endfor %}
             </div>
           {% endif %}
-          <h3>
-            <a class="text-decoration-none" href="{{ post.absolute_url }}">{{ post.name }}</a>
-          </h3>
+          <a href="{{ post.absolute_url }}" class="bloc-txt">
+            <h3>
+              {{ post.name }}
+            </h3>
+            {% if post.post_summary %}
+                <div class="text">
+                  {{ post.post_summary }}              
+                </div>
+            {% endif %}
+          </a>
+          
         </div>
       {% endfor %}
     </div>
   </section>
+  {% if tag == "case-studies" %}
+    {% module_block module "logos" path="../../modules/logos.module", label="Logos"%}{% end_module_block %}
+    {% module_block module "latest-news" path="../../modules/latest-news.module", label="Latest news"%}{% end_module_block %}
+  {% endif %}
   <!-- Pagination - You can manage it here -->
   {% if next_page_num %}
-  <nav class="blog-pagination">
+    <nav class="blog-pagination">
+      {% set page_list = [-2, -1, 0, 1, 2] %}
+      {% if contents.total_page_count - current_page_num == 1 %}{% set offset = -1 %}
+      {% elif contents.total_page_count - current_page_num == 0 %}{% set offset = -2 %}
+      {% elif current_page_num == 2 %}{% set offset = 1 %}
+      {% elif current_page_num == 1 %}{% set offset = 2 %}
+      {% else %}{% set offset = 0 %}{% endif %}
 
-
-    {% set page_list = [-2, -1, 0, 1, 2] %}
-    {% if contents.total_page_count - current_page_num == 1 %}{% set offset = -1 %}
-    {% elif contents.total_page_count - current_page_num == 0 %}{% set offset = -2 %}
-    {% elif current_page_num == 2 %}{% set offset = 1 %}
-    {% elif current_page_num == 1 %}{% set offset = 2 %}
-    {% else %}{% set offset = 0 %}{% endif %}
-
-    <a class="previous"
-      href="{{ blog_page_link(last_page_num) }}">
-    </a>
-    <div class="container-pagination-link">
-      {% for page in page_list %}
-      {% set this_page = current_page_num + page + offset %}
-      {% if this_page > 0 and this_page <= contents.total_page_count %} <a
-        class="blog-pagination__number-link {{ "
-        blog-pagination__link--active" if this_page==current_page_num }}" href="{{ blog_page_link(this_page) }}">{{
-        this_page }}</a>
-        {% endif %}
-        {% endfor %}
-    </div>
-    <a class="next {{ "
-      blog-pagination__next-link--disabled" if !next_page_num }}" href="{{ blog_page_link(current_page_num + 1) }}">
-    </a>
-  </nav>
+      <a class="previous"
+        href="{{ blog_page_link(last_page_num) }}">
+      </a>
+      <div class="container-pagination-link">
+        {% for page in page_list %}
+        {% set this_page = current_page_num + page + offset %}
+        {% if this_page > 0 and this_page <= contents.total_page_count %} <a
+          class="blog-pagination__number-link {{ "
+          blog-pagination__link--active" if this_page==current_page_num }}" href="{{ blog_page_link(this_page) }}">{{
+          this_page }}</a>
+          {% endif %}
+          {% endfor %}
+      </div>
+      <a class="next {{ "blog-pagination__next-link--disabled" if !next_page_num }}" href="{{ blog_page_link(current_page_num + 1) }}">
+      </a>
+    </nav>
   {% endif %}
-
   {% module_block module "banner-cta" path="../../modules/banner-cta.module", label="Banner CTA"%}{% end_module_block %}
 </main>
 {% module_block module "footer" path="../../modules/footer.module", label="Footer"%}{% end_module_block %}

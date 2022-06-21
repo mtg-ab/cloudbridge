@@ -116,6 +116,8 @@ section.hero-features{
                     img{
                         max-width:140px;
                         max-height:30px;
+                        height:auto;
+                        width:auto;
                         opacity:1;
                         @media(max-width:$size4){
                             max-height:30px;

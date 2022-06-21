@@ -39,13 +39,15 @@ jQuery( document ).ready(function() {
         function flickity_handle_wheel_event(e, flickity_instance, flickity_is_animating) {
             if (!flickity_is_animating) {    
                 var direction = (Math.abs(e.deltaX) > Math.abs(e.deltaY)) ? e.deltaX : e.deltaY;
-                if (direction > 0) {
-                    if (direction > 1) {
-                        flickity_instance.next();
-                    }
-                } else {
-                    if (direction < -1) {
-                        flickity_instance.previous();
+                if(jQuery("section").hasClass("pin")){
+                    if (direction > 0) {
+                        if (direction > 1) {
+                            flickity_instance.next();
+                        }
+                    } else {
+                        if (direction < -1) {
+                            flickity_instance.previous();
+                        }
                     }
                 }
             }
@@ -54,13 +56,15 @@ jQuery( document ).ready(function() {
         function flickity_handle_wheel_event_text(e, flickity_instance, flickity_is_animating) {
             if (!flickity_is_animating) {    
                 var direction = (Math.abs(e.deltaX) > Math.abs(e.deltaY)) ? e.deltaX : e.deltaY;
-                if (direction > 0) {
-                    if (direction > 1) {
-                        flickity_instance.next();
-                    }
-                } else {
-                    if (direction < -1) {
-                        flickity_instance.previous();
+                if(jQuery("section").hasClass("pin")){
+                    if (direction > 0) {
+                        if (direction > 1) {
+                            flickity_instance.next();
+                        }
+                    } else {
+                        if (direction < -1) {
+                            flickity_instance.previous();
+                        }
                     }
                 }
             }
@@ -72,18 +76,17 @@ jQuery( document ).ready(function() {
             pageDots: false,
             prevNextButtons: false,
             verticalCells: false,
-            selectedAttraction: 0.01,
-            friction: 0.15,
+            autoPlay: 3500, 
             on:{
                 change: function( index ) {
                     var id = index;
                     jQuery( "section.key-numbers div.numbers div.number" ).each(function( index ) {
                         if(jQuery(this).hasClass('is-selected')){
                             var tl = gsap.timeline();
-                            tl.staggerTo(jQuery(this).find("span.char"),0.65, { y:0,stagger:0.1 });
+                            tl.staggerTo(jQuery(this).find("span.char"),0.45, { y:0,stagger:0.05 });
                         }else{
                             var tl = gsap.timeline();
-                            tl.staggerTo(jQuery(this).find("span.char"),0.65, { y:110,stagger:0.1 });
+                            tl.staggerTo(jQuery(this).find("span.char"),0.45, { y:110,stagger:0.05 });
                         }
                     })
                 } 
@@ -94,6 +97,7 @@ jQuery( document ).ready(function() {
             pageDots: false,
             prevNextButtons: false,
             verticalCells: false,
+            autoPlay: 3500, 
         });
 
         var flickity_1_is_animating = false;
@@ -135,11 +139,12 @@ jQuery( document ).ready(function() {
 
         ScrollTrigger.create({
             trigger: "section.key-numbers",
-            pin: true,
+            //pin: true,
             start: 'top 0',
             scrub:1,
             end: () =>  '+='+wh+'',
-            animation: initAnim(),
+            //animation: initAnim(),
+            toggleClass: {targets: "section.key-numbers", className: "pin"},
             //onEnter: () => initAnim(),
         })
         

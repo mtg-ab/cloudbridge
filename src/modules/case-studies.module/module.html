@@ -24,11 +24,7 @@
                         <p class="name"><strong>{{ item.nom }}, </strong><span> {{ item.job }}</span></p>
                         {% if item.logo.src %}
                             <figure class="figure">
-                                <img class="img-fluid" src="{{ item.logo.src }}" loading="lazy" alt="{{ item.logo.alt }}" />
-                            </figure>
-                        {% else %}
-                            <figure class="figure">
-                                <img class="img-fluid" loading="lazy" src="https://via.placeholder.com/600x600/919388/ffffff.png?text=600x600">
+                                <img class="img-fluid" src="{{ item.logo.src }}" width="{{ item.logo.width }}" height="{{ item.logo.height }}" loading="lazy" alt="{{ item.logo.alt }}" />
                             </figure>
                         {% endif %}
                     </div>

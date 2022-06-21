@@ -29,7 +29,7 @@
         <div class="hero-section-container__bloc">
             {% if module.image.src %}
             <figure class="figure">
-                <img class="img-fluid" data-speed="0.85" src="{{ module.image.src }}" loading="lazy" alt="{{ module.image.alt }}" />
+                <img class="img-fluid" data-speed="0.85" width="{{ module.image.width }}" height="{{ module.image.height }}" src="{{ module.image.src }}" loading="lazy" alt="{{ module.image.alt }}" />
             </figure>
             {% endif %}
         </div>

@@ -16,7 +16,7 @@
                     <div class="bloc">
                         {% if item.logo.src %}
                             <figure class="figure">
-                                <img class="img-fluid" src="{{ item.logo.src }}" loading="lazy" alt="{{ item.logo.alt }}" />
+                                <img class="img-fluid" src="{{ item.logo.src }}" width="{{ item.logo.width }}" height="{{ item.logo.height }}" loading="lazy" alt="{{ item.logo.alt }}" />
                             </figure>
                         {% else %}
                             <figure class="figure">
@@ -32,7 +32,7 @@
                     <div class="bloc">
                         {% if item.logo.src %}
                             <figure class="figure">
-                                <img class="img-fluid" src="{{ item.logo.src }}" loading="lazy" alt="{{ item.logo.alt }}" />
+                                <img class="img-fluid" src="{{ item.logo.src }}" width="{{ item.logo.width }}" height="{{ item.logo.height }}" loading="lazy" alt="{{ item.logo.alt }}" />
                             </figure>
                         {% else %}
                             <figure class="figure">

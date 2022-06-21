@@ -21,7 +21,7 @@
                     <div class="bloc" data-id="{{ i }}">
                         <a href="{{ rec_post.absolute_url }}" class="bloc-img">
                             <figure class="position-relative h-100 mr-n1 mb-0 overflow-hidden">
-                                <img class="fit-cover" loading="lazy" src="{{ rec_post.featured_image }}" alt="{{ rec_post.featured_image_alt }}">
+                                <img class="fit-cover" loading="lazy" src="{{ rec_post.featured_image }}" width="{{ rec_post.featured_image.width }}" height="{{ irec_post.featured_image.height }}" alt="{{ rec_post.featured_image_alt }}">
                             </figure>
                         </a>
                         <div class="bloc-txt">
