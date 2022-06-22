@@ -8,6 +8,7 @@ jQuery( document ).ready(function() {
         tl.to("section.hero-single-feature div.bloc-title p",0.7, { opacity:1,ease: "power2.inOut",delay:0 });
         tl.to("section.hero-single-feature div.bloc-title div.row-btns",0.7, { opacity:1,y:0,ease: "power2.Out",delay:-0.7 });
         tl.to("section.hero-single-feature div.bloc-img",1, { opacity:1,y:0,ease: "power2.Out",delay:-0.45 });
+        tl.to("section.hero-single-feature div.bloc-video",1, { opacity:1,y:0,ease: "power2.Out",delay:-0.45 });
 
 
     }

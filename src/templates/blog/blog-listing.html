@@ -51,7 +51,9 @@
       </div>
     {% endif %}
     <div class="container">
-      {% for post in contents %}
+      <div class="column-1">
+        {% for post in contents %}
+        {% if (loop.index is odd) %}
         <div class="bloc">
           <a class="bloc-img" href="{{ post.absolute_url }}">
             <img class="fit-cover" src="{{ post.featured_image }}" width="{{ post.featured_image.width }}" height="{{ post.featured_image.height }}" loading="lazy" alt="{{ post.name }}">
@@ -87,9 +89,52 @@
                 </div>
             {% endif %}
           </a>
-          
         </div>
+        {% endif %}
       {% endfor %}
+      </div>
+      <div class="column-2">
+        {% for post in contents %}
+        {% if (loop.index is even) %}
+          <div class="bloc">
+            <a class="bloc-img" href="{{ post.absolute_url }}">
+              <img class="fit-cover" src="{{ post.featured_image }}" width="{{ post.featured_image.width }}" height="{{ post.featured_image.height }}" loading="lazy" alt="{{ post.name }}">
+              {% if tag == 'case-studies' %}
+                {% if post.widgets.case_study_informations.body.white_logo.src %}
+                  <div class="bloc-logo">
+                    <img src="{{ post.widgets.case_study_informations.body.white_logo.src }}" width="{{ post.widgets.case_study_informations.body.white_logo.width }}" height="{{ post.widgets.case_study_informations.body.white_logo.height }}" loading="lazy" alt="{{ post.widgets.case_study_informations.body.white_logo.alt }}">
+                  </div>
+                {% else %}
+                  <div class="bloc-logo">
+                    <img src="{{ post.widgets.case_study_informations.body.logo.src }}" loading="lazy" alt="{{ post.widgets.case_study_informations.body.logo.alt }}">
+                  </div>
+                {% endif %}
+              {% endif %}
+            </a>
+            {% if tag != "case-studies" %}
+              <div class="bloc-tags">
+                {% for tag in post.tag_list %}
+                <a class="tag" href="{{ blog_tag_url(group.id, tag.slug) }}">{{
+                  tag.name
+                  }}</a>
+                {% if not loop.last %}{% endif %}
+                {% endfor %}
+              </div>
+            {% endif %}
+            <a href="{{ post.absolute_url }}" class="bloc-txt">
+              <h3>
+                {{ post.name }}
+              </h3>
+              {% if post.post_summary %}
+                  <div class="text">
+                    {{ post.post_summary }}              
+                  </div>
+              {% endif %}
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+      </div>
     </div>
   </section>
   {% if tag == "case-studies" %}

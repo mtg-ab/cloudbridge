@@ -65,6 +65,19 @@ section.hero-single-feature{
                 transform: translateY(20px);
             }
         }
+        div.bloc-video{
+            max-width:440px;
+            max-height:470px;
+            opacity:0;
+            transform: translateY(0px);
+            @media(max-width:$size4){
+                padding-top:40px;
+            }
+            video{
+                width:100%;
+                pointer-events: none;
+            }
+        }
         div.bloc-img{
             max-width:500px;
             padding-top:80px;
