@@ -326,7 +326,7 @@ main.single-post{
         }
         img{
           padding:20px 0px;
-          width:100% !important;
+          max-width:100% !important;
         }
         a{
           color:$color2;
@@ -346,6 +346,7 @@ main.single-post{
             height:83px;
             border-radius: 10px;
             overflow: hidden;
+            margin-right:30px;
             figure{
                 display:block;
                 width:100%;
@@ -360,7 +361,6 @@ main.single-post{
             }
         }
         div.bloc-infos{
-            padding-left:30px;
             width:calc(100% - 83px);
             p.name{
                 margin-top:0px;

@@ -110,13 +110,13 @@
         </div>
         {% if content.topic_list|map('name') != '[Case studies]' %}
         <div class="bloc-author">
-          <div class="bloc-img">
-            {% if content.blog_post_author.avatar %}
+          {% if content.blog_post_author.avatar %}
+            <div class="bloc-img">
               <figure>
                 <img class="img-fluid" loading="lazy" src="{{ content.blog_post_author.avatar }}" alt="Photo de {{ blog_author.display_name }}" />
               </figure>
-            {% endif %}
-          </div>
+            </div>
+          {% endif %}
           <div class="bloc-infos">
             <p class="name">{{content.blog_post_author.display_name}}</p>
             <p>{{ content.blog_author.bio }}</p>

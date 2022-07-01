@@ -33,15 +33,13 @@
         }
     },
     {
-        "id" : "items",
         "name" : "items",
         "label" : "Items",
         "required" : false,
         "locked" : false,
         "occurrence" : {
-          "min" : 1,
+          "min" : null,
           "max" : null,
-          "sorting_label_field" : "items.item",
           "default" : null
         },
         "children" : [
@@ -77,6 +75,17 @@
                 }
             },
             {
+                "name" : "show_sub_menu",
+                "label" : "Show sub menu",
+                "required" : false,
+                "locked" : false,
+                "type" : "boolean",
+                "display":"checkbox",
+                "inline_help_text" : "",
+                "help_text" : "",
+                "default" : false
+            },
+            {
                 "name" : "submenu",
                 "label" : "Submenu",
                 "required" : false,
@@ -105,18 +114,7 @@
                         "locked" : false,
                         "supported_types" : [ "EXTERNAL", "CONTENT" ],
                         "type" : "link",
-                        "show_advanced_rel_options" : false,
-                        "default" : {
-                          "url" : {
-                            "content_id" : null,
-                            "type" : "CONTENT",
-                            "href" : ""
-                          },
-                          "open_in_new_tab" : false,
-                          "no_follow" : false,
-                          "sponsored" : false,
-                          "user_generated_content" : false
-                        }
+                        "show_advanced_rel_options" : false
                     }
                 ],
                 "type" : "group"  

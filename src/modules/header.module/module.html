@@ -15,19 +15,19 @@
             <nav>
                 <ul>
                     {% for item in module.items %}
-                        <li {% if item.submenu %}class="sub-menu"{% endif %}>
+                        <li {% if item.show_sub_menu %}class="sub-menu"{% endif %}>
                         {% if item.link.url.href %}
                             <a href="{{ item.link.url.href }}" class="menu-primary">
                                 {{ item.title }}
                             </a>
                         {% endif %}
-                        {% if item.submenu %}
+                        {% if item.show_sub_menu %}
                             <div class="sub-menu">
                                 <ul>
-                                    {% for item in item.submenu %}
+                                    {% for subitem in item.submenu %}
                                     <li>
-                                        <a href="{{ item.link.url.href }}">
-                                            {{ item.title }}
+                                        <a href="{{ subitem.link.url.href }}" class="{{ subitem.link.url }}">
+                                            {{ subitem.title }}
                                         </a>
                                     </li>
                                     {% endfor %}

@@ -161,13 +161,14 @@ main.blog-listing{
             text-decoration: none;
           }
         }
-        a.bloc-txt{
+        div.bloc-txt{
           position: relative;
           padding-bottom:45px;
           text-decoration: none;
           display:block;
           overflow:hidden;
           color:$color1;
+          position: relative;
           &:hover{
             &:before{
               transform: translateX(100%);
@@ -175,6 +176,15 @@ main.blog-listing{
             &:after{
               transform: translateX(0%);
             }
+          }
+          a.link-post{
+            position: absolute;
+            width:100%;
+            height:100%;
+            display:block;
+            z-index:2;
+            left:0px;
+            top:0px;
           }
           &:before{
             display:block;
@@ -215,12 +225,14 @@ main.blog-listing{
             }
           }
           div.text{
-            p{
+            font-size: 16px;
+            p,a,strong{
               font-weight: 400 !important;
-              font-size: 18px;
+              font-size: 16px;
               line-height: 28px;
               color: #022D54;
             }
+            
           }
         }
         
