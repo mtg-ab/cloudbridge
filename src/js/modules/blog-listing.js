@@ -17,4 +17,14 @@ jQuery( document ).ready(function() {
     tl.staggerTo(jQuery("section.listing-posts div.bloc"),0.55, { opacity:1,x:0,y:0,stagger:0.15,ease: "power2.Out" });
     //ANIM TIMELINE 
 
+    jQuery( "section.listing-posts div.bloc svg" ).each(function( index ) {
+        gsap.to(jQuery(this),{
+            scrollTrigger: {
+                trigger: jQuery(this),
+                start:"-=450",
+                toggleClass: {targets: jQuery(this), className: "active"}
+            }
+        });
+    })
+
 })

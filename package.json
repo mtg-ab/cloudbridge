@@ -15,10 +15,10 @@
     "gen:fields": "gulp generate-fields",
     "gen:module": "yarn plop; yarn gen:fields",
     "hs:auth": "hs auth personalaccesskey",
-    "hs:sync-prod": "yarn gen:fields; hs upload --overwrite --portal=Qubix  dist MTG-HS-Boilerplate",
-    "hs:sync-dev": "yarn gen:fields;  hs upload --overwrite --portal=mtg-dev-william  dist CloudBridge",
+    "hs:sync-prod": "yarn gen:fields; hs upload --overwrite --portal=qubix  dist MTG-HS-Boilerplate",
+    "hs:sync-dev": "yarn gen:fields;  hs upload --overwrite --portal=mtg-dev-andrew  dist CloudBridge",
     "hs:module": "yarn plop; yarn gen:fields",
-    "hs:watch": "hs watch --portal=mtg-dev-william dist CloudBridge",
+    "hs:watch": "hs watch --portal=mtg-dev-andrew dist CloudBridge",
     "deploy:prod": "yarn build && yarn hs:sync-prod",
     "deploy:dev": "yarn build && yarn hs:sync-dev"
   },

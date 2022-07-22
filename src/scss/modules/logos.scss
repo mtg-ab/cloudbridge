@@ -36,6 +36,9 @@ section.logos{
                     color: rgba(255, 255, 255, 0.5);
                 }
             }
+            p{
+                max-width:270px;
+            }
             h2{
                 margin-bottom:30px;
                 margin-top:10px;
@@ -99,7 +102,7 @@ section.logos{
             div.bloc-line{
                 display: flex;
                 flex-direction: column;
-                padding:0px 60px;
+                padding:0px 45px;
                 position: relative;
                 @media(max-width:$size4){
                     padding:0px 30px;
