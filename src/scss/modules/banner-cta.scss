@@ -1,7 +1,19 @@
 section.banner-cta{
-    background-color:$color1;
+    position: relative;
+    &:after{
+        content:'';
+        display: block;
+        width:100%;
+        position: absolute;
+        left:0px;
+        top:0px;
+        height:calc(100% + 1px);
+        background-color:$color1;
+    }
     &.bg-purple{
-        background-color:$color2;
+        &:after{
+            background-color:$color2;
+        }
     }
     div.container{
         position: relative;

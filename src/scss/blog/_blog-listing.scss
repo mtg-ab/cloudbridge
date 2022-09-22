@@ -15,10 +15,6 @@ main.blog-listing{
           border:none;
           margin-bottom:90px;
           padding-bottom:0px;
-          @media(max-width:$size4){
-            margin-bottom:60px;
-          }
-          
         }
       }
     }
@@ -85,6 +81,9 @@ main.blog-listing{
         opacity:0;
         transform: translateY(45px);
         display:flex;
+        @media(max-width:$size4){
+          flex-direction: column;
+        }
         &:hover{
           h3{
             &:before{
@@ -98,22 +97,32 @@ main.blog-listing{
         &:nth-child(2n+2){
           a.bloc-img{
             order:2;
+            @media(max-width:$size4){
+              order:1;
+            }
           }
           div.bloc-txt{
             padding-left:inherit;
             padding-right:60px;
+            @media(max-width:$size4){
+              padding-right: 0px;
+              order:2;
+            }
             &:before,&:after{
               left:0px;
             }
           }
         }
         a.bloc-img{
-          height:300px;
+          min-height:300px;
           width:100%;
           max-width:540px;
           display:block;
           position: relative;
           overflow:hidden;
+          @media(max-width:$size4){
+            max-width:100%;
+          }
           &:hover{
             img.fit-cover{
               transform: scale(1.05);
@@ -169,14 +178,23 @@ main.blog-listing{
           color:$color1;
           position: relative;
           padding-left:60px;
+          @media(max-width:$size4){
+            width:calc(100%);
+            padding-left: 0px;
+            padding-top:30px;
+          }
           &:hover{
             &:after{
-              width:calc(100% - 60px); 
+              width:calc(100% - 60px);
+              @media(max-width:$size4){
+                width:calc(100%);
+              }
             }
           }
           svg{
             display:block;
             margin:0 auto;
+            margin-bottom:35px;
             &.active{
               path#line2{
                 animation: followpathBlog 2.8s ease-in-out;
@@ -229,6 +247,15 @@ main.blog-listing{
                 text-decoration: none;
               }
             }
+            a.btn{
+              margin-bottom:20px;
+              color:$color2;
+              border-bottom: 1px solid $color2;
+              float:right;
+              &:before,&:after{
+                background-color: $color2;
+              }
+            }
           }
           
           &:before{
@@ -241,6 +268,10 @@ main.blog-listing{
             height:1px;
             width:calc(100% - 60px); 
             transition: 0.5s;
+            @media(max-width:$size4){
+              width:calc(100%);
+              left:0px;
+            }
           }
           &:after{
             display:block;
@@ -252,10 +283,14 @@ main.blog-listing{
             height:1px;
             width:0%;
             transition: 0.5s;
+            @media(max-width:$size4){
+              left:0px;
+            }
           }
           
           div.text{
             font-size: 16px;
+            padding-bottom:25px;
             p,a,strong{
               font-weight: 400 !important;
               font-size: 16px;
@@ -458,6 +493,7 @@ main.blog-listing{
           }
           div.text{
             font-size: 16px;
+            padding-bottom:13px;
             p,a,strong{
               font-weight: 400 !important;
               font-size: 16px;

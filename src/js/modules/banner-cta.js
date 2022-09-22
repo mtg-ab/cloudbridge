@@ -1,5 +1,5 @@
 jQuery( document ).ready(function() {
-    if(jQuery("section").hasClass("case-studies")){
+    if(jQuery("section").hasClass("banner-cta")){
 
         //INIT GSAP
         const { gsap } = require("gsap/dist/gsap");

@@ -35,7 +35,7 @@ jQuery( document ).ready(function() {
     let smoother = ScrollSmoother.create({
         wrapper: "div#smooth-wrapper",
         content: "div#smooth-content",
-        smooth: 1.7,
+        smooth: 1.4,
         effects: true
     });
     
