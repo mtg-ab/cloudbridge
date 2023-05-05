@@ -98,8 +98,8 @@
     {% module_block module "logos" path="../../modules/our-client.module", label="Logos"%}{% end_module_block %}
     {% module_block module "latest-news" path="../../modules/latest-news.module", label="Latest news"%}{% end_module_block %}
   {% endif %}
+  {% if tag != "case-studies" %}
   <!-- Pagination - You can manage it here -->
-  {% if next_page_num %}
     <nav class="blog-pagination">
       {% set page_list = [-2, -1, 0, 1, 2] %}
       {% if contents.total_page_count - current_page_num == 1 %}{% set offset = -1 %}

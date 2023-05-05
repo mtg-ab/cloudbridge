@@ -56,5 +56,62 @@
                 </div>
             </div>
         </div>
+        <div class="bloc-offers-mobile my-3">
+            <div class="top d-flex justify-content-around">
+                {% for item in module.offers %}
+                <div class="offer">
+                    <div class="title">
+                        {{ item.title }}
+                    </div>
+                    {% if item.price or item.text %}
+                        <p class="price mt-1">{% if item.price %}<span>{{ item.price }}</span>{% endif %} {% if item.text %}{{ item.text }}{% endif %}</p>
+                    {% endif %}
+                    {% if item.link %}
+                        <a href="{{ item.link.url.href }}" class="btn primary mt-1"><span>Ask for quote</span></a>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+            <div class="field">
+                {% for item in module.features %}
+                    <div class="down">
+                        
+                            <div class="title">
+                                <span class="label">
+                                    {{ item.title }}
+                                </span>
+                                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 4.99988L5.00011 0.999989L1.00022 4.99988" stroke="#722281" stroke-linecap="round"/>
+                                </svg>    
+                            </div>
+
+                            <div class="bloc-lines">
+                                {% for item in item.items %}
+                                    <div class="row flex-column px-1 area">
+                                        <div class="bloc mt-2">
+                                            {{ item.title }}
+                                            {% if item.question %}
+                                                <div class="question">
+                                                    <div class="contain-question">
+                                                        {{ item.question }}
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                        <div class="bloc-infos">
+                                            {% for item in item.offers %}
+                                                <div class="info {% if item.text_offer %}{%else%}{% if item.content_offer %}is-contain{% else %}not-contain{% endif %}{% endif %}">
+                                                    {{ item.text_offer  }}
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
     </div>
 </section>

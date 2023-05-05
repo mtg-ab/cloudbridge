@@ -8,9 +8,7 @@ jQuery( document ).ready(function() {
         jQuery('div.bloc-contain-post h2').each(function(index) {
             index += 1
             jQuery(this).attr('data-id', index);
-            jQuery('div.bloc-anchor-post ul').append(jQuery('<li/>', {html: "<span data-id='"+index +"'>"+index+" - "+jQuery(this).text()+"</span>"}));
-            
-            
+            jQuery('div.bloc-anchor-post ul').append(jQuery('<li/>', {html: "<span data-id='"+index +"'>"+index+" - "+jQuery(this).text()+"</span>"}));            
         });
 
         if(jQuery("div").hasClass("bloc-case-study")){
